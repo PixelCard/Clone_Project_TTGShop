@@ -143,7 +143,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\CSS\MasterLayout.css" />
+    <Content Include="Content\CSS\CustomerLayout.css" />
+    <Content Include="Content\CSS\HomePage.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\ie7\ie7.css" />
@@ -540,8 +541,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\MasterLayout.cshtml" />
-    <Content Include="Views\Home\Customer.cshtml" />
+    <Content Include="Views\Shared\CustomerLayout.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

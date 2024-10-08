@@ -8,7 +8,7 @@ namespace WebBanMayTinh.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Customer()
+        public ActionResult HomePage()
         {
             return View();
         }
