@@ -1,0 +1,944 @@
+﻿@{
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/CSS/Content_ProductDetails.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+<div id="Product">
+    <div id="breadcrumb">
+        <div class="container_fluid">
+            <div class="List_BreadCrumb">
+                <ol class="breadcrumb_Arrow">
+                    <li>
+                        For You
+                    </li>
+
+                    <li>
+                        For Me
+                    </li>
+
+                    <li>
+                        For everyone
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <section class="Product_Infomation">
+        <div class="container_fluid">
+            <div class="Product_Details_Main">
+                <div class="Product_Gallery">
+                    <div class="cointainer_Product_Gallery">
+                        <div class="Product_Info">
+                            <div class="Nav_Product_Gallery_Img">
+                                <div class="Items_Product_Gallery">
+                                    <ul class="Nav_Img_Product_Gallery">
+                                        <li class="ItemsProduct Item1">
+                                            <a href="#" class="Lkn_Product">
+                                                <img src="~/Content/IMG/Product1.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+
+
+                                <div class="Own_nav">
+                                    <button type="button" role="presentation" class="Btn_Prev">
+                                        <span class="Previous"><</span>
+                                    </button>
+
+                                    <button type="button" role="presentation" class="Btn_nxt">
+                                        <span class="Next">></span>
+                                    </button>
+                                </div>
+
+                                <div class="Discount">
+                                    <span class="ProSale">
+                                        -17%
+                                        <br />
+                                        OFF
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="SubNav_Product_Gallery_Img">
+                                <div class="Inside_SubNav_Product_Gallery">
+                                    <div class="All_Main_Content_SubNav">
+                                        <div class="Sub_Nav_Items_Product_Gallery">
+                                            <div class="Sub_Items_Content">
+                                                <div class="Item_SubNav">
+                                                    <ul class="Nav_Img_Product_Gallery">
+                                                        <li class="ItemsProduct Item1">
+                                                            <a href="#" class="Lkn_Product">
+                                                                <img src="~/Content/IMG/Product1.jpg" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="Sub_Nav_Items_Product_Gallery">
+                                            <div class="Sub_Items_Content">
+                                                <div class="Item_SubNav">
+                                                    <ul class="Nav_Img_Product_Gallery">
+                                                        <li class="ItemsProduct Item1">
+                                                            <a href="#" class="Lkn_Product">
+                                                                <img src="~/Content/IMG/Product2.jpg" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="Sub_Nav_Items_Product_Gallery">
+                                            <div class="Sub_Items_Content">
+                                                <div class="Item_SubNav">
+                                                    <ul class="Nav_Img_Product_Gallery">
+                                                        <li class="ItemsProduct Item1">
+                                                            <a href="#" class="Lkn_Product">
+                                                                <img src="~/Content/IMG/Product3.jpg" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="Sub_Nav_Items_Product_Gallery">
+                                            <div class="Sub_Items_Content">
+                                                <div class="Item_SubNav">
+                                                    <ul class="Nav_Img_Product_Gallery">
+                                                        <li class="ItemsProduct Item1">
+                                                            <a href="#" class="Lkn_Product">
+                                                                <img src="~/Content/IMG/Product4.jpg" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="Product_Content">
+                    <div class="WBox">
+                        <div class="WBox-detail">
+                            <div class="Product_Heading">
+                                <h1 class="Title_Product">
+                                    PC FASTER GAMING 10400F - RTX 3050 6GB ( ALL NEW- Bảo hành 36 Tháng)- 20 slots- 10 HN- 10 HCM
+                                </h1>
+
+                                <span class="Slots">
+                                    Tình trạng
+                                    <strong>Còn hàng</strong>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="Bottom_Main_Product_Content">
+
+                            @*On the Left Side*@
+                            <div class="Box_Content_Bottom_Product left">
+
+                                @* Product_Details About Price and Discount and Original_Price *@
+                                <div class="WBox-detail">
+                                    <div class="Product_Facitlity">
+                                        <span class="Tittle_Price">Giá</span>
+                                        <span class="Discount_Price">15,480,000₫</span>
+                                        <del class="Original_Price">17,990,000₫</del>
+                                        <span class="Discount_Box">-14%</span>
+                                    </div>
+
+                                    @* Product Choose to Switch to another Gear *@
+                                    <div class="Product_Action_Choose_For_Get_MoreST">
+                                        <form id="Add_Item_Form clearfix" action="" class="variants">
+                                            <div class="Select_Watch clearfix">
+                                                <div id="Variant_swatch_Item1" class="Box_Choose">
+                                                    <div class="Tittle">
+                                                        Ram:
+                                                    </div>
+
+                                                    <div class="select_Swap">
+                                                        <div class="SwitchElement Ram16gb">
+                                                            <label class="Lb">
+                                                                <span>Ram 16GB</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="SwitchElement Ram32gb">
+                                                            <label class="Lb">
+                                                                <span>Ram 32Gb</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div id="Variant_swatch_Item2" class="Box_Choose">
+                                                    <div class="Tittle">
+                                                        Cpu:
+                                                    </div>
+
+                                                    <div class="select_Swap">
+                                                        <div class="SwitchElement i5-12400f-tan-khi">
+                                                            <label class="Lb">
+                                                                <span>i5 12400F + Tản khí</span>
+                                                            </label>
+                                                        </div>
+
+
+                                                        <div class="SwitchElement i5-12400f-tan-nuoc-aio-240">
+                                                            <label class="Lb">
+                                                                <span>i5 12400F +  Tản nước AIO 240</span>
+                                                            </label>
+                                                        </div>
+
+
+                                                        <div class="SwitchElement i5-13400f-tan-nuoc-aio-240">
+                                                            <label class="Lb">
+                                                                <span>i5 13400F + Tản nước AIO 240</span>
+                                                            </label>
+                                                        </div>
+
+
+
+                                                        <div class="SwitchElement i5-13500-Tan-nuoc-AIO-240">
+                                                            <label class="Lb">
+                                                                <span>i5 13500 + Tản nước AIO 240</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div id="Variant_swatch_Item3" class="Box_Choose">
+                                                    <div class="Tittle">
+                                                        SSD:
+                                                    </div>
+
+                                                    <div class="select_Swap">
+                                                        <div class="SwitchElement SSD500GB">
+                                                            <label class="Lb">
+                                                                <span>SSD 500GB</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="SwitchElement SSD1TB">
+                                                            <label class="Lb">
+                                                                <span>SSD 1TB</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+
+                                    @* Count Your Buying and Some Button to buy or add On cart  *@
+                                    <div class="Product_Count_And_BtnForBuying">
+                                        <div class="BlockForBtnBuyingAndProductCount clearfix">
+                                            <div class="Product_Count">
+                                                <div class="Tittle">Số lượng</div>
+                                                <button class="Decrease_Count qtybtn" type="button">-</button>
+                                                <input type="text" value="1" min="1" class="Quantity-Product" />
+                                                <button class="Upper_Count qtybtn" type="button">+</button>
+                                            </div>
+
+                                            <div class="Block_AddOnCart">
+                                                <button class="btn-AddOnCart button" type="button" id="Add-to-cart">
+                                                    <span>Thêm vào giỏ hàng</span>
+                                                </button>
+
+                                                <button class="btn-BuyNow button">
+                                                    <span>Mua Ngay</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="Product_SharingSocial">
+                                        <span>Chia sẻ</span>
+                                        <a href="" class="Share_FaceBook">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+
+                                        <a href="" class="Share_Instagram">
+                                            <i class="ti-instagram"></i>
+                                        </a>
+
+                                        <a href="" class="Share_Mess">
+                                            <i class="fab fa-facebook-messenger"></i>
+                                        </a>
+
+                                        <a href="" class="Share_Twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            @*On the right Side*@
+                            <div class="RightSideBox_Container">
+                                <div class="WBox-detail">
+                                    <div class="Product_Delivery">
+                                        <div class="Deliverly_inner">
+                                            <div class="Title_Deliverly">
+                                                <span>Chính sách bán hàng</span>
+                                            </div>
+
+                                            <div class="info_List_Deliverly">
+                                                <div class="Deliverly_Item">
+                                                    <span>
+                                                        <img src="~/Content/IMG/product_deliverly_1_ico.png" />
+                                                    </span>
+                                                    Cam kết 100% chính hãng
+                                                </div>
+
+                                                <div class="Deliverly_Item">
+                                                    <span>
+                                                        <img src="~/Content/IMG/product_deliverly_3_ico.png" />
+                                                    </span>
+                                                    Hỗ trợ 24/7
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="Deliverly_inner" style="max-width:100%;flex:0 0 100%;">
+                                            <div class="Title_Deliverly">
+                                                <span>Thông tin thêm</span>
+                                            </div>
+
+                                            <div class="info_List_Deliverly">
+                                                <div class="Deliverly_Item">
+                                                    <span>
+                                                        <img src="~/Content/IMG/product_deliverly_4_ico.png" />
+                                                    </span>
+                                                    Hoàn tiền 111% nếu hàng giả
+                                                </div>
+
+                                                <div class="Deliverly_Item">
+                                                    <span>
+                                                        <img src="~/Content/IMG/product_deliverly_5_ico.png" />
+                                                    </span>
+                                                    Mở hộp kiểm tra nhận hàng
+                                                </div>
+
+                                                <div class="Deliverly_Item">
+                                                    <span>
+                                                        <img src="~/Content/IMG/product_deliverly_6_ico.png" />
+                                                    </span>
+                                                    Đổi trả trong 7 ngày
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Product_Advertise">
+                                        <a href="#">
+                                            <img src="~/Content/IMG/product_banner.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="ProductDetail--Box">
+                    <div class="Product_Description mg-top15">
+                        <div class="Box_Tittle">
+                            <h2>Mô tả sản phẩm</h2>
+                        </div>
+
+                        <div class="Main_Prodcut_Description">
+                            <div class="Table_Description_Details">
+                                <h3>Thông số kỹ thuật</h3>
+                                <div>
+                                    <span style="font-size: 15px; font-weight: 700; color: #e74c3c"><strong style="font-weight:700">Tất cả linh kiện điều mới</strong></span>
+                                </div>
+
+                                <div>
+                                    <table cellpadding="0" cellspacing="0" border="1" style="border-collapse:collapse; width:100%">
+                                        <tbody>
+                                            <tr>
+                                                <td style="background-color: white;
+                                                border-bottom: 1px solid black;
+                                                border-left: 1px solid black;
+                                                border-right: 1px solid black;
+                                                border-top: 1px solid black;
+                                                height: 23px; padding-left: 1px;
+                                                padding-right: 1px; padding-top: 1px;
+                                                text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">STT</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                                border-bottom: 1px solid black;
+                                                border-left: 1px solid black;
+                                                border-right: 1px solid black;
+                                                border-top: 1px solid black;
+                                                height: 23px; padding-left: 1px;
+                                                padding-right: 1px; padding-top: 1px;
+                                                text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">Mô tả thiết bị</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                                border-bottom: 1px solid black;
+                                                border-left: 1px solid black;
+                                                border-right: 1px solid black;
+                                                border-top: 1px solid black;
+                                                height: 23px; padding-left: 1px;
+                                                padding-right: 1px; padding-top: 1px;
+                                                text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">SL</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                                border-bottom: 1px solid black;
+                                                border-left: 1px solid black;
+                                                border-right: 1px solid black;
+                                                border-top: 1px solid black;
+                                                height: 23px; padding-left: 1px;
+                                                padding-right: 1px; padding-top: 1px;
+                                                text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">BH</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">CPU Intel Core i5-12400F (Up To 4.40GHz, 6 Nhân 12 Luồng,18MB Cache, Socket 1700, Alder Lake)- Tray</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">2</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">Mainboard ASUS B760M-K DDR4</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">2</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">Mainboard ASUS B760M-K DDR4</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">3</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700"> Ram GEIL EVO Spear 16GB DDR4 3200MHz	</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">4</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700"> SSD CRUCIAL P3 500GB NVME M.2 PCIE	</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">5</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">VGA OCPC RTX 3060 Ti 8GB ZT WHITE</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">24th</span>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">6</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">	 Nguồn AIGO VK650 - 650W (85 Plus/ Active PFC/ Single Rail)</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">36th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">7</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">Vỏ Case XIGMATEK CUBI M WHITE</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">12th</span>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+                                            <tr>
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 55px;">
+                                                    <span style="font-size:15px;font-weight:700">8</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 543px;">
+                                                    <span style="font-size:15px;font-weight:700">Tản nhiệt khí CR1000 RGB</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">1</span>
+                                                </td>
+
+
+                                                <td style="background-color: white;
+                                               border-bottom: 1px solid black;
+                                               border-left: 1px solid black;
+                                               border-right: 1px solid black;
+                                               border-top: 1px solid black;
+                                               height: 23px; padding-left: 1px;
+                                               padding-right: 1px; padding-top: 1px;
+                                               text-align: center; width: 60px;">
+                                                    <span style="font-size:15px;font-weight:700">12th</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div>
+                                    <hr />
+                                </div>
+
+                                <div>
+                                    <span style="font-size: 15px; font-weight: 700; color: #e74c3c">Bộ PC này đã áp dụng CTKM SHOCK Toàn Tập - nên sẽ không được Áp dụng CTKM Chung</span>
+                                </div>
+
+                                <div>
+                                    <hr />
+                                </div>
+                            </div>
+
+                            <div class="Description_Details_Btn">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="Product_You_Need_ToWatch">
+    </section>
+
+
+    <section class="Product_You_Seen_before">
+    </section>
+</div>
+

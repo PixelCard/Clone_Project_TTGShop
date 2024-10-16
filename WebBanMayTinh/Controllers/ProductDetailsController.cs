@@ -13,5 +13,10 @@ namespace WebBanMayTinh.Controllers
         {
             return View();
         }
+
+        public ActionResult ProductPage()
+        {
+            return View();
+        }
     }
 }
