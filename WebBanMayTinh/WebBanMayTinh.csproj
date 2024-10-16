@@ -521,6 +521,16 @@
     <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_10.png" />
     <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_11.png" />
     <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_12.png" />
+    <Content Include="Content\IMG\Product_Page_Img\Product1.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product2.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product3.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product4.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\product_banner.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_1_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_3_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_4_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_5_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_6_ico.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -563,7 +573,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\IMG\Product_Page_Img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
