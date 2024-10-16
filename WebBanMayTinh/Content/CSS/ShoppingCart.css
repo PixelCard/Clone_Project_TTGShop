@@ -1,0 +1,352 @@
+﻿/*Phần chung*/
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+label{
+    display:inline-block;
+}
+
+.col-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #333333;
+    margin: 0 0 13px 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+li {
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #0000001a;
+}
+
+button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.container_fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.DSPBLCK {
+    display: block;
+}
+
+.mg-top15 {
+    margin-top: 15px;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+
+
+
+
+/*BreadCrumb*/
+#Product {
+    margin-top: 12px;
+}
+
+#breadcrumb {
+}
+
+.List_BreadCrumb {
+    /*    margin-top: 20px;*/
+}
+
+
+    .List_BreadCrumb .breadcrumb_Arrow {
+        display: flex;
+        font-size: 13px;
+        padding: 9px 0px;
+        padding-top: 33px;
+        background-color: transparent;
+        flex-wrap: wrap;
+    }
+/*End Crumb*/
+
+
+
+/*Begin at Wrapper_Main_Content_Layout_Cart*/
+.Wrapper_Main_Content_Layout_Cart{
+
+}
+
+    .Wrapper_Main_Content_Layout_Cart .Content_Layout_Cart{
+
+    }
+
+.Content_Layout_Cart .contentCart-detail{
+
+}
+
+.contentCart-detail .Main_Details {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+
+.Main_Details .Heading_Cart {
+    font-size: 25px;
+    margin: 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eae4e8;
+}
+
+
+.Main_Details .What_Items_You_Put_On_Cart {
+    padding: 20px 15px;
+    text-align: left;
+    font-size: 17px;
+}
+
+
+.sidebarCart-sticky{
+
+}
+
+    .sidebarCart-sticky .Wrapper-Pay_Layout {
+        position: sticky;
+        top: 95px;
+    }
+
+
+.Wrapper-Pay_Layout .Sumary_Block {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px #00000014;
+}
+
+.Wrapper-Pay_Layout .Pay_Top_Layout{
+
+}
+
+.Pay_Top_Layout .Pay_Tittle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.Pay_Top_Layout .Pay_Total {
+    font-size: 16px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    border-top: 1px dotted #dfe0e1;
+    border-bottom: 1px dotted #dfe0e1;
+    margin-bottom: 10px;
+    border-top: 0;
+}
+
+.Pay_Total > p{
+    display:flex;align-items:center;justify-content:space-between;margin:0;
+}
+
+    .Pay_Total > p > span {
+        font-weight: bold;
+        float: right;
+        color: red;
+        font-size: 24px;
+    }
+
+.Pay_Top_Layout .Pay_action_Notice {
+    padding-top: 5px;
+    text-align: center;
+}
+
+    .Pay_Top_Layout .Pay_action_Notice > p {
+        position: relative;
+        font-size: 14px;
+        margin-bottom: 4px;
+        padding-left: 15px;
+        font-weight: 400;
+        text-align: left;
+    }
+
+        .Pay_Top_Layout .Pay_action_Notice > p::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            background: #999999;
+            left: 0;
+            opacity: 1;
+            position: absolute;
+            top: 8px;
+            border-radius: 50%;
+        }
+
+.Pay_action_Notice .Box_Notice {
+    background-color: #fee3e8;
+    border: 1px solid #fdd0d8;
+    color: #d20909;
+    font-size: 13px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.Pay_Top_Layout .Pay_Btn{
+
+}
+
+.Pay_Btn .checkout-btn {
+    display: block;
+    background: red;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 0;
+    margin-top: 12px;
+}
+
+    .Pay_Btn .checkout-btn.disabled {
+        pointer-events: none;
+        opacity: 0.7;
+        background: #151515;
+    }
+
+.Pay_Top_Layout .Time_Shipping {
+    background-color: #fcfcfc;
+    border: 1px solid #F5f5f5;
+}
+
+.Time_Shipping .Inside_Box_Time {
+    padding: 10px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Inside_Box_Time .Box_Time_Title {
+    flex: 1 1 auto;
+    width: 1%;
+    padding-right: 10px;
+}
+
+.Box_Time_Title .txt_title {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 0 5px;
+}
+
+.Box_Time_Title .txt_time{
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+
+    .Box_Time_Title .txt_time > i {
+        color: #f9bb01;
+        margin-right: 2px;
+        font-size: 15px;
+        vertical-align: text-bottom;
+    }
+
+.Inside_Box_Time .Box_Time_Radio {
+    max-width: 50%;
+}
+
+.Box_Time_Radio .Radio_item{
+    position:relative;
+    margin-top:1px;
+}
+
+
+    .Box_Time_Radio .Radio_item input[type='radio'] {
+        position: absolute;
+        top: 2px;
+        left: 0px;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        color: #fff;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+        margin: 0;
+        transition: all 0.15s ease-out 0s;
+    }
+
+
+
+.Box_Time_Radio input[type='radio'] + label {
+    position: relative;
+    margin: 0px;
+    padding-left: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor:pointer
+}
+
+
+.Wrapper-Pay_Layout .Primary_Layout_Pay{
+    padding:0;
+    border:0;
+}
+
+.Primary_Layout_Pay .Block_Primary_Layout_Pay {
+    padding: 12px 15px;
+    border-radius: 4px;
+    background-color: #d9edf7;
+}
+
+
+.Block_Primary_Layout_Pay .Heading_Block_Primary_Layout_Pay {
+    margin-bottom: 5px;
+}
+
+.Block_Primary_Layout_Pay > p {
+    margin: 0;
+    font-size: 16px;
+}

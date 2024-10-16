@@ -1,0 +1,134 @@
+﻿@{
+    Layout = "~/Views/Shared/_ShoppingCartLayout.cshtml";
+}
+
+<link rel="stylesheet"  href="~/Content/CSS/ShoppingCart.css"/>
+
+<div class="Layout_Cart">
+    <div id="breadcrumb">
+        <div class="container_fluid">
+            <div class="List_BreadCrumb">
+                <ol class="breadcrumb_Arrow">
+                    <li>
+                        For You
+                    </li>
+
+                    <li>
+                        For Me
+                    </li>
+
+                    <li>
+                        For everyone
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Wrapper_Main_Content_Layout_Cart">
+        <div class="Content_Layout_Cart">
+            <div class="container_fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-12 contentCart-detail">
+                        <div class="Main_Details">
+                            <h1 class="Heading_Cart">
+                                Giỏ hàng của bạn
+                            </h1>
+
+
+                            <div class="What_Items_You_Put_On_Cart">
+                                Giỏ hàng của bạn đang trống
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12 sidebarCart-sticky">
+                        <div class="Wrapper-Pay_Layout">
+                            <div class="Pay_Top_Layout Sumary_Block">
+                                <h2 class="Pay_Tittle">Thông tin đơn hàng</h2>
+
+                                <div class="Time_Shipping">
+                                    <div class="Inside_Box_Time">
+                                        <div class="Box_Time_Title">
+                                            <p class="txt_title">Thời gian giao hàng</p>
+                                            <p class="txt_time">
+                                                <i class="far fa-clock"></i>
+                                                <span>Chọn thời gian</span>
+                                            </p>
+                                        </div>
+
+
+                                        <div class="Box_Time_Radio" id="picktime_radio">
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-1" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-1">Giao khi có hàng</label>
+                                            </div>
+
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-2" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-2">Chọn thời gian</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="Pay_Total">
+                                    <p>
+                                        Tổng tiền
+                                        <span>0₫</span>
+                                    </p>
+                                </div>
+
+
+                                <div class="Pay_action_Notice">
+                                    <p>
+                                        Phí vận chuyển sẽ được tính ở trang thanh toán.
+                                    </p>
+
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+
+                                    <div class="Box_Notice" style="display:block">
+
+                                        Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
+
+                                    </div>
+                                </div>
+
+
+                                <div class="Pay_Btn">
+                                    <a id="btnCart-checkout" class="checkout-btn btnred disabled" href="#">
+                                        THANH TOÁN
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="Primary_Layout_Pay Sumary_Block">
+                                <div class="Block_Primary_Layout_Pay">
+                                    <p class="Heading_Block_Primary_Layout_Pay">
+                                        <strong>Chính sách mua hàng</strong>
+                                        :
+                                    </p>
+
+                                    <p>
+                                        Hiện chúng tôi chỉ áp dụng thanh toán với đơn hàng có giá trị tối thiểu
+                                        <strong>40.000₫ </strong>  trở lên.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
