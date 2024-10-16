@@ -1,0 +1,691 @@
+﻿/*Phần chung*/
+
+li {
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #0000001a;
+}
+
+button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.container_fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.DSPBLCK {
+    display: block;
+}
+
+.mg-top15 {
+    margin-top: 15px;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+
+
+
+
+/*BreadCrumb*/
+#Product {
+    margin-top: 12px;
+}
+
+#breadcrumb {
+}
+
+.List_BreadCrumb {
+    /*    margin-top: 20px;*/
+}
+
+
+    .List_BreadCrumb .breadcrumb_Arrow {
+        display: flex;
+        font-size: 13px;
+        padding: 9px 0px;
+        background-color: transparent;
+        flex-wrap: wrap;
+    }
+/*End Crumb*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Product Slider*/
+.Product_Infomation {
+    position: relative;
+    right: 22px;
+}
+
+    .Product_Infomation .Product_Details_Main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+.Product_Details_Main .Product_Gallery {
+    width: 34%;
+    background: #fff;
+}
+
+.Product_Gallery .cointainer_Product_Gallery {
+    padding: 15px;
+}
+
+.cointainer_Product_Gallery .Discount {
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+.Discount .ProSale {
+    display: block;
+    background: red;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 13px;
+    border-radius: 0 0 10px 10px;
+    margin-top: 10px;
+    margin-right: 16px;
+}
+
+
+
+.Product_Gallery .Nav_Product_Gallery_Img {
+    position: relative;
+}
+
+.Nav_Product_Gallery_Img .Items_Product_Gallery {
+    overflow: hidden;
+}
+
+.Items_Product_Gallery .Nav_Img_Product_Gallery {
+    width: 100%;
+}
+
+.Nav_Img_Product_Gallery .Items {
+}
+
+.ItemsProduct > a > img {
+    width: 100%;
+}
+
+.Own_nav {
+}
+
+    .Own_nav > button {
+        position: absolute;
+        top: 45%;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .Own_nav .Btn_Prev {
+        left: 0;
+        opacity: 1;
+    }
+
+    .Own_nav .Btn_nxt {
+        right: 0;
+        opacity: 1;
+    }
+
+    .Own_nav > button > span {
+        font-size: 34px;
+        display: inline-block;
+    }
+
+
+.SubNav_Product_Gallery_Img {
+}
+
+    .SubNav_Product_Gallery_Img .Inside_SubNav_Product_Gallery {
+        position: initial;
+        max-width: 90%;
+        margin: 15px auto 0px;
+    }
+
+.Inside_SubNav_Product_Gallery .All_Main_Content_SubNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.Inside_SubNav_Product_Gallery .Sub_Nav_Items_Product_Gallery {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.Sub_Nav_Items_Product_Gallery .Sub_Items_Content {
+    width: 346px;
+    position: relative;
+}
+
+
+.Sub_Nav_Items_Product_Gallery .Item_SubNav {
+    width: 71.372px;
+    margin-right: 15px;
+}
+/*End ProductSlider*/
+
+
+
+
+
+
+
+
+
+/*Product_Content*/
+.Product_Content {
+    width: 64%;
+    background: #fff;
+    border-left: 1px solid #eee;
+}
+
+    .Product_Content .WBox {
+    }
+
+
+.WBox .WBox-detail {
+    padding: 0 15px;
+    background: #fff;
+}
+
+.Product_Content .WBox-detail > [class *='Product_'] {
+    margin-bottom: 15px;
+}
+
+.WBox-detail .Product_Heading {
+    padding-top: 15px;
+}
+
+    .WBox-detail .Product_Heading .Title_Product {
+        padding-bottom: 5px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+.Product_Heading .Slots strong {
+    color: #f9bb01;
+    font-weight: 700;
+}
+
+
+.WBox .Bottom_Main_Product_Content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Bottom_Main_Product_Content .Box_Content_Bottom_Product {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    padding: 0;
+}
+
+.Bottom_Main_Product_Content .RightSideBox_Container {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0;
+}
+
+
+
+/*On the left side*/
+.WBox-detail .Product_Facitlity {
+    display: flex;
+    align-items: center;
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.Product_Facitlity .Tittle_Price {
+    font-weight: 600;
+    width: 11%;
+}
+
+.Product_Facitlity .Discount_Price {
+    font-size: 28px;
+    font-weight: 600;
+    color: red;
+    padding-right: 12px;
+}
+
+.Product_Facitlity .Original_Price {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #878c8f;
+}
+
+.Product_Facitlity .Discount_Box {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    font-size: 13px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    background-color: #fff;
+    font-weight: 600
+}
+
+
+
+
+
+
+
+.Product_Action_Choose_For_Get_MoreST {
+}
+
+
+    .Product_Action_Choose_For_Get_MoreST .variants {
+    }
+
+.variants .Select_Watch {
+}
+
+
+.Select_Watch .Box_Choose {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+}
+
+.Box_Choose .Tittle {
+    width: 20%;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.Box_Choose .select_Swap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 72%;
+}
+
+.select_Swap .SwitchElement {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    border-radius: 3px;
+    position: relative;
+    vertical-align: bottom;
+}
+
+.SwitchElement label {
+    font-size: 12px;
+    padding: 7px 10px;
+    position: relative;
+    display: block;
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #bdbfbe;
+    min-width: 72px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.SwitchElement .Lb {
+    color: #f9bb01;
+    background-color: #fff;
+    border: 1px solid #f9bb01;
+}
+
+    .SwitchElement .Lb > span {
+        display: block;
+        padding: 0 10px;
+        overflow: hidden
+    }
+
+
+
+/*Mở ra khi mà làm được JavaScript cho phần chọn lựa gear */
+
+/*    .SwitchElement .Lb::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        right: -1px;
+        top: -1px;
+        border-style: solid;
+        border-width: 0px 19px 19px 0px;
+        border-color:transparent #f9bb01 transparent transparent;
+    }
+
+    .SwitchElement .Lb::after {
+        position: absolute;
+        content: "";
+        width: 19px;
+        height: 19px;
+        right: -1px;
+        top: -1px;
+    }*/
+
+
+/*Product Count And Two Button Add on Cart and Buying*/
+.Product_Count_And_BtnForBuying {
+    width: 100%;
+    margin-top: 27px;
+}
+
+    .Product_Count_And_BtnForBuying .BlockForBtnBuyingAndProductCount {
+        display: block;
+    }
+
+.BlockForBtnBuyingAndProductCount .Product_Count {
+    display: flex;
+    align-items: center;
+}
+
+.Product_Count .Tittle {
+    width: 20%;
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+.Product_Count .qtybtn {
+    float: left;
+    background-color: #fff;
+    border: 1px solid #f3f4f4;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    outline: none;
+    text-align: center;
+    opacity: 0.5;
+}
+
+    .Product_Count .qtybtn:hover {
+        opacity: 1;
+        transition: 1s;
+        border: 2px solid red;
+    }
+
+.Product_Count .Quantity-Product {
+    float: left;
+    background-color: #fff;
+    border: 1px solid #f3f4f4;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    text-align: center;
+}
+
+
+.Product_Count .Block_AddOnCart {
+    display: flex;
+    margin-top: 15px;
+}
+
+
+.Block_AddOnCart {
+    display: flex;
+    margin-top: 30px;
+}
+
+    .Block_AddOnCart .button {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        overflow: hidden;
+        color: #fff;
+        background-color: #f9bb01;
+        border: 0;
+        padding: 12px 28px;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 1px;
+        outline: none;
+        border-radius: 4px;
+        text-transform: uppercase;
+        transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    .Block_AddOnCart .btn-AddOnCart {
+        background: #fff;
+        border: 1px solid #e70505;
+        color: #e70505;
+    }
+
+    .Block_AddOnCart button {
+        width: 100%;
+        border-radius: 4px;
+        padding: 12px 20px;
+        outline: none;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+
+    .Block_AddOnCart .btn-AddOnCart:hover {
+        color: #fff;
+        background-color: #e70505;
+        transition: 1s;
+        font-weight: bold;
+    }
+
+    .Block_AddOnCart .btn-BuyNow {
+        background-color: red;
+        border-color: #e70505;
+        margin-left: 15px;
+    }
+
+
+        .Block_AddOnCart .btn-BuyNow:hover {
+            background-color: rgb(59 130 246 / 71%);
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+.Product_SharingSocial {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+    .Product_SharingSocial a {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 14px;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 10px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .Product_SharingSocial a > i {
+            text-align: center;
+        }
+
+    .Product_SharingSocial .Share_FaceBook {
+        background-color: #25479b;
+    }
+
+    .Product_SharingSocial .Share_Instagram {
+        background-color: red;
+    }
+
+    .Product_SharingSocial .Share_Mess {
+        background-color: #0084ff;
+    }
+
+
+    .Product_SharingSocial .Share_Twitter {
+        background-color: #55acee;
+    }
+/*End On the left Side*/
+
+
+
+
+/*On the right side*/
+.RightSideBox_Container .Product_Delivery {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RightSideBox_Container .Product_Advertise {
+}
+
+.Product_Delivery .Deliverly_inner {
+    max-width: 100%;
+    flex: 0 0 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.Deliverly_inner .Title_Deliverly {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.Deliverly_inner .info_List_Deliverly {
+}
+
+.info_List_Deliverly .Deliverly_Item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 4px 10px 0 40px;
+    margin-bottom: 30px;
+}
+
+
+.Deliverly_Item > span > img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+}
+
+.Product_Advertise > a > img {
+    max-width: 100%;
+}
+/*End Product Content*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Begin at Box Product Information Details*/
+.Product_Details_Main .ProductDetail--Box {
+    max-width: 98%;
+    flex: 0 0 98%;
+}
+
+.ProductDetail--Box [class ^='Product_'] {
+    padding: 15px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.ProductDetail--Box .Product_Description {
+}
+
+.Product_Description .Box_Tittle {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+    .Product_Description .Box_Tittle h2 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #000000;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+        .Product_Description .Box_Tittle h2::before {
+            content: '';
+            background-color: #000;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: -10px;
+            font-weight: 600;
+        }
+
+.Product_Description .Main_Prodcut_Description {
+}
+
+.Main_Prodcut_Description .Table_Description_Details {
+    height: auto;
+    overflow: hidden;
+}
+
+.Table_Description_Details h3 {
+    color: #333333;
+    margin: 0px 0 15px 0;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 1.75rem;
+}

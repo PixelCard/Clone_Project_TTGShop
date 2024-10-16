@@ -146,6 +146,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\CustomerLayout.css" />
     <Content Include="Content\CSS\HomePage.css" />
+    <Content Include="Content\CSS\Product_Page.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\ie7\ie7.css" />
@@ -562,6 +563,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\IMG\Product_Page_Img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
