@@ -57,7 +57,6 @@
 
     .Category_Items_Img > a > img:hover {
         transform: scale(1.1);
-        transition-delay:1s;
     }
 /*End HomePage Category*/
 
