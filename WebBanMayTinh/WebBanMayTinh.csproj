@@ -574,6 +574,10 @@
     <Content Include="Views\ProductDetails\ProductPage.cshtml" />
     <Content Include="Views\Shared\_ShoppingCartLayout.cshtml" />
     <Content Include="Views\ShoppingCart\ShoppingCartPage.cshtml" />
+    <Content Include="Views\Shared\PV_Header_Layout.cshtml" />
+    <Content Include="Views\Shared\PV_Footer_Layout.cshtml" />
+    <Content Include="Views\Shared\PV_Section_ShoppingCart_ProductDetails.cshtml" />
+    <Content Include="Views\Shared\PV_Section_HomePage_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
