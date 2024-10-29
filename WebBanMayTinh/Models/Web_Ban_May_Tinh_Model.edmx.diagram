@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76d5fa11caaa419290f11ad96da52201" Name="Diagram1">
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Category" Width="1.5" PointX="3.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Customer" Width="1.5" PointX="6.625" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Order" Width="1.5" PointX="9.625" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.OrderDetail" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Product" Width="1.5" PointX="6.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.sysdiagram" Width="1.5" PointX="13.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.User" Width="1.5" PointX="3.625" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__Order__CustomerI__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_User_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__OrderDeta__Order__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__OrderDeta__Produ__30F848ED" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
