@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Order" Width="1.5" PointX="9.625" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.OrderDetail" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Product" Width="1.5" PointX="6.5" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.sysdiagram" Width="1.5" PointX="13.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.sysdiagram" Width="1.5" PointX="13.125" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.User" Width="1.5" PointX="3.625" PointY="5.875" IsExpanded="true" />
         <AssociationConnector Association="Web_Ban_May_TinhModel.FK_Pro_Category" ManuallyRouted="false" />
         <AssociationConnector Association="Web_Ban_May_TinhModel.FK__Order__CustomerI__2E1BDC42" ManuallyRouted="false" />

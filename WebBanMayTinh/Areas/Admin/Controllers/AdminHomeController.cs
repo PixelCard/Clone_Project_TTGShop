@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebBanMayTinh.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class AdminHomeController : Controller
     {
         // GET: Admin/Home
         public ActionResult Index()

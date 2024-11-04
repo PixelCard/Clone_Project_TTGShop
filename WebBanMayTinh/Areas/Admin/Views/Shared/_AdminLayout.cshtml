@@ -1,59 +1,59 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - TTG Shop</title>
-    <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - TTG Shop</title>
+        <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css" />
 
-    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+        <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
 
-    @*Font-awesome*@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+        @*Font-awesome*@
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
 
 
-    <style>
-        .collapse .navbar-nav > li {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("TTG Shop", "Index", "Admin/Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Trang Chủ", "Index", "Admin/Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Danh Mục Sản phẩm", "Index", "Category", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Sản Phẩm", "Index", "Product", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Khách Hàng", "Index", "User", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Giỏ hàng", "Index", "Order", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+        <style>
+            .collapse .navbar-nav > li {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("TTG Shop", "Index", "Admin/AdminHome", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Trang Chủ", "Index", "Admin/AdminHome", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Danh Mục Sản phẩm", "Index", "Admin/Category", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Sản Phẩm", "Index", "Admin/Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Khách Hàng", "Index", "Admin/User", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Giỏ hàng", "Index", "Admin/Order", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+
+
+
+
+        <div class="container body-content" style="height:1000px">
+            @RenderBody()
         </div>
-    </nav>
 
 
+        @*       Footer           *@
 
+        @Html.Partial("PV_Footer_AdminLayout");
 
-    <div class="container body-content" style="height:1000px">
-        @RenderBody()
-    </div>
-
-
-    @*       Footer           *@
-
-    @Html.Partial("PV_Footer_AdminLayout");
-
-    @*       End Footer           *@
-</body>
+        @*       End Footer           *@
+    </body>
 </html>
 
 

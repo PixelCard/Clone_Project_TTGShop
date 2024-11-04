@@ -16,12 +16,13 @@
 
     <div class="main">
 
-        @Html.Partial("PV_Header_Layout", ViewContext);
-        
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Header_Layout.cshtml", ViewContext);
 
 
 
-        @Html.Partial("PV_Section_ShoppingCart_ProductDetails", ViewContext);
+
+
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Section_ShoppingCart_ProductDetails.cshtml", ViewContext);
 
 
 
@@ -30,10 +31,9 @@
             @RenderBody();
         </div>
         <!---End Content-->
-       
 
 
-        @Html.Partial("PV_Footer_Layout", ViewContext);
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Footer_Layout.cshtml", ViewContext);
     </div>
 </body>
 </html>

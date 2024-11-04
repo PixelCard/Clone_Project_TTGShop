@@ -17,20 +17,24 @@
     <div class="main">
 
 
-        @Html.Partial("PV_Header_Layout", ViewContext);
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Header_Layout.cshtml", ViewContext);
 
 
 
-        @Html.Partial("PV_Section_HomePage_Layout", ViewContext);
+
+
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Section_HomePage_Layout.cshtml", ViewContext);
+
+
 
         <!--Begin at Content-->
-        <div class="Main_Content" style="height: 1000px">
+        <div class="Main_Content">
             @RenderBody();
         </div>
         <!---End Content-->
 
 
-        @Html.Partial("PV_Footer_Layout", ViewContext);
+        @Html.Partial("~\\Views\\Shared\\Partital_View\\PV_Footer_Layout.cshtml", ViewContext);
     </div>
 </body>
 </html>
