@@ -1,157 +1,157 @@
 ﻿
-<style>
+    <style>
 
 
-    .Section_Main_left .site_overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.53);
-        z-index: -1;
-        transition: .3s
-    }
+        .Section_Main_left .site_overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.53);
+            z-index: -1;
+            transition: .3s
+        }
 
-    .Section_Main_left .SideBar_left.active_Menu {
-        position: absolute;
-        z-index: 99;
-        left: 335px;
-    }
+        .Section_Main_left .SideBar_left.active_Menu {
+            position: absolute;
+            z-index: 99;
+            left: 12.1%;
+        }
 
-    .Section_Main{
-        overflow:unset;
-    }
-</style>
+        .Section_Main{
+            overflow:unset;
+        }
+    </style>
 
-@*Section*@
-<div class="Section_Main">
-    <div class="container_fluid">
-            <div class="Section_Main_left" style="display:none">
-                <div class="Main_Menu SideBar_left">
-                    <ul class="Menu_Link_Root">
-                        <li class="item">
-                            <a href="">
+    @*Section*@
+    <div class="Section_Main">
+        <div class="container_fluid">
+                <div class="Section_Main_left" style="display:none">
+                    <div class="Main_Menu SideBar_left">
+                        <ul class="Menu_Link_Root">
+                            <li class="item">
+                                <a href="">
 
-                                Pc Gaming - Máy tính chơi game
+                                    Pc Gaming - Máy tính chơi game
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                PC Workstation
+                                    PC Workstation
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                PC VĂN PHÒNG
+                                    PC VĂN PHÒNG
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                PC AMD GAMING
+                                    PC AMD GAMING
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                PC MINI
+                                    PC MINI
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
 
-                                PC GIẢ LẬP - ẢO HÓA
+                                    PC GIẢ LẬP - ẢO HÓA
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item SubItem">
-                            <a href="">
+                            <li class="item SubItem">
+                                <a href="">
 
-                                Linh kiện máy tính
+                                    Linh kiện máy tính
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                Build PC theo nhu cầu
+                                    Build PC theo nhu cầu
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item">
-                            <a href="">
+                            <li class="item">
+                                <a href="">
 
-                                Màn hình
+                                    Màn hình
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item SubItem">
-                            <a href="">
+                            <li class="item SubItem">
+                                <a href="">
 
-                                Gaming Gear
+                                    Gaming Gear
 
-                            </a>
-                        </li>
+                                </a>
+                            </li>
 
-                        <li class="item Dnone" style="display: none;">
-                            <a href="">
-                                giá treo màn hình
-                            </a>
-                        </li>
+                            <li class="item Dnone" style="display: none;">
+                                <a href="">
+                                    giá treo màn hình
+                                </a>
+                            </li>
 
-                        <li class="item MoreItem">
-                            <span>Xem thêm</span>
-                        </li>
-                    </ul>
+                            <li class="item MoreItem">
+                                <span>Xem thêm</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site_overlay"></div>
                 </div>
-                <div class="site_overlay"></div>
-            </div>
+        </div>
     </div>
-</div>
-@*End Section*@
+    @*End Section*@
 
 
-<script language="JavaScript">
+    <script language="JavaScript">
 
 
-    //Dùng để viết javascript cho phần mở tắt phần 
-    var Box_OpenCategory = document.querySelector('.menu-clicked')
+        //Dùng để viết javascript cho phần mở tắt phần 
+        var Box_OpenCategory = document.querySelector('.menu-clicked')
 
-    var Category_Site_OverLayout = document.querySelector('.site_overlay');
+        var Category_Site_OverLayout = document.querySelector('.site_overlay');
 
 
-    var Category_FullContainer = document.querySelector('.Section_Main_left');
+        var Category_FullContainer = document.querySelector('.Section_Main_left');
 
-    var Box_Category = document.querySelector('.SideBar_left');
+        var Box_Category = document.querySelector('.SideBar_left');
 
-    Box_OpenCategory.addEventListener('click', function () {
+        Box_OpenCategory.addEventListener('click', function () {
 
-        if (Category_FullContainer.style.display === 'none' || Category_FullContainer.display === '') {
-            Category_FullContainer.style.display = 'block';
-            Box_Category.classList.add('active_Menu');
-        }
+            if (Category_FullContainer.style.display === 'none' || Category_FullContainer.display === '') {
+                Category_FullContainer.style.display = 'block';
+                Box_Category.classList.add('active_Menu');
+            }
 
-        else {
-            Category_FullContainer.style.display = 'none';
-            Box_Category.classList.remove('active_Menu');
-        }
-    })
-</script>
+            else {
+                Category_FullContainer.style.display = 'none';
+                Box_Category.classList.remove('active_Menu');
+            }
+        })
+    </script>
