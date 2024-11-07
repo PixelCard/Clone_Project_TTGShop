@@ -130,8 +130,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\CheckoutPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginPageController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ProductHistoryController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -648,6 +651,9 @@
     <Content Include="Views\Shared\Partital_View\PV_Footer_Layout.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_ShoppingCart_ProductDetails.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_HomePage_Layout.cshtml" />
+    <Content Include="Views\CheckoutPage\CheckoutPage.cshtml" />
+    <Content Include="Views\LoginPage\LoginPage.cshtml" />
+    <Content Include="Views\ProductHistory\ProductHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
