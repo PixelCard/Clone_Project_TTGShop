@@ -127,6 +127,7 @@ button {
 }
 
 
+
 .Main_Details .Heading_Cart {
     font-size: 25px;
     margin: 0;
@@ -135,19 +136,237 @@ button {
 }
 
 
-.Main_Details .What_Items_You_Put_On_Cart {
+.Main_Details .Main_Cointainer_for_ListPageForm {
+    padding:15px;
+}
+
+
+.Main_Cointainer_for_ListPageForm #cartFormPage{
+
+}
+
+
+.Main_Cointainer_for_ListPageForm .Cart_row{
+    width:100%;
+    display:inline-block;
+}
+
+
+.Cart_row .What_Items_You_Put_On_Cart {
     padding: 20px 15px;
     text-align: left;
     font-size: 17px;
 }
 
 
-.sidebarCart-sticky{
+.Cart_row .cointainer_ItemsCart {
+    padding: 8px 10px;
+    border: 2px solid #eae4e8;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+.cointainer_ItemsCart .Items_Collection{
+    display:flex;
+
+    padding:15px 10px;
+
+    flex-direction:row;
+
+    justify-content:space-between;
+
+    position:relative;
+}
+
+
+.Items_Collection .Left {
+    flex: 0 0 80px;
+    max-width: 80px;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+
+.Left .Items-img{
 
 }
 
+
+.Items-img > a > img {
+    border: 1px solid #ededed;
+    width:100%;
+}
+
+
+.Left .Item-Remove{
+
+    position:absolute;
+
+    top:-7px;
+
+    left:-12px;
+}
+
+
+.Item-Remove .Btn_Remove_Cart {
+    display: block;
+    background: #8f9bb3;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+.Btn_Remove_Cart .Remove_Span {
+    color: #fff;
+    font-size: 8px;
+    font-weight: 400;
+    position:relative;
+    top:-1px;
+}
+
+
+.Items_Collection .right {
+    flex: 1 1 auto;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+
+
+.right .Items_Info {
+    margin-bottom: 10px;
+}
+
+.Items_Info .Title_Items {
+    font-size: 15px;
+    margin: 0 0 2px;
+    font-weight: 500;
+}
+
+
+.Title_Items > a {
+    color: #252a2b;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+
+.Items_Info .Variant_Items {
+    font-size: 12px;
+    color: #777;
+    font-weight: 500;
+}
+
+
+.right .Items_Price{
+
+}
+
+
+.Items_Price .Price{
+
+}
+
+.Price > span {
+    font-weight: 600;
+    color: #8f9bb3;
+}
+
+
+.Price > del {
+    color: #8f9bb3;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
+.Items_Collection .Total {
+    text-align: right;
+}
+
+
+.Total .Price_Total{
+
+}
+
+.Price_Total .Title_Price {
+
+}
+
+
+.Title_Price .line-item-total {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Total .Item_quantity{
+    display:inline-block;
+}
+
+.Item_quantity .Product_Count_And_BtnForBuying {
+    display: flex;
+    margin: 8px 0 3px;
+    width: 100%;
+}
+
+.Product_Count_And_BtnForBuying .BlockForBtnBuyingAndProductCount {
+    display: block;
+}
+
+.BlockForBtnBuyingAndProductCount .Product_Count {
+    display: flex;
+    align-items: center;
+}
+
+.Product_Count .Tittle {
+    width: 20%;
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+.Product_Count .qtybtn {
+    float: left;
+    background-color: #5a5a5a1a;
+    border: 1px solid #f3f4f4;
+    cursor: pointer;
+    font-weight: 600;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    outline: none;
+    text-align: center;
+    opacity: 0.5;
+}
+
+    .Product_Count .qtybtn:hover {
+        opacity: 1;
+        transition: 1s;
+        border: 2px solid red;
+    }
+
+.Product_Count .Quantity-Product {
+    float: left;
+    background-color: #fff;
+    border: 1px solid #f3f4f4;
+    cursor: pointer;
+    font-weight: 600;
+    height: 30px;
+    width: 36px;
+    outline: none;
+    text-align: center;
+}
+
+.sidebarCart-sticky {
+}
+
     .sidebarCart-sticky .Wrapper-Pay_Layout {
-        position: sticky;
         top: 95px;
     }
 

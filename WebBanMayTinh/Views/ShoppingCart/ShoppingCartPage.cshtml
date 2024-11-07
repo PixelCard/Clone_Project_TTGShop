@@ -2,28 +2,9 @@
     Layout = "~/Views/Shared/_ShoppingCartLayout.cshtml";
 }
 
-<link rel="stylesheet"  href="~/Content/CSS/ShoppingCart.css"/>
+<link rel="stylesheet" href="~/Content/CSS/ShoppingCart.css" />
 
 <div class="Layout_Cart">
-    <div id="breadcrumb">
-        <div class="container_fluid">
-            <div class="List_BreadCrumb">
-                <ol class="breadcrumb_Arrow">
-                    <li>
-                        For You
-                    </li>
-
-                    <li>
-                        For Me
-                    </li>
-
-                    <li>
-                        For everyone
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
 
 
     <div class="Wrapper_Main_Content_Layout_Cart">
@@ -36,12 +17,122 @@
                                 Giỏ hàng của bạn
                             </h1>
 
+                            <div class="Main_Cointainer_for_ListPageForm">
+                                <form action="" method="post" id="cartFormPage">
+                                    <div class="Cart_row">
+                                        <div class="What_Items_You_Put_On_Cart">
+                                            Bạn đang có 1 sản phẩm
+                                        </div>
 
-                            <div class="What_Items_You_Put_On_Cart">
-                                Giỏ hàng của bạn đang trống
+
+                                        <div class="cointainer_ItemsCart">
+                                            <div class="Items_Collection">
+                                                <div class="Left">
+                                                    <div class="Items-img">
+
+                                                        @*
+                                                            Link tới trang sản phẩm trong giỏ hàng
+                                                        *@
+                                                        <a href="#">
+                                                            <img src="~/Content/IMG/Product_Page_Img/Product1.jpg" />
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="Item-Remove">
+
+                                                        <button class="Btn_Remove_Cart">
+
+                                                            <span class="Remove_Span">Xóa</span>
+
+
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="right">
+                                                    <div class="Items_Info">
+
+                                                        <h3 class="Title_Items">
+
+
+                                                            @*
+                                                                Link tới trang sản phẩm
+                                                            *@
+                                                            <a href="#">
+
+                                                                PC BEST FOR GAMING i5 10400F- GTX 1660 Super 6GB(Tất cả linh kiện đều All New - bảo hành 36 tháng) - 16 slots - 8HN - 8 HCM
+
+
+                                                            </a>
+
+                                                        </h3>
+
+                                                        <div class="Variant_Items">
+                                                            <span>
+
+                                                                Ram 16GB / SSD 256GB
+
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="Items_Price">
+
+                                                        <p class="Price">
+
+                                                            <span class="Reduce_Price">
+
+                                                                9,990,000₫
+
+                                                            </span>
+
+
+                                                            <del class="Orignal_Price">
+                                                                11,990,000₫
+                                                            </del>
+
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="Total">
+
+                                                    <div class="Price_Total">
+
+                                                        <div class="Title_Price">
+                                                            <span class="line-item-total">9,990,000₫</span>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="Item_quantity">
+                                                        @* Count Your Buying and Some Button to buy or add On cart  *@
+                                                        <div class="Product_Count_And_BtnForBuying">
+                                                            <div class="BlockForBtnBuyingAndProductCount clearfix">
+                                                                <div class="Product_Count">
+                                                                    <button class="Decrease_Count qtybtn" type="button">-</button>
+                                                                    <input type="text" value="1" min="1" class="Quantity-Product" />
+                                                                    <button class="Upper_Count qtybtn" type="button">+</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+
+
 
                     <div class="col-lg-4 col-12 sidebarCart-sticky">
                         <div class="Wrapper-Pay_Layout">
