@@ -200,16 +200,20 @@ a {
 }
 
 
-.Header_search {
-    max-width: 680px;
+.flex_container_MiddleHeader .Header_search {
+    max-width: 52%;
     position: relative;
     margin: 0 auto;
     margin-left: 25px;
 }
 
+.flex_container_MiddleHeader .Header_Logo{
+    width:20%;
+}
+
 .Form_Search .FindingProduct {
     width: 600px;
-    padding: 11px 3px 10px 7px;
+    padding: 15px 5px 11px 7px;
     font-size: 14px;
     border: 1px solid #ececec;
     background: #fff;
@@ -286,12 +290,12 @@ a {
 }
 
 .Header_Account_Shop {
-    max-width: 600px;
+    max-width: 33%;
     padding: 0 15px;
 }
 
 .Box_Account_Shop {
-    width: 450px;
+    width:380px;
 }
 
 .ShopCart {
@@ -315,6 +319,7 @@ a {
     align-items: center;
     position: relative;
     height: 100%;
+    margin-left: 30px;
 }
 
     .Header_ShoppingCart .Box_Icon_ShoppingCart {
