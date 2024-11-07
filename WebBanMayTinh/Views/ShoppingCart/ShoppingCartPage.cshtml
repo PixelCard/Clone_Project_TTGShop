@@ -116,9 +116,9 @@
                                                         <div class="Product_Count_And_BtnForBuying">
                                                             <div class="BlockForBtnBuyingAndProductCount clearfix">
                                                                 <div class="Product_Count">
-                                                                    <button class="Decrease_Count qtybtn" type="button">-</button>
-                                                                    <input type="text" value="1" min="1" class="Quantity-Product" />
-                                                                    <button class="Upper_Count qtybtn" type="button">+</button>
+                                                                    <button class="Decrease_Count qtybtn" type="button" onclick="changeQuantity(-1)">-</button>
+                                                                    <input type="text" value="1" min="1" class="Quantity-Product" onchange="updateTotal()" />
+                                                                    <button class="Upper_Count qtybtn" type="button" onclick="changeQuantity(1)">+</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -223,3 +223,39 @@
         </div>
     </div>
 </div>
+
+
+<script language="javascript">
+
+    const Price_AfterChangeQuantity = 9990000;
+
+    function changeQuantity(ammount) {
+        const quantityInput = document.querySelector('.Quantity-Product');
+
+        let currentQuantity = parseInt(quantityInput.value);
+
+        currentQuantity += ammount;
+
+
+        // Đảm bảo số lượng không nhỏ hơn 1
+        if (currentQuantity < 1) {
+            currentQuantity = 1;
+        }
+
+        quantityInput.value = currentQuantity;
+        updateTotal();
+    }
+
+    function updateTotal() {
+        const quantity = parseInt(document.querySelector('.Quantity-Product').value);
+        const total = quantity * Price_AfterChangeQuantity;
+
+        // Cập nhật giá tạm tính
+        document.querySelector('.line-item-total').innerHTML = `
+            <div>${total.toLocaleString('vi-VN')}</div>`;
+     }
+
+    // Khởi tạo tổng khi trang được tải
+    updateTotal();
+
+</script>
