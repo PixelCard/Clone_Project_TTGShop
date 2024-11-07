@@ -168,7 +168,7 @@
                                 <div class="Pay_Total">
                                     <p>
                                         Tổng tiền
-                                        <span>0₫</span>
+                                        <span class="Total_Price_To_Pay">9.990.000</span>
                                     </p>
                                 </div>
 
@@ -238,7 +238,8 @@
 
 
         // Đảm bảo số lượng không nhỏ hơn 1
-        if (currentQuantity < 1) {
+        if (currentQuantity < 1)
+        {
             currentQuantity = 1;
         }
 
@@ -253,7 +254,13 @@
         // Cập nhật giá tạm tính
         document.querySelector('.line-item-total').innerHTML = `
             <div>${total.toLocaleString('vi-VN')}</div>`;
-     }
+
+
+        //Cập nhập giá tổng cộng
+        document.querySelector('.Total_Price_To_Pay').innerHTML = `
+            <div>${total.toLocaleString('vi-VN')}</div>`;   
+    }
+   
 
     // Khởi tạo tổng khi trang được tải
     updateTotal();
