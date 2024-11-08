@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\CSS\CheckOutPage.css" />
     <Content Include="Content\CSS\CustomerLayout.css" />
     <Content Include="Content\CSS\HomePage.css" />
     <Content Include="Content\CSS\Product_Page.css" />
