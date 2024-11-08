@@ -195,6 +195,8 @@
     <Content Include="Content\CSS\CheckOutPage.css" />
     <Content Include="Content\CSS\CustomerLayout.css" />
     <Content Include="Content\CSS\HomePage.css" />
+    <Content Include="Content\CSS\LoginPage.css" />
+    <Content Include="Content\CSS\ProductHistoryPage.css" />
     <Content Include="Content\CSS\Product_Page.css" />
     <Content Include="Content\CSS\ShoppingCart.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
@@ -557,7 +559,9 @@
     <Content Include="Content\Icon\themify-icons-font\themify-icons\SVG\zoom-out.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\themify-icons.css" />
     <Content Include="Content\IMG\3144456.png" />
+    <Content Include="Content\IMG\3262386.png" />
     <Content Include="Content\IMG\Check_logo_footer.jpg" />
+    <Content Include="Content\IMG\erroricon.png" />
     <Content Include="Content\IMG\logo.jpg" />
     <Content Include="Content\IMG\Banner1.png" />
     <Content Include="Content\IMG\Banner2.png" />
