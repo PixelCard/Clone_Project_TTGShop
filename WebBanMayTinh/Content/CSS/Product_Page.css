@@ -98,6 +98,7 @@ button {
 
 .Product_Gallery .cointainer_Product_Gallery {
     padding: 15px;
+    padding-left: 30px;
 }
 
 .cointainer_Product_Gallery .Discount {
@@ -123,10 +124,20 @@ button {
 
 .Product_Gallery .Nav_Product_Gallery_Img {
     position: relative;
+    width: 407px;
+    overflow:hidden;
 }
 
+
+.Nav_Product_Gallery_Img .Img_Slider{
+    display:flex;
+    position:relative;
+    transition:0.5s ease-in-out;
+}
+
+
 .Nav_Product_Gallery_Img .Items_Product_Gallery {
-    overflow: hidden;
+    flex: 1 0 100%;
 }
 
 .Items_Product_Gallery .Nav_Img_Product_Gallery {
@@ -146,11 +157,12 @@ button {
     .Own_nav > button {
         position: absolute;
         top: 45%;
-        width: 35px;
+        width: 30px;
         height: 35px;
         line-height: 35px;
         text-align: center;
         display: inline-block;
+        font-weight:500;
     }
 
     .Own_nav .Btn_Prev {
@@ -196,6 +208,9 @@ button {
     position: relative;
 }
 
+.Item_SubNav .Nav_Img_Product_Gallery {
+    display: -webkit-inline-box
+}
 
 .Sub_Nav_Items_Product_Gallery .Item_SubNav {
     width: 71.372px;
