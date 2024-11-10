@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/RegisterPage.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
+    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <span class="inactive"><a href="/LoginPage/LoginPage" class="Link_inactive">Đăng nhập</a></span> |
+            <span class="active">Đăng ký</span>
+        </div>
+        <form class="login-form">
+            <input type="text" placeholder="Họ" required>
+            <input type="text" placeholder="Tên" required>
+
+            <input type="radio" name="Sex" value="0" /> <span class="Sex Male">Nam</span>
+
+            <input type="radio" name="Sex" value="1" />  <span class="Sex Female">Nữ</span>
+
+            <input type="text" placeholder="mm/dd/yyyy" name="Customer_Birthday" id="birthday" />
+
+            <input type="email" placeholder="Email" name="Customer_Email" id="Email" />
+
+            <input type="password" placeholder="Mật khẩu" />
+
+            <p class="captcha-info">
+                This site is protected by reCAPTCHA and the Google
+                <a href="#">Privacy Policy</a> and
+                <a href="#">Terms of Service</a> apply.
+            </p>
+            <button type="submit" class="login-button">Đăng kí</button>
+        </form>
+        <div class="login-footer">
+            <p>Bạn đã có tài khoản?<a href="/LoginPage/LoginPage">Đăng nhập</a></p>
+        </div>
+    </div>
+</body>
+</html>

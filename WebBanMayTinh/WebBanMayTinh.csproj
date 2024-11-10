@@ -133,6 +133,7 @@
     <Compile Include="Controllers\LoginPageController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductHistoryController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +199,7 @@
     <Content Include="Content\CSS\LoginPage.css" />
     <Content Include="Content\CSS\ProductHistoryPage.css" />
     <Content Include="Content\CSS\Product_Page.css" />
+    <Content Include="Content\CSS\RegisterPage.css" />
     <Content Include="Content\CSS\ShoppingCart.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.svg" />
@@ -657,6 +659,7 @@
     <Content Include="Views\CheckoutPage\CheckoutPage.cshtml" />
     <Content Include="Views\LoginPage\LoginPage.cshtml" />
     <Content Include="Views\ProductHistory\ProductHistory.cshtml" />
+    <Content Include="Views\Register\RegisterPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

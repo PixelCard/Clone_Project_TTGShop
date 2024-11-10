@@ -1,4 +1,5 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -87,6 +88,30 @@ body {
         text-decoration: none;
         margin-left: 5px;
     }
+
+
+
+
+input[type="radio"] {
+    position: relative;
+    width: 11%;
+    left: -20px;
+}
+
+
+
+.login-form .Sex{
+    position:relative;
+    top:49%;
+}
+
+.login-form .Male {
+    left: -6%;
+}
+
+.login-form .Female{
+    left:-6%;
+}
 
 .Link_inactive {
     color: #c0c0c0;

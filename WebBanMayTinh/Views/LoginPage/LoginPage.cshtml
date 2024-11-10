@@ -9,7 +9,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý đơn hàng</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
     <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
@@ -17,7 +16,7 @@
     <div class="login-container">
         <div class="login-header">
             <span class="active">Đăng nhập</span> |
-            <span class="inactive">Đăng ký</span>
+            <span class="inactive"><a href="/Register/RegisterPage" class="Link_inactive">Đăng ký</a></span>
         </div>
         <form class="login-form">
             <input type="email" placeholder="Vui lòng nhập email của bạn" required>
@@ -31,7 +30,7 @@
         </form>
         <div class="login-footer">
             <p>Bạn chưa có tài khoản? <a href="#">Quên mật khẩu?</a></p>
-            <p>Bạn quên mật khẩu? <a href="#">Đăng ký</a></p>
+            <p>Bạn quên mật khẩu? <a href="/Register/RegisterPage">Đăng ký</a></p>
         </div>
     </div>
 </body>
