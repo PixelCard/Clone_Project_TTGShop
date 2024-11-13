@@ -124,10 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CheckoutPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginPageController.cs" />
@@ -660,10 +662,24 @@
     <Content Include="Views\LoginPage\LoginPage.cshtml" />
     <Content Include="Views\ProductHistory\ProductHistory.cshtml" />
     <Content Include="Views\Register\RegisterPage.cshtml" />
+    <Content Include="Views\Shared\_CategoriesLayout.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Categories.cshtml" />
+    <Content Include="Views\Categories\PC_Gaming.cshtml" />
+    <Content Include="Views\Categories\PC_Working.cshtml" />
+    <Content Include="Views\Categories\PC_VanPhong.cshtml" />
+    <Content Include="Views\Categories\PC_AMD_Gaming.cshtml" />
+    <Content Include="Views\Categories\PC_Core_Ultra.cshtml" />
+    <Content Include="Views\Categories\PC_GiaLap_MoPhong.cshtml" />
+    <Content Include="Views\Categories\PC_MINI.cshtml" />
+    <Content Include="Views\Categories\Linhkien_PhuKKien.cshtml" />
+    <Content Include="Views\Categories\ManHinh.cshtml" />
+    <Content Include="Views\Categories\Gaming_Gear.cshtml" />
+    <Content Include="Views\Categories\KhungSatTreoManHinh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
