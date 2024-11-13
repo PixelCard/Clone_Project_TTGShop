@@ -307,6 +307,10 @@
 }
 
 .Inside_Btn_AddOnCart .Box_Cart {
+    position: relative;
+    bottom: 6px;
+    padding-bottom: 9px;
+    padding-top: 5px;
 }
 
 .Box_Cart .btn-proloop-cart {
@@ -349,6 +353,7 @@
 
 .btn-proloop-cart .Tittle {
     position: relative;
+    top: 10px;
 }
 
     .btn-proloop-cart .Tittle:hover {

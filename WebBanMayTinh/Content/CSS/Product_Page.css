@@ -484,6 +484,7 @@ button {
 }
 
     .Block_AddOnCart .button {
+        width:100%;
         position: relative;
         display: inline-block;
         z-index:0;
@@ -508,14 +509,19 @@ button {
         color: #e70505;
     }
 
-    .Block_AddOnCart button {
-        width: 100%;
-        border-radius: 4px;
-        padding: 12px 20px;
-        outline: none;
-        font-weight: 500;
-        font-size: 15px;
-    }
+        .Block_AddOnCart .btn-AddOnCart > span{
+            position:relative;
+            top:2px;
+        }
+
+        .Block_AddOnCart button {
+            width: 100%;
+            border-radius: 4px;
+            padding: 12px 20px;
+            outline: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
 
 
     .Block_AddOnCart .btn-AddOnCart:hover {
@@ -530,6 +536,12 @@ button {
         border-color: #e70505;
         margin-left: 15px;
     }
+
+        .Block_AddOnCart .btn-BuyNow > span {
+            position: absolute;
+            left: 36.9%;
+            bottom: 12px;
+        }
 
 
         .Block_AddOnCart .btn-BuyNow:hover {
