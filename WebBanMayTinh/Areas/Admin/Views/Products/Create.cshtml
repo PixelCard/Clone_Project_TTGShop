@@ -1,0 +1,23 @@
+﻿@model WebBanMayTinh.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Thêm Sản Phẩm</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.Partial("PVCreate_Edit_Product", Model)
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

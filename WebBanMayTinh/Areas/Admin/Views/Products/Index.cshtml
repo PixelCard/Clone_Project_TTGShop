@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebBanMayTinh.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        font-size:16px;
+        box-sizing:border-box;  
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    .Box_Button_Add {
+        justify-content: flex-end;
+    }
+
+
+        .Box_Button_Add .Btn_AddProduct {
+            box-shadow: 0px 0px 1px 2px red;
+            border-radius: 68% 65% 62% 59%;
+        }
+
+
+    .Btn_AddProduct > p {
+        position: relative;
+        top: 8px;
+        left: 6px;
+    }
+</style>
+
+<h2>Product Layout</h2>
+
+
+
+
+@Html.Partial("PV_IndexProduct", Model)
+
+<div class="d-flex Box_Button_Add">
+
+    @*    Nút tạo thêm product     *@
+    <div class="col-1 Btn_AddProduct">
+        <p>
+            @Html.ActionLink("Thêm Product", "Create")
+        </p>
+    </div>
+
+
+   @*Phần hiển thị Phân Trang*@
+</div>

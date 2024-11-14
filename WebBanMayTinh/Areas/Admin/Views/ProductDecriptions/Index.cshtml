@@ -1,0 +1,108 @@
+﻿@model IEnumerable<WebBanMayTinh.Models.ProductDecription>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.CPU)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.MAINBOARD)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.RAM)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.HARDDISK)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.VGA)
+        </th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+
+            @Html.DisplayFor(modelItems => item.Product.ProductID)
+
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CPU)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.MAINBOARD)
+        </td>
+
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RAM)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.HARDDISK)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.VGA)
+        </td>
+
+
+
+
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductDescriptionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductDescriptionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductDescriptionID })
+        </td>
+    </tr>
+}
+</table>
