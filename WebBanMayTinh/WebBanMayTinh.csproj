@@ -155,6 +155,9 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductDecription.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
     </Compile>
@@ -621,10 +624,6 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\PV_Section_ShoppingCart_ProductDetails_AdminLayOut.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\PV_Section_HomePage_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\PV_Header_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\PV_Footer_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

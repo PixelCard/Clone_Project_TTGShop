@@ -18,6 +18,7 @@ namespace WebBanMayTinh.Models
         public Product()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.ProductDecriptions = new HashSet<ProductDecription>();
         }
     
         public int ProductID { get; set; }
@@ -30,5 +31,7 @@ namespace WebBanMayTinh.Models
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductDecription> ProductDecriptions { get; set; }
     }
 }

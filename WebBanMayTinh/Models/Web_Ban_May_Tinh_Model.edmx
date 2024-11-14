@@ -42,6 +42,7 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="OrderStatus" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -53,6 +54,18 @@
           <Property Name="ProductStatus" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ProductPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ProductImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ProductDecription">
+          <Key>
+            <PropertyRef Name="ProductDescriptionID" />
+          </Key>
+          <Property Name="ProductDescriptionID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CPU" Type="nvarchar(max)" />
+          <Property Name="MAINBOARD" Type="nvarchar(max)" />
+          <Property Name="RAM" Type="nvarchar(max)" />
+          <Property Name="HARDDISK" Type="nvarchar(max)" />
+          <Property Name="VGA" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -108,6 +121,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ProductDe__Produ__49C3F6B7">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductDecription" Type="Self.ProductDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductDecription">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Pro_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -138,6 +163,7 @@
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductDecription" EntityType="Self.ProductDecription" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Order__CustomerI__2E1BDC42" Association="Self.FK__Order__CustomerI__2E1BDC42">
@@ -151,6 +177,10 @@
           <AssociationSet Name="FK__OrderDeta__Produ__30F848ED" Association="Self.FK__OrderDeta__Produ__30F848ED">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductDe__Produ__49C3F6B7" Association="Self.FK__ProductDe__Produ__49C3F6B7">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductDecription" EntitySet="ProductDecription" />
           </AssociationSet>
           <AssociationSet Name="FK_Pro_Category" Association="Self.FK_Pro_Category">
             <End Role="Category" EntitySet="Category" />
@@ -209,6 +239,7 @@
           <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__Order__31EC6D26" FromRole="OrderDetail" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="Self.FK__OrderDeta__Produ__30F848ED" FromRole="OrderDetail" ToRole="Product" />
+          <Property Name="OrderStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -222,6 +253,7 @@
           <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Pro_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__30F848ED" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="ProductDecriptions" Relationship="Web_Ban_May_TinhModel.FK__ProductDe__Produ__49C3F6B7" FromRole="Product" ToRole="ProductDecription" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -330,7 +362,37 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
+          <EntitySet Name="ProductDecriptions" EntityType="Web_Ban_May_TinhModel.ProductDecription" />
+          <AssociationSet Name="FK__ProductDe__Produ__49C3F6B7" Association="Web_Ban_May_TinhModel.FK__ProductDe__Produ__49C3F6B7">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductDecription" EntitySet="ProductDecriptions" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ProductDecription">
+          <Key>
+            <PropertyRef Name="ProductDescriptionID" />
+          </Key>
+          <Property Name="ProductDescriptionID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MAINBOARD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HARDDISK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Web_Ban_May_TinhModel.FK__ProductDe__Produ__49C3F6B7" FromRole="ProductDecription" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__ProductDe__Produ__49C3F6B7">
+          <End Type="Web_Ban_May_TinhModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="Web_Ban_May_TinhModel.ProductDecription" Role="ProductDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductDecription">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -371,6 +433,7 @@
           <EntitySetMapping Name="OrderDetails">
             <EntityTypeMapping TypeName="Web_Ban_May_TinhModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
@@ -408,6 +471,19 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductDecriptions">
+            <EntityTypeMapping TypeName="Web_Ban_May_TinhModel.ProductDecription">
+              <MappingFragment StoreEntitySet="ProductDecription">
+                <ScalarProperty Name="VGA" ColumnName="VGA" />
+                <ScalarProperty Name="HARDDISK" ColumnName="HARDDISK" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="MAINBOARD" ColumnName="MAINBOARD" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductDescriptionID" ColumnName="ProductDescriptionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
