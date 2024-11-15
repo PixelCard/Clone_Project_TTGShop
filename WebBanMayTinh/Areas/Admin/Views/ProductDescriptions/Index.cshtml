@@ -1,0 +1,74 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+
+    .Btn_AddProduct > p {
+        position: relative;
+        top: 7px;
+        left: 9px;
+    }
+
+    .Form_Search .search-bar {
+        display: flex;
+        justify-content: center;
+        padding-bottom:20px;
+    }
+
+    input {
+        max-width: 330px;
+    }
+
+    .form-group .btn-finding {
+        background-color: bisque;
+        margin-left: 15px;
+    }
+
+
+</style>
+
+<h2>Chi tiết Sản Phẩm</h2>
+
+
+@using (Html.BeginForm("Index", "ProductDescriptions", FormMethod.Get,new { @class ="Form_Search"}))
+{
+    <div class="form-group search-bar">
+
+            @Html.TextBoxFor(m => m.SearchTerm, new
+            {        
+                @class = "form-control",
+                @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
+            })
+
+
+        <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+    </div>
+}
+
+
+
+
+@Html.Partial("PV_IndexProductDescriptions", Model)
+
+
+
+
+
+<div class="d-flex Box_Button_Add" style="justify-content:flex-end">
+
+    @*    Nút tạo thêm product     *@
+    <div class="col-1 Btn_AddProduct" style="background-color: #ffd800; margin-right: 36px;">
+        <p>
+            @Html.ActionLink("Thêm Product", "Create")
+        </p>
+    </div>
+
+
+    @*Phần hiển thị Phân Trang*@
+</div>

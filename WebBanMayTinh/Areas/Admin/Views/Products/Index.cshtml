@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebBanMayTinh.Models.Product>
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
 
 @{
     ViewBag.Title = "Index";
@@ -7,11 +7,11 @@
 
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        font-size:16px;
-        box-sizing:border-box;  
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        box-sizing: border-box;
     }
 
     a {
@@ -35,14 +35,60 @@
         top: 8px;
         left: 6px;
     }
+
+
+
+    .Btn_AddProduct > p {
+        position: relative;
+        top: 7px;
+        left: 9px;
+    }
+
+    .Form_Search .search-bar {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    input {
+        max-width: 330px;
+    }
+
+    .form-group .btn-finding {
+        background-color: bisque;
+        margin-left: 15px;
+    }
 </style>
 
-<h2>Product Layout</h2>
 
+
+<h2>Sản Phẩm</h2>
+
+
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get, new { @class = "Form_Search" }))
+{
+    <div class="form-group search-bar">
+
+        @Html.TextBoxFor(m => m.SearchTerm, new
+        {
+            @class = "form-control",
+            @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
+        })
+
+
+        <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+    </div>
+}
 
 
 
 @Html.Partial("PV_IndexProduct", Model)
+
+
+
+
+
 
 <div class="d-flex Box_Button_Add">
 
@@ -54,5 +100,5 @@
     </div>
 
 
-   @*Phần hiển thị Phân Trang*@
+    @*Phần hiển thị Phân Trang*@
 </div>

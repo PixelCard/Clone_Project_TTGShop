@@ -12,15 +12,14 @@ namespace WebBanMayTinh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductDecription
+    public partial class ProductDescription
     {
         public int ProductDescriptionID { get; set; }
         public int ProductID { get; set; }
         public string CPU { get; set; }
         public string MAINBOARD { get; set; }
         public string RAM { get; set; }
-        public string HARDDISK { get; set; }
-        public string VGA { get; set; }
+        public string SSD { get; set; }
     
         public virtual Product Product { get; set; }
     }

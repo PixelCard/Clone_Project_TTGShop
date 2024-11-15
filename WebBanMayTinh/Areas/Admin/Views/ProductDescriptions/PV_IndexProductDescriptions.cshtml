@@ -1,0 +1,124 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
+
+<style>
+
+    a{
+        text-decoration:none;
+        font-size:14px;
+        font-weight:600;
+    }
+
+</style>
+
+@if (Model.ProductDescriptions != null && Model.ProductDescriptions.Any())
+{
+
+    <div class="container_fluid">
+
+        <table class="table">
+            <tr>
+                <th class="col-3">
+
+                    ProductName
+
+                </th>
+
+
+
+
+                <th class="col-1">
+
+                    CPU
+
+                </th>
+
+
+
+                <th class="col-lg-1">
+
+
+                    MAINBOARD
+
+
+                </th>
+
+
+                <th class="col-1">
+
+                    RAM
+
+
+                </th>
+
+
+                <th class="col-1">
+
+
+                    SSD
+
+
+                </th>
+
+
+
+
+                <th class="col-2" style="text-align:center">
+
+                    Chức năng
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model.ProductDescriptions)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPU)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MAINBOARD)
+                    </td>
+
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RAM)
+                    </td>
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SSD)
+                    </td>
+
+
+                    <td style="text-align:center">
+                        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ProductDescriptionID }) |
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.ProductDescriptionID }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.ProductDescriptionID })
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+}
+
+
+else
+{
+    <div class="Error_Finding">
+        Can't find any ProductDesprition with that name 
+    </div>
+}

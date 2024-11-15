@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Antlr.Runtime.Tree;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebBanMayTinh.Models;
+using WebBanMayTinh.Models.ViewModel;
 
 namespace WebBanMayTinh.Areas.Admin.Controllers
 {
@@ -15,10 +17,37 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
 
         // GET: Admin/Products
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm,decimal? maxprice , decimal? minprice)
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            var products_Linq = db.Products.AsQueryable();
+
+            var ProductSearchVM = new ProductDetailsSearchVM();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                ProductSearchVM.SearchTerm = searchTerm;
+
+                products_Linq = products_Linq.Where(p => p.ProductName.Contains(searchTerm) || p.Category.CategoryName.Contains(searchTerm));
+            }
+
+            if (minprice.HasValue)
+            {
+                ProductSearchVM.Min_Price = minprice.Value;
+                products_Linq = products_Linq.Where(p => p.ProductPrice >= minprice.Value);
+            }
+
+
+            if (maxprice.HasValue)
+            {
+                ProductSearchVM.Max_Price = maxprice.Value;
+                products_Linq = products_Linq.Where(p => p.ProductPrice <= maxprice.Value);
+            }
+
+
+            ProductSearchVM.Products = products_Linq.ToList();
+
+
+            return View(ProductSearchVM);
         }
 
         // GET: Admin/Products/Details/5
@@ -102,10 +131,14 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
+
+
             if (product == null)
             {
                 return HttpNotFound();
             }
+
+
             return View(product);
         }
 
