@@ -22,6 +22,7 @@
           <Property Name="CustomerAddress" Type="nvarchar(max)" />
           <Property Name="Email_User" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="CustomerGender" Type="nvarchar" MaxLength="5" />
+          <Property Name="CustomerBirthDay" Type="datetime" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -215,6 +216,7 @@
           <NavigationProperty Name="Orders" Relationship="Self.FK__Order__CustomerI__2E1BDC42" FromRole="Customer" ToRole="Order" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Customer" FromRole="Customer" ToRole="User" />
           <Property Name="CustomerGender" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerBirthDay" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -410,6 +412,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="Web_Ban_May_TinhModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerBirthDay" ColumnName="CustomerBirthDay" />
                 <ScalarProperty Name="CustomerGender" ColumnName="CustomerGender" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />

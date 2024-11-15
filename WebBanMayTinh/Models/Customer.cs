@@ -26,6 +26,7 @@ namespace WebBanMayTinh.Models
         public string CustomerAddress { get; set; }
         public string Email_User { get; set; }
         public string CustomerGender { get; set; }
+        public Nullable<System.DateTime> CustomerBirthDay { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
