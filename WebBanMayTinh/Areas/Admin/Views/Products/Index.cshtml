@@ -1,4 +1,5 @@
 ﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -20,44 +21,84 @@
 
 
     .Box_Button_Add {
-        justify-content: flex-end;
+        justify-content: space-between;
+        flex-direction: row-reverse;
     }
 
 
         .Box_Button_Add .Btn_AddProduct {
-            box-shadow: 0px 0px 1px 2px red;
-            border-radius: 68% 65% 62% 59%;
+            border-radius: 25px;
+            border: 2px solid #37a1a8;
         }
 
 
     .Btn_AddProduct > p {
         position: relative;
-        top: 8px;
-        left: 6px;
+        top: 9px;
+        left: 2px;
     }
 
-
-
-    .Btn_AddProduct > p {
-        position: relative;
-        top: 7px;
-        left: 9px;
-    }
 
     .Form_Search .search-bar {
         display: flex;
-        justify-content: center;
-        padding-bottom: 20px;
+        justify-content: space-evenly;
+        padding: 20px 0px;
     }
 
-    input {
-        max-width: 330px;
+    .search-bar .SearchTerm{
+
+    }
+
+    .SearchTerm > input {
+        width: 300px;
     }
 
     .form-group .btn-finding {
         background-color: bisque;
         margin-left: 15px;
     }
+
+    .SortBar {
+        margin: 20px 0px;
+    }
+
+        .SortBar .container-fluid {
+            width: 93%;
+        }
+
+        .SortBar .Sort_Function {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    .Sort_Function .Sort {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 162px;
+        text-align: center;
+    }
+
+    .pagination-container{
+
+    }
+
+        .pagination-container .pagination{
+            padding-left:12px;
+        }
+
+        .pagination > li{
+            margin-right:12px;
+        }
+    .pagination > li > a {
+        border-radius: 9px;
+        border: 2px solid #73AD21;
+        padding: 9px;
+        font-size:16px;
+        font-weight:600;
+        line-height:1.6;
+    }
+
+
 </style>
 
 
@@ -70,14 +111,111 @@
 {
     <div class="form-group search-bar">
 
-        @Html.TextBoxFor(m => m.SearchTerm, new
-        {
-            @class = "form-control",
-            @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
-        })
+        <div class="SearchTerm">
+
+            @Html.TextBoxFor(m => m.SearchTerm, new
+            {
+                @class = "form-control",
+                @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
+            })
+
+        </div>
+
+        
+        <div class="SearchTerm PriceMax">
+            @Html.TextBoxFor(m => m.Max_Price, new
+            {
+                   @class = "form-control",
+                   @placeholder = "Nhập vào giá trị tối đa",
+                   @type = "number",
+            })
+        </div>
 
 
-        <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+        <div class="SearchTerm PriceMin">
+            @Html.TextBoxFor(m => m.Min_Price, new
+            {
+                @class = "form-control",
+                @placeholder = "Nhập vào giá trị tối thiểu",
+                @type = "number",
+            })
+        </div>
+
+
+        <div class="Btn_Submit_Container">
+            <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+        </div>
+    </div>
+
+
+
+    <div class="form-group SortBar">
+        <div class="container-fluid">
+            <div class="Sort_Function">
+                <div class="Tittle_Sort">
+
+                    Sắp xếp theo
+
+                </div>
+        
+
+
+                <div class="Sort NameDesc">
+
+                    @Html.ActionLink("Giảm dần theo tên", "Index", new
+                    {
+                       sortOrder = "NameDesc",
+                       searchTerm = Model.SearchTerm,
+                       minprice = Model.Min_Price,
+                       maxprice = Model.Max_Price,
+                    })
+
+                </div>
+
+
+
+                <div class="Sort NameAsc">
+
+
+                    @Html.ActionLink("Tăng dần theo tên", "Index", new
+                    {
+                       sortOrder = "NameAsc",
+                       searchTerm = Model.SearchTerm,
+                       minprice = Model.Min_Price,
+                       maxprice = Model.Max_Price,
+                    })
+
+                </div>
+
+
+                <div class="Sort PriceAsc">
+
+                    @Html.ActionLink("Tăng dần theo giá ", "Index", new
+                    {
+                       sortOrder = "PriceASC",
+                       searchTerm = Model.SearchTerm,
+                       minprice = Model.Min_Price,
+                       maxprice = Model.Max_Price,
+                    })
+
+
+                </div>
+
+
+                <div class="Sort PriceDesc">
+
+
+                    @Html.ActionLink("Giảm dần theo giá", "Index", new
+                    {
+                       sortOrder = "PriceDesc",
+                       searchTerm = Model.SearchTerm,
+                       minprice = Model.Min_Price,
+                       maxprice = Model.Max_Price,
+                    })
+
+                </div>
+            </div>
+        </div>
     </div>
 }
 
@@ -100,5 +238,16 @@
     </div>
 
 
+
     @*Phần hiển thị Phân Trang*@
+    @Html.PagedListPager(Model.Products, Page => Url.Action("Index", new
+    {
+
+        Page,
+        sortOrder = Model.SortOrder,
+        searchTerm = Model.SearchTerm,
+        maxprice = Model.Max_Price,
+        minprice = Model.Min_Price,
+
+    }))
 </div>

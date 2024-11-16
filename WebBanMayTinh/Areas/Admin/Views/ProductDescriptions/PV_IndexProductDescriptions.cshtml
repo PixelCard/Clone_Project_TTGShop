@@ -1,13 +1,27 @@
 ﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
+@using PagedList.Mvc
+
 
 <style>
 
-    a{
-        text-decoration:none;
-        font-size:14px;
-        font-weight:600;
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
     }
 
+    img {
+        height: 290px;
+    }
+
+    .container {
+        max-width:1600px;
+    }
+
+
+    .container_fluid{
+        max-width:1600px;
+    }
 </style>
 
 @if (Model.ProductDescriptions != null && Model.ProductDescriptions.Any())
@@ -24,9 +38,13 @@
                 </th>
 
 
+                <th class="col-2"> 
+                    ProductImagine
+                </th>
 
 
-                <th class="col-1">
+
+                <th class="col-2">
 
                     CPU
 
@@ -62,7 +80,7 @@
 
 
 
-                <th class="col-2" style="text-align:center">
+                <th class="col-4" style="text-align:center">
 
                     Chức năng
 
@@ -76,6 +94,12 @@
 
                     <td>
                         @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+
+
+
+                    <td>
+                       <img src="@Html.DisplayFor(modelItem => item.Product.ProductImage)" />
                     </td>
 
 
@@ -116,9 +140,10 @@
 }
 
 
+
 else
 {
     <div class="Error_Finding">
-        Can't find any ProductDesprition with that name 
+        Can't find any ProductDesprition with that name
     </div>
 }

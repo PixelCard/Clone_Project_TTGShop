@@ -61,12 +61,12 @@
           <Key>
             <PropertyRef Name="ProductDescriptionID" />
           </Key>
-          <Property Name="ProductDescriptionID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="CPU" Type="nvarchar(max)" />
           <Property Name="MAINBOARD" Type="nvarchar(max)" />
           <Property Name="RAM" Type="nvarchar(max)" />
           <Property Name="SSD" Type="nvarchar(max)" />
+          <Property Name="ProductDescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>

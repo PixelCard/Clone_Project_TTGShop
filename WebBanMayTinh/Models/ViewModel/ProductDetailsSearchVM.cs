@@ -10,14 +10,25 @@ namespace WebBanMayTinh.Models.ViewModel
         public string SearchTerm;
 
 
-        public decimal Max_Price;
+        public decimal? Max_Price;
 
 
-        public decimal Min_Price;
-
-        public IEnumerable<ProductDescription> ProductDescriptions {  get; set; }
+        public decimal? Min_Price;
 
 
-        public IEnumerable<Product> Products { get; set; }
+        public string SortOrder;
+
+        //public IEnumerable<ProductDescription> ProductDescriptions {  get; set; }
+
+
+        //public IEnumerable<Product> Products { get; set; }
+
+
+
+        //Danh sách để phân trang 
+        public PagedList.IPagedList<ProductDescription> ProductDescriptions {   get; set; }
+
+
+        public PagedList.IPagedList<Product> Products { get; set; } 
     }
 }

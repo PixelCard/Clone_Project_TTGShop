@@ -1,7 +1,9 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,7 +19,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
 
         // GET: Admin/ProductDescriptions
-        public ActionResult Index(string searchTerm)
+        public ActionResult Index(string searchTerm,int? page,string sortOrder)
         {
             var ProductDespritionSearchVM = new ProductDetailsSearchVM();
 
@@ -35,9 +37,37 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
 
 
 
-            ProductDespritionSearchVM.ProductDescriptions = productDescriptions.ToList();
 
 
+            //ProductDespritionSearchVM.ProductDescriptions = productDescriptions.ToList();
+
+
+            //OrderBy:Sort
+            switch (sortOrder)
+            {
+                //Theo tên giảm dần
+                case "NameDesc":
+                    productDescriptions = productDescriptions.OrderByDescending(p => p.Product.ProductName ); break;
+
+
+                //Theo Tên tăng dần
+                case "NameAsc":
+                    productDescriptions = productDescriptions.OrderBy(p => p.Product.ProductName); break;
+
+
+                //Sort theo Tên tăng dần
+                default:
+                    productDescriptions = productDescriptions.OrderBy(p => p.Product.ProductName); break;
+            }
+
+
+
+            //Phần phân trang để hiển thị Product
+            int pageNumber = page ?? 1;
+            int page_List = 2;
+            ProductDespritionSearchVM.ProductDescriptions = productDescriptions.ToPagedList(pageNumber, page_List);
+
+            
             return View(ProductDespritionSearchVM);
         }
 

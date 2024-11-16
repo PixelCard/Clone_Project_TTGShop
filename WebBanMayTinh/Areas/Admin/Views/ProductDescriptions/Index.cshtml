@@ -1,5 +1,5 @@
 ﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
-
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
@@ -8,21 +8,49 @@
 
 
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    .Box_Button_Add {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+
+
+        .Box_Button_Add .Btn_AddProduct {
+            width: 11.133333%;
+            border-radius: 25px;
+            border: 2px solid #37a1a8;
+        }
+
 
     .Btn_AddProduct > p {
         position: relative;
-        top: 7px;
-        left: 9px;
+        top: 9px;
+        left: 2px;
     }
+
 
     .Form_Search .search-bar {
         display: flex;
         justify-content: center;
-        padding-bottom:20px;
+        padding: 20px 0px;
     }
 
-    input {
-        max-width: 330px;
+    .search-bar .SearchTerm {
+    }
+
+    .SearchTerm > input {
+        width: 300px;
     }
 
     .form-group .btn-finding {
@@ -30,26 +58,119 @@
         margin-left: 15px;
     }
 
+    .SortBar {
+        margin: 20px 0px;
+    }
 
+        .SortBar .container-fluid {
+            width: 93%;
+        }
+
+        .SortBar .Sort_Function {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    .Sort_Function .Sort {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 162px;
+        text-align: center;
+    }
+
+    .pagination-container {
+        padding-left: 60px;
+    }
+
+        .pagination-container .pagination {
+            padding-left: 12px;
+        }
+
+    .pagination > li {
+        margin-right: 12px;
+    }
+
+        .pagination > li > a {
+            border-radius: 9px;
+            border: 2px solid #73AD21;
+            padding: 9px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
 </style>
+
+
+
 
 <h2>Chi tiết Sản Phẩm</h2>
 
 
-@using (Html.BeginForm("Index", "ProductDescriptions", FormMethod.Get,new { @class ="Form_Search"}))
+@using (Html.BeginForm("Index", "ProductDescriptions", FormMethod.Get, new { @class = "Form_Search" }))
 {
     <div class="form-group search-bar">
 
+
+
+        <div class="SearchTerm">
+
             @Html.TextBoxFor(m => m.SearchTerm, new
-            {        
+            {
                 @class = "form-control",
                 @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
             })
 
+        </div>
 
-        <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+
+
+
+
+        <div class="Btn_Submit_Container">
+            <button type="submit" class="btn btn-finding">Tìm kiếm</button>
+        </div>
+    </div>
+
+
+    <div class="form-group SortBar">
+        <div class="container-fluid">
+            <div class="Sort_Function">
+                <div class="Tittle_Sort">
+
+                    Sắp xếp theo
+
+                </div>
+
+
+
+                <div class="Sort NameDesc">
+
+                    @Html.ActionLink("Giảm dần theo tên", "Index", new
+                    {
+                       sortOrder = "NameDesc",
+                       searchTerm = Model.SearchTerm,
+                    })
+
+                </div>
+
+
+
+                <div class="Sort NameAsc">
+
+
+                    @Html.ActionLink("Tăng dần theo tên", "Index", new
+                    {
+                       sortOrder = "NameAsc",
+                       searchTerm = Model.SearchTerm,
+                    })
+
+                </div>
+            </div>
+        </div>
     </div>
 }
+
+
 
 
 
@@ -60,15 +181,25 @@
 
 
 
-<div class="d-flex Box_Button_Add" style="justify-content:flex-end">
+
+
+
+<div class="d-flex Box_Button_Add">
 
     @*    Nút tạo thêm product     *@
-    <div class="col-1 Btn_AddProduct" style="background-color: #ffd800; margin-right: 36px;">
+    <div class="col-1 Btn_AddProduct">
         <p>
-            @Html.ActionLink("Thêm Product", "Create")
+            @Html.ActionLink("Thêm ProductDescription", "Create")
         </p>
     </div>
 
 
     @*Phần hiển thị Phân Trang*@
+    @Html.PagedListPager(Model.ProductDescriptions, Page => Url.Action("Index", new
+    {
+
+        Page,
+        sortOrder = Model.SortOrder,
+        searchTerm = Model.SearchTerm,
+    }))
 </div>

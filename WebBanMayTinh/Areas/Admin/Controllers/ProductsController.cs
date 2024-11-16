@@ -5,10 +5,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.Mvc;
 using WebBanMayTinh.Models;
 using WebBanMayTinh.Models.ViewModel;
+using PagedList.Mvc;
+using PagedList;
 
 namespace WebBanMayTinh.Areas.Admin.Controllers
 {
@@ -17,7 +20,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
 
         // GET: Admin/Products
-        public ActionResult Index(string searchTerm,decimal? maxprice , decimal? minprice)
+        public ActionResult Index(string searchTerm,decimal? maxprice , decimal? minprice, int? page,string sortOrder)
         {
             var products_Linq = db.Products.AsQueryable();
 
@@ -30,11 +33,13 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                 products_Linq = products_Linq.Where(p => p.ProductName.Contains(searchTerm) || p.Category.CategoryName.Contains(searchTerm));
             }
 
+
             if (minprice.HasValue)
             {
                 ProductSearchVM.Min_Price = minprice.Value;
                 products_Linq = products_Linq.Where(p => p.ProductPrice >= minprice.Value);
             }
+
 
 
             if (maxprice.HasValue)
@@ -44,8 +49,50 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
             }
 
 
-            ProductSearchVM.Products = products_Linq.ToList();
+            ////Nó sẽ bỏ vào list để hiển thị theo 1 danh sách 
+            //ProductSearchVM.Products = products_Linq.ToList();
 
+
+
+
+            //OrderBy:Sort
+            switch (sortOrder)
+            {
+                //Theo tên giảm dần
+                case "NameDesc":
+                    products_Linq = products_Linq.OrderByDescending(p => p.ProductName); break;
+
+
+                //Theo Tên tăng dần
+                case "NameAsc":
+                    products_Linq = products_Linq.OrderBy(p => p.ProductName); break;
+
+
+
+                //Theo giá tăng giảm dần
+                case "PriceDesc":
+                    products_Linq = products_Linq.OrderByDescending(p => p.ProductPrice); break;
+
+
+                //Theo giá tăng tăng dần
+                case "PriceASC":
+                    products_Linq = products_Linq.OrderBy(p => p.ProductPrice); break;
+
+
+                //Mặc định là xếp theo tên tăng dần
+                default:
+                    products_Linq = products_Linq.OrderBy(p => p.ProductName); break; 
+            }
+
+
+
+            //Hiển thị theo danh sách đã phân trang
+            int pageNumber = page ?? 1; //Mặc định là trang 1 nếu ko có truyền vào số trang tương ứng
+
+            int pagesize = 2; //Hiển tối đa được bao nhiêu sản phẩm trên 1 trang
+
+
+            ProductSearchVM.Products = products_Linq.ToPagedList(pageNumber,pagesize); //truyền list sản phẩm của product đã truy vấn ra để phân trang 
 
             return View(ProductSearchVM);
         }
