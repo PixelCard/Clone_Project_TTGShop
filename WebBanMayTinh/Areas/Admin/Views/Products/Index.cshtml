@@ -1,5 +1,4 @@
-﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
-@using PagedList.Mvc;
+﻿@model WebBanMayTinh.Models.ViewModel.ProductSearchVM
 
 @{
     ViewBag.Title = "Index";
@@ -45,11 +44,10 @@
         padding: 20px 0px;
     }
 
-    .search-bar .SearchTerm{
-
+    .search-bar .searchterm {
     }
 
-    .SearchTerm > input {
+    .searchterm > input {
         width: 300px;
     }
 
@@ -111,33 +109,33 @@
 {
     <div class="form-group search-bar">
 
-        <div class="SearchTerm">
+        <div class="searchterm">
 
             @Html.TextBoxFor(m => m.SearchTerm, new
             {
                 @class = "form-control",
-                @placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
+                placeholder = "Nhập vào tên sản phẩm bạn cần tìm kiếm"
             })
 
         </div>
 
-        
-        <div class="SearchTerm PriceMax">
+
+        <div class="searchterm PriceMax">
             @Html.TextBoxFor(m => m.Max_Price, new
             {
                    @class = "form-control",
-                   @placeholder = "Nhập vào giá trị tối đa",
-                   @type = "number",
+                   placeholder = "Nhập vào giá trị tối đa",
+                   type = "number",
             })
         </div>
 
 
-        <div class="SearchTerm PriceMin">
+        <div class="searchterm PriceMin">
             @Html.TextBoxFor(m => m.Min_Price, new
             {
                 @class = "form-control",
-                @placeholder = "Nhập vào giá trị tối thiểu",
-                @type = "number",
+                placeholder = "Nhập vào giá trị tối thiểu",
+                type = "number",
             })
         </div>
 
@@ -166,8 +164,8 @@
                     {
                        sortOrder = "NameDesc",
                        searchTerm = Model.SearchTerm,
-                       minprice = Model.Min_Price,
                        maxprice = Model.Max_Price,
+                       minprice = Model.Min_Price,
                     })
 
                 </div>
@@ -181,11 +179,12 @@
                     {
                        sortOrder = "NameAsc",
                        searchTerm = Model.SearchTerm,
-                       minprice = Model.Min_Price,
                        maxprice = Model.Max_Price,
+                       minprice = Model.Min_Price,
                     })
 
                 </div>
+
 
 
                 <div class="Sort PriceAsc">
@@ -194,12 +193,13 @@
                     {
                        sortOrder = "PriceASC",
                        searchTerm = Model.SearchTerm,
-                       minprice = Model.Min_Price,
                        maxprice = Model.Max_Price,
+                       minprice = Model.Min_Price,
                     })
 
 
                 </div>
+
 
 
                 <div class="Sort PriceDesc">
@@ -209,8 +209,8 @@
                     {
                        sortOrder = "PriceDesc",
                        searchTerm = Model.SearchTerm,
-                       minprice = Model.Min_Price,
                        maxprice = Model.Max_Price,
+                       minprice = Model.Min_Price,
                     })
 
                 </div>
@@ -221,33 +221,8 @@
 
 
 
+
+
+@*Partial view chứa render code tự động của Model Products và Phân trang*@
 @Html.Partial("PV_IndexProduct", Model)
 
-
-
-
-
-
-<div class="d-flex Box_Button_Add">
-
-    @*    Nút tạo thêm product     *@
-    <div class="col-1 Btn_AddProduct">
-        <p>
-            @Html.ActionLink("Thêm Product", "Create")
-        </p>
-    </div>
-
-
-
-    @*Phần hiển thị Phân Trang*@
-    @Html.PagedListPager(Model.Products, Page => Url.Action("Index", new
-    {
-
-        Page,
-        sortOrder = Model.SortOrder,
-        searchTerm = Model.SearchTerm,
-        maxprice = Model.Max_Price,
-        minprice = Model.Min_Price,
-
-    }))
-</div>

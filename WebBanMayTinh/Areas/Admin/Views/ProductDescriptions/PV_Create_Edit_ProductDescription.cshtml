@@ -97,7 +97,40 @@
 </div>
 
 
+@*------------------------------------------------------VGA------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
 
+
+    <div class="control-label col-md-2 ProductName">
+        VGA
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.VGA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.VGA, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+@*------------------------------------------------------PowerPC------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        PowerPC
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.PowerPC, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PowerPC, "", new { @class = "text-danger" })
+    </div>
+</div>
 
 
 <div class="form-group">

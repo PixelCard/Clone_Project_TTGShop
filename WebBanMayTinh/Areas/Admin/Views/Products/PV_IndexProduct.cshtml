@@ -1,5 +1,5 @@
-﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
-
+﻿@model WebBanMayTinh.Models.ViewModel.ProductSearchVM
+@using PagedList.Mvc
 
 <style>
 
@@ -75,7 +75,7 @@
 
                     <td>
                         @*@Html.DisplayFor(modelItem => item.ProductImage)  <img  />*@
-                        <img src="@item.ProductImage" alt="@item.ProductName" style="width:300px; height=300px" />
+                        <img src="@item.ProductImage" alt="@item.ProductName" style="width:300px;" />
                     </td>
 
 
@@ -92,6 +92,32 @@
                 </tr>
             }
         </table>
+    </div>
+
+
+
+    <div class="d-flex Box_Button_Add">
+
+        @*    Nút tạo thêm product     *@
+        <div class="col-1 Btn_AddProduct">
+            <p>
+                @Html.ActionLink("Thêm Product", "Create")
+            </p>
+        </div>
+
+
+
+        @*Phần hiển thị Phân Trang*@
+        @Html.PagedListPager(Model.Products, Page => Url.Action("Index", new
+        {
+
+            Page,
+            searchTerm = Model.SearchTerm,
+            maxprice = Model.Max_Price,
+            minprice = Model.Min_Price,
+            sortOrder = Model.SortOrder,
+
+        }))
     </div>
 }
 

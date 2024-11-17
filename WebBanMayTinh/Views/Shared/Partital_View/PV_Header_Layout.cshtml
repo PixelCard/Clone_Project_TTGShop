@@ -1,4 +1,6 @@
-﻿ <!-- Begin at Header -->
+﻿ @model WebBanMayTinh.Models.ViewModel.SearchVM
+    
+<!-- Begin at Header -->
 <div class="templateHeader">
     <div class="mainHeader--height" >
         <header class="Main_Header">
@@ -34,16 +36,28 @@
                         </div>
 
                         <div class="Header_search">
-                            <form action="" class="Form_Search">
+
+                            @*Thanh Tìm kiếm cho sản phẩm tương ứng*@
+                            <form action="@Url.Action("SearchPage", "Search")" method="get" class="Form_Search">
                                 <div class="Searching_Input">
-                                    <input type="text" name="p" id="Searching" required size="20" maxlength="40"
-                                           placeholder="Tìm kiếm sản phẩm" class="FindingProduct">
+
+                                    @Html.TextBoxFor(m => m.searchTerm, new
+                                    {
+                                       @class = "FindingProduct",
+                                       @id = "Searching",
+                                       placeholder = "Tìm kiếm sản phẩm",
+                                       required = "required",
+                                       size = 20,
+                                       maxlength = "40",
+                                    })
                                 </div>
+
 
                                 <button type="submit" class="btn_Finding">
                                     <i class="ti-search Finding_Icon"></i>
                                 </button>
                             </form>
+
                         </div>
 
                         <div class="Header_Account_Shop">

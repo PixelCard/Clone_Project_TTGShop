@@ -1,4 +1,4 @@
-﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsSearchVM
+﻿@model WebBanMayTinh.Models.ViewModel.ProductSearchVM
 @using PagedList.Mvc
 
 
@@ -11,7 +11,7 @@
     }
 
     img {
-        height: 290px;
+        height: 224px;
     }
 
     .container {
@@ -24,6 +24,7 @@
     }
 </style>
 
+
 @if (Model.ProductDescriptions != null && Model.ProductDescriptions.Any())
 {
 
@@ -31,14 +32,14 @@
 
         <table class="table">
             <tr>
-                <th class="col-3">
+                <th class="col-lg-1">
 
                     ProductName
 
                 </th>
 
 
-                <th class="col-2"> 
+                <th class="col-2">
                     ProductImagine
                 </th>
 
@@ -78,6 +79,24 @@
                 </th>
 
 
+                <th class="col-1">
+
+
+                    VGA
+
+
+                </th>
+
+
+
+                <th class="col-1">
+
+
+                    PowerPC
+
+
+                </th>
+
 
 
                 <th class="col-4" style="text-align:center">
@@ -99,7 +118,7 @@
 
 
                     <td>
-                       <img src="@Html.DisplayFor(modelItem => item.Product.ProductImage)" />
+                        <img src="@Html.DisplayFor(modelItem => item.Product.ProductImage)" />
                     </td>
 
 
@@ -124,6 +143,19 @@
 
                     <td>
                         @Html.DisplayFor(modelItem => item.SSD)
+                    </td>
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VGA)
+                    </td>
+
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PowerPC)
                     </td>
 
 

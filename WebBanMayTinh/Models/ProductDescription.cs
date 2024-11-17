@@ -20,6 +20,8 @@ namespace WebBanMayTinh.Models
         public string MAINBOARD { get; set; }
         public string RAM { get; set; }
         public string SSD { get; set; }
+        public string VGA { get; set; }
+        public string PowerPC { get; set; }
     
         public virtual Product Product { get; set; }
     }

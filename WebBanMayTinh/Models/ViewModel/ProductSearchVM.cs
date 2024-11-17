@@ -5,18 +5,24 @@ using System.Web;
 
 namespace WebBanMayTinh.Models.ViewModel
 {
-    public class ProductDetailsSearchVM
+    public class ProductSearchVM
     {
-        public string SearchTerm;
+        //
+        public string SearchTerm { get; set; }
 
 
-        public decimal? Max_Price;
+
+        public decimal? Max_Price { get; set; }
 
 
-        public decimal? Min_Price;
+
+        public decimal? Min_Price { get; set; }
 
 
-        public string SortOrder;
+
+        public string SortOrder { get; set; }
+
+
 
         //public IEnumerable<ProductDescription> ProductDescriptions {  get; set; }
 

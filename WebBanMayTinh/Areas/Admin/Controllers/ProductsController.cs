@@ -20,16 +20,19 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
 
         // GET: Admin/Products
+        [HttpGet]
         public ActionResult Index(string searchTerm,decimal? maxprice , decimal? minprice, int? page,string sortOrder)
         {
             var products_Linq = db.Products.AsQueryable();
 
-            var ProductSearchVM = new ProductDetailsSearchVM();
+
+            var ProductSearchVM = new ProductSearchVM();
+
+
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                ProductSearchVM.SearchTerm = searchTerm;
-
+                ProductSearchVM.SearchTerm= searchTerm;
                 products_Linq = products_Linq.Where(p => p.ProductName.Contains(searchTerm) || p.Category.CategoryName.Contains(searchTerm));
             }
 
@@ -47,6 +50,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                 ProductSearchVM.Max_Price = maxprice.Value;
                 products_Linq = products_Linq.Where(p => p.ProductPrice <= maxprice.Value);
             }
+
 
 
             ////Nó sẽ bỏ vào list để hiển thị theo 1 danh sách 
@@ -83,7 +87,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                 default:
                     products_Linq = products_Linq.OrderBy(p => p.ProductName); break; 
             }
-
+            ProductSearchVM.SortOrder = sortOrder;
 
 
             //Hiển thị theo danh sách đã phân trang
@@ -124,7 +128,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage")] Product product)
+        public ActionResult Create([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage,DiscountPercentage,DiscountValue")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -158,7 +162,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage,DiscountPercentage,DiscountValue")] Product product)
         {
             if (ModelState.IsValid)
             {

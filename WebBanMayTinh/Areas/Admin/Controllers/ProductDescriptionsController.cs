@@ -21,7 +21,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // GET: Admin/ProductDescriptions
         public ActionResult Index(string searchTerm,int? page,string sortOrder)
         {
-            var ProductDespritionSearchVM = new ProductDetailsSearchVM();
+            var ProductDespritionSearchVM = new ProductSearchVM();
 
 
             var productDescriptions = db.ProductDescriptions.AsQueryable();
@@ -101,7 +101,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductDescriptionID,ProductID,CPU,MAINBOARD,RAM,SSD")] ProductDescription productDescription)
+        public ActionResult Create([Bind(Include = "ProductDescriptionID,ProductID,CPU,MAINBOARD,RAM,SSD,VGA,PowerPC")] ProductDescription productDescription)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +135,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductDescriptionID,ProductID,CPU,MAINBOARD,RAM,SSD")] ProductDescription productDescription)
+        public ActionResult Edit([Bind(Include = "ProductDescriptionID,ProductID,CPU,MAINBOARD,RAM,SSD,VGA,PowerPC")] ProductDescription productDescription)
         {
             if (ModelState.IsValid)
             {
