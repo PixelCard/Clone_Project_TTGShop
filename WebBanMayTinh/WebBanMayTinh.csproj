@@ -175,6 +175,9 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\Cart.cs" />
+    <Compile Include="Models\ViewModel\CartItem.cs" />
+    <Compile Include="Models\ViewModel\CartService.cs" />
     <Compile Include="Models\ViewModel\ProductSearchVM.cs" />
     <Compile Include="Models\ViewModel\ProductDetailsVM.cs" />
     <Compile Include="Models\ViewModel\SearchVM.cs" />
@@ -584,6 +587,7 @@
     <Content Include="Content\IMG\3262386.png" />
     <Content Include="Content\IMG\Check_logo_footer.jpg" />
     <Content Include="Content\IMG\erroricon.png" />
+    <Content Include="Content\IMG\Img_HandDown.jpg" />
     <Content Include="Content\IMG\logo.jpg" />
     <Content Include="Content\IMG\Banner1.png" />
     <Content Include="Content\IMG\Banner2.png" />
@@ -607,6 +611,7 @@
     <Content Include="Content\IMG\Product_Page_Img\product_deliverly_4_ico.png" />
     <Content Include="Content\IMG\Product_Page_Img\product_deliverly_5_ico.png" />
     <Content Include="Content\IMG\Product_Page_Img\product_deliverly_6_ico.png" />
+    <Content Include="Content\IMG\trash-bin-clipart-vector-art-illustration_761413-26114.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -711,6 +716,11 @@
     <Content Include="Views\Categories\Gaming_Gear.cshtml" />
     <Content Include="Views\Categories\KhungSatTreoManHinh.cshtml" />
     <Content Include="Views\Search\SearchPage.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductDescription_Table.cshtml" />
+    <Content Include="Views\ProductDetails\PV_Product_Policy.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductButtonAddCart.cshtml" />
+    <Content Include="Views\ProductDetails\PV_SocialSharingProduct.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductBoxChooseToUpdrade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

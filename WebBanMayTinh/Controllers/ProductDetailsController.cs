@@ -20,6 +20,7 @@ namespace WebBanMayTinh.Controllers
 
         public ActionResult ProductPage(int? id, int? quantity, int? page)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
@@ -49,14 +50,34 @@ namespace WebBanMayTinh.Controllers
             //var productsDescription_WithSameCategory = db.ProductDescriptions.Where(p => p.ProductID == productDescription_withID.ProductID).AsQueryable();
 
 
+            
+
+                //Sử dụng toán tử 3 ngôi để thay đổi giá trị hiển thị thành số vd : 17.00 sẽ hiển thị thành 17 ( làm tròn xuống)
+
+                var ValuePersentageChanged = productWithID.DiscountPercentage.HasValue ? Math.Floor(productWithID.DiscountPercentage.Value * 100).ToString("0.##"): "0";
+
+
+
+
 
 
             productDetails.products = productWithID;
 
 
 
-
             productDetails.productdescription = productDescription_withID;
+
+
+
+
+            productDetails.Text_DiscountValue = ValuePersentageChanged;
+
+
+
+            if (quantity.HasValue)
+            {
+                productDetails.quantity = quantity.Value;
+            }
 
 
 

@@ -1,5 +1,10 @@
 ﻿ @model WebBanMayTinh.Models.ViewModel.SearchVM
     
+
+@{ 
+    var CartItem = Session["Cart"] as WebBanMayTinh.Models.ViewModel.Cart;
+}
+
 <!-- Begin at Header -->
 <div class="templateHeader">
     <div class="mainHeader--height" >
@@ -42,14 +47,14 @@
                                 <div class="Searching_Input">
 
                                     @Html.TextBoxFor(m => m.searchTerm, new
-                                    {
-                                       @class = "FindingProduct",
-                                       @id = "Searching",
-                                       placeholder = "Tìm kiếm sản phẩm",
-                                       required = "required",
-                                       size = 20,
-                                       maxlength = "40",
-                                    })
+                               {
+                                   @class = "FindingProduct",
+                                   @id = "Searching",
+                                   placeholder = "Tìm kiếm sản phẩm",
+                                   required = "required",
+                                   size = 20,
+                                   maxlength = "40",
+                               })
                                 </div>
 
 
@@ -86,19 +91,31 @@
                                 <div class="ShopCart">
                                     <a href="~/ShoppingCart/ShoppingCartPage" class="Href_To_ShoppingCart">
                                         <div class="Header_ShoppingCart">
-                                            <button type="button" label="Gio Hang" class="Btn_Cart" style="cursor:pointer">
+                                            <a href="@Url.Action("ShoppingCartPage", "ShoppingCart", null)"  class="Btn_Cart" style="cursor:pointer">
                                                 <span class="Box_Icon_ShoppingCart">
                                                     <span>
                                                         <i class="ti-shopping-cart Icon_ShoppingCart"></i>
                                                     </span>
 
                                                     <span class="Count_BG">
-                                                        <span class="Count">1</span>
+                                                        <span class="Count">
+
+                                                            @if (CartItem?.CartItems != null)
+                                                            {
+                                                                @CartItem.CartItems.Count()
+                                                            }
+
+
+                                                            else
+                                                            {
+                                                                <p>0</p>
+                                                            }
+                                                        </span>
                                                     </span>
                                                 </span>
 
                                                 <span class="Text_Cart">Giỏ Hàng</span>
-                                            </button>
+                                            </a>
                                         </div>
                                     </a>
                                 </div>

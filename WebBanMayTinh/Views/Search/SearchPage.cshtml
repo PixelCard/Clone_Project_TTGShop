@@ -12,7 +12,9 @@
 
 <link rel="stylesheet" href="~/Content/CSS/HomePage.css" />
 
-
+@{ 
+    var CartItems = Session["Cart"] as WebBanMayTinh.Models.ViewModel.Cart;
+}
 
 @if (Model.Products_SearchPageList != null && Model.Products_SearchPageList.Any() && Model.searchTerm != null)
 {
@@ -44,6 +46,17 @@
                             <div class="Owl-stage" style="width:2412px;flex-wrap:wrap">
                                 @foreach (var items in Model.Products_SearchPageList)
                                 {
+                                    var ValuePersentageChanged = items.DiscountPercentage.HasValue ? Math.Floor(items.DiscountPercentage.Value * 100).ToString("0.##") : "0";
+
+
+                                    string ValuePriceAfterPersenTage = "";
+
+
+                                    if (items.DiscountValue.HasValue)
+                                    {
+                                        ValuePriceAfterPersenTage = (items.DiscountValue ?? 0).ToString("N0");
+                                    }
+
                                     <div class="Owl-item" style=" width: 280px">
                                         <div class="Product_Loop">
                                             <div class="Product_Inner">
@@ -66,7 +79,7 @@
                                                     <div class="proloop--top"></div>
 
                                                     <h3>
-                                                        <a href="~/ProductDetails/ProductPage" class="quickview-product">
+                                                        <a href="@Url.Action("ProductPage", "ProductDetails", new {id = items.ProductID})" class="quickview-product">
                                                             @items.ProductName
                                                         </a>
                                                     </h3>
@@ -81,19 +94,27 @@
 
                                                     <div class="Price_ProLoop">
                                                         <div class="Price_Box">
-                                                            @*<span class="Discount_Price">9,990,000₫</span>*@
-                                                            <span class="OriginalPrice"><del>@items.ProductPrice</del></span>
+                                                            @if (items.DiscountValue.HasValue)
+                                                            {
+                                                                <span class="Discount_Price">@ValuePriceAfterPersenTage</span>
+                                                                <span class="OriginalPrice"><del>@items.ProductPrice.ToString("N0")</del></span>
+                                                            }
+
+                                                            else
+                                                            {
+                                                                <span class="OriginalPrice">@items.ProductPrice.ToString("N0")</span>
+                                                            }
                                                         </div>
 
                                                         <div class="Price_Sell">
-                                                            <span class="Pro_Sale">-17%</span>
+                                                            <span class="Pro_Sale">-@ValuePersentageChanged%</span>
                                                         </div>
                                                     </div>
 
                                                     <div class="Btn_AddOnCart">
                                                         <div class="Inside_Btn_AddOnCart">
                                                             <div class="Box_Cart">
-                                                                <a href="/ShoppingCart/ShoppingCartPage" class="btn-proloop-cart add-to-cart  btn-addcart-view">
+                                                                <a href="@Url.Action("AddToCart","ShoppingCart",new {id = items.ProductID})" class="btn-proloop-cart add-to-cart  btn-addcart-view">
                                                                     <span class="Tittle">Thêm vào giỏ hàng</span>
                                                                     <span class="Icon">
                                                                         <i class="fas fa-wallet"></i>
@@ -152,7 +173,7 @@ else
             <div class="Search_Term_Box">
 
                 @*Thanh Tìm kiếm cho sản phẩm tương ứng*@
-                <form action="@Url.Action("SearchPage", "Search")" method="post" class="Form_Search">
+                <form action="@Url.Action("SearchPage", "Search")" method="get" class="Form_Search">
                     <div class="Searching_Input">
 
                         @Html.TextBoxFor(m => m.searchTerm, new

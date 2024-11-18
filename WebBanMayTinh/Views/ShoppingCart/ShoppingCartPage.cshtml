@@ -1,12 +1,17 @@
-﻿@{
+﻿@model WebBanMayTinh.Models.ViewModel.Cart
+
+@{
     Layout = "~/Views/Shared/_ShoppingCartLayout.cshtml";
 }
 
+
+
+
 <link rel="stylesheet" href="~/Content/CSS/ShoppingCart.css" />
 
+
+
 <div class="Layout_Cart">
-
-
     <div class="Wrapper_Main_Content_Layout_Cart">
         <div class="Content_Layout_Cart">
             <div class="container_fluid">
@@ -17,118 +22,171 @@
                                 Giỏ hàng của bạn
                             </h1>
 
-                            <div class="Main_Cointainer_for_ListPageForm">
-                                <form action="" method="post" id="cartFormPage">
-                                    <div class="Cart_row">
-                                        <div class="What_Items_You_Put_On_Cart">
-                                            Bạn đang có 1 sản phẩm
-                                        </div>
+
+                            @* Chưa có product nào trong cart *@
+                            @if (!Model.CartItems.Any())
+                            {
 
 
-                                        <div class="cointainer_ItemsCart">
-                                            <div class="Items_Collection">
-                                                <div class="Left">
-                                                    <div class="Items-img">
-
-                                                        @*
-                                                            Link tới trang sản phẩm trong giỏ hàng
-                                                        *@
-                                                        <a href="#">
-                                                            <img src="~/Content/IMG/Product_Page_Img/Product1.jpg" />
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="Item-Remove">
-
-                                                        <button class="Btn_Remove_Cart">
-
-                                                            <span class="Remove_Span">Xóa</span>
+                            }
 
 
-                                                        </button>
+                            else
+                            {
 
-                                                    </div>
+                                <div class="Main_Cointainer_for_ListPageForm">
+                                    <form action="" method="post" id="cartFormPage">
+                                        <div class="Cart_row">
+                                            <div class="What_Items_You_Put_On_Cart" style="display: flex; justify-content: space-between;">
+                                                Bạn đang có @Model.CartItems.Count() sản phẩm
+
+
+                                                <div class="DeleteAllCart" style="width:4%;overflow:hidden">
+                                                    <a href="@Url.Action("ClearCart","ShoppingCart")"><img src="~/Content/IMG/trash-bin-clipart-vector-art-illustration_761413-26114.jpg" style="width:100%" /></a>
                                                 </div>
+                                            </div>
+
+                                            <div class="table_Items_Cart">
+                                                @foreach (var item in Model.CartItems)
+                                                {
 
 
-                                                <div class="right">
-                                                    <div class="Items_Info">
-
-                                                        <h3 class="Title_Items">
+                                                    string ValuePriceAfterPersenTage = "";
 
 
-                                                            @*
-                                                                Link tới trang sản phẩm
-                                                            *@
-                                                            <a href="#">
-
-                                                                PC BEST FOR GAMING i5 10400F- GTX 1660 Super 6GB(Tất cả linh kiện đều All New - bảo hành 36 tháng) - 16 slots - 8HN - 8 HCM
+                                                    decimal ValueDiscount = item.ProductPriceDiscount ?? 0;
 
 
-                                                            </a>
+                                                    ValuePriceAfterPersenTage = (ValueDiscount).ToString("N0");
 
-                                                        </h3>
+                                                    <div class="cointainer_ItemsCart">
+                                                        <div class="Items_Collection">
+                                                            <div class="Left">
+                                                                <div class="Items-img">
 
-                                                        <div class="Variant_Items">
-                                                            <span>
+                                                                    @*
+                                                                        Link tới trang sản phẩm trong giỏ hàng
+                                                                    *@
 
-                                                                Ram 16GB / SSD 256GB
+                                                                    <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+                                                                        <img src="@item.ProductImage" />
+                                                                    </a>
+                                                                </div>
 
-                                                            </span>
-                                                        </div>
+                                                                <div class="Item-Remove">
 
-                                                    </div>
-
-                                                    <div class="Items_Price">
-
-                                                        <p class="Price">
-
-                                                            <span class="Reduce_Price">
-
-                                                                9,990,000₫
-
-                                                            </span>
+                                                                    <a href="@Url.Action("DeleteItemsOnCart","ShoppingCart",new { id = item.ProductId})" class="Btn_Remove_Cart">
 
 
-                                                            <del class="Orignal_Price">
-                                                                11,990,000₫
-                                                            </del>
-
-                                                        </p>
-
-                                                    </div>
-                                                </div>
+                                                                        <span class="Remove_Span">Xóa</span>
 
 
-                                                <div class="Total">
+                                                                    </a>
 
-                                                    <div class="Price_Total">
-
-                                                        <div class="Title_Price">
-                                                            <span class="line-item-total">9,990,000₫</span>
-                                                        </div>
-
-                                                    </div>
+                                                                </div>
+                                                            </div>
 
 
-                                                    <div class="Item_quantity">
-                                                        @* Count Your Buying and Some Button to buy or add On cart  *@
-                                                        <div class="Product_Count_And_BtnForBuying">
-                                                            <div class="BlockForBtnBuyingAndProductCount clearfix">
-                                                                <div class="Product_Count">
-                                                                    <button class="Decrease_Count qtybtn" type="button" onclick="changeQuantity(-1)">-</button>
-                                                                    <input type="text" value="1" min="1" class="Quantity-Product" onchange="updateTotal()" />
-                                                                    <button class="Upper_Count qtybtn" type="button" onclick="changeQuantity(1)">+</button>
+                                                            <div class="right">
+                                                                <div class="Items_Info">
+
+                                                                    <h3 class="Title_Items">
+
+
+                                                                        @*
+                                                                            Link tới trang sản phẩm
+                                                                        *@
+                                                                        <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+
+
+                                                                            @item.ProductName
+
+                                                                        </a>
+
+                                                                    </h3>
+
+                                                                    @*<div class="Variant_Items">
+                                                                            <span>
+
+                                                                                Ram 16GB / SSD 256GB
+
+                                                                            </span>
+                                                                        </div>*@
+
+                                                                </div>
+
+                                                                <div class="Items_Price">
+
+                                                                    <p class="Price">
+
+                                                                        @* Nếu item của products đó chứa discount value sẽ hiện discount value và value gốc *@
+                                                                        @if (item.ProductPriceDiscount != 0)
+                                                                        {
+                                                                            <span class="Reduce_Price">
+
+                                                                                @ValuePriceAfterPersenTage
+
+                                                                            </span>
+
+
+                                                                            <del class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </del>
+                                                                        }
+
+
+                                                                        //Còn ko chỉ hiện mỗi value gốc
+                                                                        else
+                                                                        {
+                                                                            <span class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </span>
+                                                                        }
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="Total">
+
+                                                                <div class="Price_Total">
+
+                                                                    <div class="Title_Price">
+                                                                        <span class="line-item-total">@item.TotalPrice.ToString("N0")</span>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="Item_quantity">
+                                                                    @* Count Your Buying and Some Button to buy or add On cart  *@
+                                                                    <div class="Product_Count_And_BtnForBuying">
+                                                                        <div class="BlockForBtnBuyingAndProductCount clearfix">
+                                                                            <div class="Product_Count">
+                                                                                @using (Html.BeginForm("UpdateQuantity", "ShoppingCart", FormMethod.Post))
+                                                                                {
+
+                                                                                    <input type="hidden" name="id" value="@item.ProductId" />
+                                                                                    <button class="Decrease_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity - 1)">-</button>
+                                                                                    <input type="text" value="@item.Quantity" readonly min="100" class="Quantity-Product" />
+                                                                                    <button class="Upper_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity + 1)">+</button>
+
+
+
+                                                                                }
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                }
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
+                                    </form>
+                                </div>
+                            }
                         </div>
                     </div>
 
@@ -168,7 +226,7 @@
                                 <div class="Pay_Total">
                                     <p>
                                         Tổng tiền
-                                        <span class="Total_Price_To_Pay">9.990.000</span>
+                                        <span class="Total_Price_To_Pay">@Model.TotalValue().ToString("N0")</span>
                                     </p>
                                 </div>
 
@@ -186,20 +244,42 @@
                                     <p>
                                         Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
                                     </p>
+                                </div>
 
+
+                                @if (Model.TotalValue() <= 40000)
+                                {
                                     <div class="Box_Notice" style="display:block">
 
                                         Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
 
                                     </div>
-                                </div>
 
 
-                                <div class="Pay_Btn">
-                                    <a id="btnCart-checkout" class="checkout-btn btnred disabled" href="#">
-                                        THANH TOÁN
-                                    </a>
-                                </div>
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred disabled" href="#">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
+
+                                else
+                                {
+                                    <div class="Box_Notice Box_Notice_Friendly" style="text-align:center">
+
+                                        <span style=" font-size: 18px; position: relative; bottom: 16px; margin-left: 9px;">Thanh Toán ngay</span>  <img src="~/Content/IMG/Img_HandDown.jpg" style="height:50px" />
+
+                                    </div>
+
+
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred" href="#">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
                             </div>
 
                             <div class="Primary_Layout_Pay Sumary_Block">
@@ -225,44 +305,54 @@
 </div>
 
 
+
+
 <script language="javascript">
 
-    const Price_AfterChangeQuantity = 9990000;
+    //Dùng để update Quantity ứng với product Id đó
+    function CartUpdateQuantity(id, quantity) {
 
-    function changeQuantity(ammount) {
-        const quantityInput = document.querySelector('.Quantity-Product');
-
-        let currentQuantity = parseInt(quantityInput.value);
-
-        currentQuantity += ammount;
+        const form = document.createElement('form');
 
 
-        // Đảm bảo số lượng không nhỏ hơn 1
-        if (currentQuantity < 1)
-        {
-            currentQuantity = 1;
+        form.method = "post";
+
+
+        form.action = "UpdateQuantity";
+
+
+        if (quantity < 1) {
+            return;
         }
 
-        quantityInput.value = currentQuantity;
-        updateTotal();
+        const idInput = document.createElement('input');
+
+        idInput.type = 'hidden';
+
+
+        idInput.name = 'id';
+
+
+        idInput.value = id;
+
+
+        form.appendChild(idInput);
+
+
+        const quantityInput = document.createElement('input');
+
+        quantityInput.type = 'hidden';
+
+        quantityInput.name = 'quantity';
+
+        quantityInput.value = quantity;
+
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+
+
+        form.submit();
     }
-
-    function updateTotal() {
-        const quantity = parseInt(document.querySelector('.Quantity-Product').value);
-        const total = quantity * Price_AfterChangeQuantity;
-
-        // Cập nhật giá tạm tính
-        document.querySelector('.line-item-total').innerHTML = `
-            <div>${total.toLocaleString('vi-VN')}</div>`;
-
-
-        //Cập nhập giá tổng cộng
-        document.querySelector('.Total_Price_To_Pay').innerHTML = `
-            <div>${total.toLocaleString('vi-VN')}</div>`;   
-    }
-   
-
-    // Khởi tạo tổng khi trang được tải
-    updateTotal();
 
 </script>

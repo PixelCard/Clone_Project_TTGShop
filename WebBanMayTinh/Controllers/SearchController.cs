@@ -47,23 +47,5 @@ namespace WebBanMayTinh.Controllers
 
             return View(Search_VM);
         }
-
-        [HttpPost]
-        public ActionResult SearchPage(string searchTerm)
-        {
-            var products = db.Products.AsQueryable();
-
-            var Search_VM = new SearchVM();
-
-
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                Search_VM.searchTerm = searchTerm;
-
-                products = products.Where(p => p.ProductName.Contains(searchTerm) || p.Category.CategoryName.Contains(searchTerm));
-            }
-
-            return RedirectToAction("SearchPage");
-        }
     }
 }

@@ -14,6 +14,9 @@ namespace WebBanMayTinh.Models.ViewModel
         public int quantity { get; set; } = 1;
 
 
+        public string Text_DiscountValue { get; set; } = "";
+
+
         public decimal TotalPrice => quantity * products.ProductPrice;
 
 

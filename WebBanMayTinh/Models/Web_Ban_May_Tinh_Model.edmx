@@ -57,7 +57,7 @@
           <Property Name="ProductPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ProductImage" Type="nvarchar(max)" />
           <Property Name="DiscountPercentage" Type="decimal" Precision="5" Scale="2" />
-          <Property Name="DiscountValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DiscountValue" Type="decimal" Precision="24" Scale="4" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProductDescription">
           <Key>
@@ -262,7 +262,7 @@
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__30F848ED" FromRole="Product" ToRole="OrderDetail" />
           <NavigationProperty Name="ProductDescriptions" Relationship="Web_Ban_May_TinhModel.FK_ProductID" FromRole="Product" ToRole="ProductDescription" />
           <Property Name="DiscountPercentage" Type="Decimal" Precision="5" Scale="2" />
-          <Property Name="DiscountValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DiscountValue" Type="Decimal" Precision="24" Scale="4" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>

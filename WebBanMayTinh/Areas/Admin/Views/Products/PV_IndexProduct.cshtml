@@ -20,7 +20,7 @@
 
         <table class="table">
             <tr>
-                <th class="col-3">
+                <th class="col-1">
                     Tên Sản Phẩm
                 </th>
 
@@ -36,7 +36,7 @@
                 </th>
 
 
-                <th class="col-3" style="text-align: center;">
+                <th class="col-2" style="text-align: center;">
                     Hình ảnh Sản Phẩm
                 </th>
 
@@ -46,6 +46,10 @@
                     Danh Mục Sản Phẩm
                 </th>
 
+
+                <th class="col-1">
+                    Discount
+                </th>
 
 
                 <th class="col-4">
@@ -83,7 +87,9 @@
                         @Html.DisplayFor(modelItem => item.Category.CategoryName)
                     </td>
 
-
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscountPercentage)
+                    </td>
 
                     <td>
                         @Html.ActionLink("Sửa", "Edit", new { id = item.ProductID }) |
