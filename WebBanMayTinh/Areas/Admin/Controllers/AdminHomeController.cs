@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebBanMayTinh.Controllers
+namespace WebBanMayTinh.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class AdminHomeController : Controller
     {
-        public ActionResult HomePage()
+        // GET: Admin/Home
+        public ActionResult Index()
         {
             return View();
         }

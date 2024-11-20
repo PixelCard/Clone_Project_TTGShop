@@ -6,9 +6,10 @@ using System.Web.Mvc;
 
 namespace WebBanMayTinh.Controllers
 {
-    public class HomeController : Controller
+    public class ProductHistoryController : Controller
     {
-        public ActionResult HomePage()
+        // GET: ProductHistrory
+        public ActionResult ProductHistory()
         {
             return View();
         }

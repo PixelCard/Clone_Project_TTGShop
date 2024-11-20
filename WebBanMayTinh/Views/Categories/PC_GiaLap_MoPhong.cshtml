@@ -1,0 +1,543 @@
+﻿@{
+    Layout = "~/Views/Shared/_CategoriesLayout.cshtml";
+}
+
+@*  Chưa làm trang Build PC và trang Linh Kiện  *@
+
+@*<link rel="stylesheet" href="~/Content/CSS/LoginPage.css" />*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<!DOCTYPE html>
+<style>
+    .Section_Main {
+        background: #fff6;
+    }
+
+
+    /*CSS Left*/
+    .List_MENU, .List_BRAND, .List_Price {
+        border: 10px solid #fff;
+    }
+
+    ul .Topic_Content {
+        justify-items: center;
+        border-bottom: 1px solid #000000;
+    }
+
+    ul .item {
+        font-size: 16px;
+    }
+
+
+    /*CSS Right*/
+    Section_right {
+        padding: 15px;
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
+
+    .Cate_Banner img {
+        max-width: 100%;
+    }
+
+    .collection-heading__content {
+        padding: 10px;
+    }
+
+        .collection-heading__content h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .collection-heading__content .heading-box {
+            display: flex;
+            height: 100%;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .collection-heading__content span, b {
+            font-size: 18px;
+            justify-items: center;
+        }
+
+    .Product_Loop .Product_Inner {
+        display: flex;
+        margin-bottom: 0;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 4px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+
+    a img {
+        padding: 0px 15px;
+        width: 200px;
+        height: 120px;
+    }
+
+    .proloop-variant, .Price_Box, .Price_Sell {
+        padding-left: 10px;
+    }
+
+    Owl-item {
+        width: 22%;
+        max-height: 400px;
+    }
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CategoriesDemo1</title>
+    @*<link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">*@
+    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+
+
+
+    <div class="Section_Main">
+        <div class="container_fluid">
+            <div class="Flex_Section_Main_Items">
+                <div class="Section_Main_left">
+                    <div class="Main_Menu SideBar_left">
+                        <div class="List_MENU">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Danh mục sản phẩm</h2></li>
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_Gaming.cshtml">
+
+                                        Pc Gaming - Máy tính chơi game
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_Working.cshtml">
+
+                                        PC Workstation
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_VanPhong.cshtml">
+
+                                        PC VĂN PHÒNG
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_AMD_Gaming.cshtml">
+
+                                        PC AMD GAMING
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_MINI.cshtml">
+
+                                        PC MINI
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/PC_GiaLap_MoPhong.cshtml">
+
+
+                                        PC GIẢ LẬP - ẢO HÓA
+
+                                    </a>
+                                </li>
+
+                                <li class="item SubItem">
+                                    <a href="~/Views/Categories/Linhkien_PhuKKien.cshtml">
+
+                                        Linh kiện máy tính
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="">
+
+                                        Build PC theo nhu cầu
+
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a href="~/Views/Categories/ManHinh.cshtml">
+
+                                        Màn hình
+
+                                    </a>
+                                </li>
+
+                                <li class="item SubItem">
+                                    <a href="~/Views/Categories/Gaming_Gear.cshtml">
+
+                                        Gaming Gear
+
+                                    </a>
+                                </li>
+
+                                <li class="item Dnone" style="display: none;">
+                                    <a href="~/Views/Categories/KhungSatTreoManHinh.cshtml">
+                                        giá treo màn hình
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="List_BRAND">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Nhà cung cấp</h2></li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    Khác
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="List_Price">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Lọc giá</h2></li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    Dưới 5.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    5.000.000₫-10.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    10.000.000₫-15.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    15.000.000₫-20.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    20.000.000₫-25.000.000₫
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Section_right">
+                    <div class="Cate_Banner">
+                        <img src="https://file.hstatic.net/1000288298/collection/423236683_728691796044291_7157647799474904702_n_2293a29be9154c538ec1cda4e0a49568.jpg" />
+                    </div>
+
+
+
+                    <div class="collection-heading__content">
+                        <div class="heading-box">
+                            <h1 class="title">
+                                PC GIẢ LẬP ẢO HÓA
+                            </h1>
+                            <span class="title-count"><b>8</b>" sản phẩm"</span>
+                        </div>
+                    </div>
+
+                    <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
+                        <div class="Owl-stage-outer">
+                            <div class="Owl-stage" style="width:auto;display:flex;">
+
+
+                                <div class="Owl-item" style="width: 25%;max-height: 400px;">
+                                    <div class="Product_Loop">
+                                        <div class="Product_Inner">
+                                            <div class="ProductLoop_Img">
+                                                <div class="Product_Img">
+                                                    <div class="lazy-img first-img">
+
+                                                        <a href="~/ProductDetails/ProductPage">
+
+                                                            <img src="~/Content/IMG/Product_Items_Img/CollectionProduct_9.png" />
+
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="Product_Loop_Details">
+                                                <div class="proloop--top"></div>
+
+                                                <h4>
+                                                    <a href="~/ProductDetails/ProductPage" class="quickview-product">
+                                                        PC FASTER GAMING 10400F - RTX 3050 6GB ( ALL NEW- Bảo hành 36 Tháng)- 20 slots- 10 HN- 10 HCM
+                                                    </a>
+                                                </h4>
+
+                                                <div class="proloop-variant">
+                                                    <span>+2 Ram</span>
+                                                </div>
+
+                                                <div class="Price_ProLoop">
+                                                    <div class="Price_Box">
+                                                        <span class="Discount_Price">9,990,000₫</span>
+                                                        <span class="OriginalPrice"><del>11,990,000₫</del></span>
+                                                    </div>
+
+                                                    <div class="Price_Sell">
+                                                        <span class="Pro_Sale">-17%</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="Btn_AddOnCart">
+                                                    <div class="Inside_Btn_AddOnCart">
+                                                        <div class="Box_Cart">
+                                                            <button type="submit" class="btn-proloop-cart add-to-cart  btn-addcart-view ">
+                                                                <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                <span class="Icon">
+                                                                    <i class="fas fa-wallet"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="Owl-item">
+                                    <div class="Product_Loop">
+                                        <div class="Product_Inner">
+                                            <div class="ProductLoop_Img">
+                                                <div class="Product_Img">
+                                                    <div class="lazy-img first-img">
+
+                                                        <a href="~/ProductDetails/ProductPage">
+
+                                                            <img src="~/Content/IMG/Product_Items_Img/CollectionProduct_10.png" />
+
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="Product_Loop_Details">
+                                                <div class="proloop--top"></div>
+
+                                                <h4>
+                                                    <a href="~/ProductDetails/ProductPage" class="quickview-product">
+                                                        PC MAX PERFORMANCE GAMING RTX 3060TI 12400F (All NEW - Bảo hành 36 Tháng) 4 Slots - 2 HN - 2 HCM
+                                                    </a>
+                                                </h4>
+
+                                                <div class="proloop-variant">
+                                                    <span>+2 Ram</span>
+                                                    <span>+8 CPU</span>
+                                                    <span>+2 SSD</span>
+                                                </div>
+
+                                                <div class="Price_ProLoop">
+                                                    <div class="Price_Box">
+                                                        <span class="Discount_Price">
+                                                            16,980,000₫
+                                                        </span>
+
+                                                        <span class="OriginalPrice">
+                                                            <del>
+                                                                24,990,000₫
+                                                            </del>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="Price_Sell">
+                                                        <span class="Pro_Sale">-32%</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="Btn_AddOnCart">
+                                                    <div class="Inside_Btn_AddOnCart">
+                                                        <div class="Box_Cart">
+                                                            <button type="submit" class="btn-proloop-cart add-to-cart  btn-addcart-view ">
+                                                                <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                <span class="Icon">
+                                                                    <i class="fas fa-wallet"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="Owl-item">
+                                    <div class="Product_Loop">
+                                        <div class="Product_Inner">
+                                            <div class="ProductLoop_Img">
+                                                <div class="Product_Img">
+                                                    <div class="lazy-img first-img">
+
+                                                        <a href="~/ProductDetails/ProductPage">
+                                                            <img src="~/Content/IMG/Product_Items_Img/CollectionProduct_11.png" />
+                                                        </a>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="Product_Loop_Details">
+                                                <div class="proloop--top"></div>
+
+                                                <h4>
+                                                    <a href="~/ProductDetails/ProductPage" class="quickview-product">
+                                                        PC CHƠI GAME HIỆU SUẤT CAO RTX 3060 12GB - 12400F ( ALL NEW - Bảo hành 36 tháng) - còn 6 Slots Order 3 Hà Nội - HCM 3 slots
+                                                    </a>
+                                                </h4>
+
+                                                <div class="proloop-variant">
+                                                    <span>+2 Ram</span>
+                                                    <span>+8 CPU</span>
+                                                    <span>+2 SSD</span>
+                                                </div>
+
+                                                <div class="Price_ProLoop">
+                                                    <div class="Price_Box">
+                                                        <span class="Discount_Price">15,980,000₫</span>
+                                                        <span class="OriginalPrice"><del>18,990,000₫</del></span>
+                                                    </div>
+
+                                                    <div class="Price_Sell">
+                                                        <span class="Pro_Sale">-16%</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="Btn_AddOnCart">
+                                                    <div class="Inside_Btn_AddOnCart">
+                                                        <div class="Box_Cart">
+                                                            <button type="submit" class="btn-proloop-cart add-to-cart  btn-addcart-view ">
+                                                                <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                <span class="Icon">
+                                                                    <i class="fas fa-wallet"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="Owl-item">
+                                    <div class="Product_Loop">
+                                        <div class="Product_Inner">
+                                            <div class="ProductLoop_Img">
+                                                <div class="Product_Img">
+                                                    <div class="lazy-img first-img">
+                                                        <a href="~/ProductDetails/ProductPage">
+                                                            <img src="~/Content/IMG/Product_Items_Img/CollectionProduct_12.png" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="Product_Loop_Details">
+                                                <div class="proloop--top"></div>
+
+                                                <h4>
+                                                    <a href="~/ProductDetails/ProductPage" class="quickview-product">
+                                                        PC ASUS GAMING PERFORMANCE RTX 4060 - I5 12400F ( Toàn bộ linh kiện All New - Bảo hành 36 tháng) 9 slots - 4 Hà Nội - 5 HCM
+                                                    </a>
+                                                </h4>
+
+                                                <div class="proloop-variant">
+                                                    <span>+2 Ram</span>
+                                                    <span>+8 CPU</span>
+                                                    <span>+2 SSD</span>
+                                                </div>
+
+                                                <div class="Price_ProLoop">
+                                                    <div class="Price_Box">
+                                                        <span class="Discount_Price">
+                                                            16,680,000₫
+                                                        </span>
+
+
+                                                        <span class="OriginalPrice">
+                                                            <del>
+                                                                21,990,000₫
+                                                            </del>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="Price_Sell">
+                                                        <span class="Pro_Sale">-24%</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="Btn_AddOnCart">
+                                                    <div class="Inside_Btn_AddOnCart">
+                                                        <div class="Box_Cart">
+                                                            <button type="submit" class="btn-proloop-cart add-to-cart  btn-addcart-view ">
+                                                                <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                <span class="Icon">
+                                                                    <i class="fas fa-wallet"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

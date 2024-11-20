@@ -1,0 +1,358 @@
+﻿@model WebBanMayTinh.Models.ViewModel.Cart
+
+@{
+    Layout = "~/Views/Shared/_ShoppingCartLayout.cshtml";
+}
+
+
+
+
+<link rel="stylesheet" href="~/Content/CSS/ShoppingCart.css" />
+
+
+
+<div class="Layout_Cart">
+    <div class="Wrapper_Main_Content_Layout_Cart">
+        <div class="Content_Layout_Cart">
+            <div class="container_fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-12 contentCart-detail">
+                        <div class="Main_Details">
+                            <h1 class="Heading_Cart">
+                                Giỏ hàng của bạn
+                            </h1>
+
+
+                            @* Chưa có product nào trong cart *@
+                            @if (!Model.CartItems.Any())
+                            {
+
+
+                            }
+
+
+                            else
+                            {
+
+                                <div class="Main_Cointainer_for_ListPageForm">
+                                    <form action="" method="post" id="cartFormPage">
+                                        <div class="Cart_row">
+                                            <div class="What_Items_You_Put_On_Cart" style="display: flex; justify-content: space-between;">
+                                                Bạn đang có @Model.CartItems.Count() sản phẩm
+
+
+                                                <div class="DeleteAllCart" style="width:4%;overflow:hidden">
+                                                    <a href="@Url.Action("ClearCart","ShoppingCart")"><img src="~/Content/IMG/trash-bin-clipart-vector-art-illustration_761413-26114.jpg" style="width:100%" /></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_Items_Cart">
+                                                @foreach (var item in Model.CartItems)
+                                                {
+
+
+                                                    string ValuePriceAfterPersenTage = "";
+
+
+                                                    decimal ValueDiscount = item.ProductPriceDiscount ?? 0;
+
+
+                                                    ValuePriceAfterPersenTage = (ValueDiscount).ToString("N0");
+
+                                                    <div class="cointainer_ItemsCart">
+                                                        <div class="Items_Collection">
+                                                            <div class="Left">
+                                                                <div class="Items-img">
+
+                                                                    @*
+                                                                        Link tới trang sản phẩm trong giỏ hàng
+                                                                    *@
+
+                                                                    <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+                                                                        <img src="@item.ProductImage" />
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="Item-Remove">
+
+                                                                    <a href="@Url.Action("DeleteItemsOnCart","ShoppingCart",new { id = item.ProductId})" class="Btn_Remove_Cart">
+
+
+                                                                        <span class="Remove_Span">Xóa</span>
+
+
+                                                                    </a>
+
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="right">
+                                                                <div class="Items_Info">
+
+                                                                    <h3 class="Title_Items">
+
+
+                                                                        @*
+                                                                            Link tới trang sản phẩm
+                                                                        *@
+                                                                        <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+
+
+                                                                            @item.ProductName
+
+                                                                        </a>
+
+                                                                    </h3>
+
+                                                                    @*<div class="Variant_Items">
+                                                                            <span>
+
+                                                                                Ram 16GB / SSD 256GB
+
+                                                                            </span>
+                                                                        </div>*@
+
+                                                                </div>
+
+                                                                <div class="Items_Price">
+
+                                                                    <p class="Price">
+
+                                                                        @* Nếu item của products đó chứa discount value sẽ hiện discount value và value gốc *@
+                                                                        @if (item.ProductPriceDiscount != 0)
+                                                                        {
+                                                                            <span class="Reduce_Price">
+
+                                                                                @ValuePriceAfterPersenTage
+
+                                                                            </span>
+
+
+                                                                            <del class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </del>
+                                                                        }
+
+
+                                                                        //Còn ko chỉ hiện mỗi value gốc
+                                                                        else
+                                                                        {
+                                                                            <span class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </span>
+                                                                        }
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="Total">
+
+                                                                <div class="Price_Total">
+
+                                                                    <div class="Title_Price">
+                                                                        <span class="line-item-total">@item.TotalPrice.ToString("N0")</span>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="Item_quantity">
+                                                                    @* Count Your Buying and Some Button to buy or add On cart  *@
+                                                                    <div class="Product_Count_And_BtnForBuying">
+                                                                        <div class="BlockForBtnBuyingAndProductCount clearfix">
+                                                                            <div class="Product_Count">
+                                                                                @using (Html.BeginForm("UpdateQuantity", "ShoppingCart", FormMethod.Post))
+                                                                                {
+
+                                                                                    <input type="hidden" name="id" value="@item.ProductId" />
+                                                                                    <button class="Decrease_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity - 1)">-</button>
+                                                                                    <input type="text" value="@item.Quantity" readonly min="100" class="Quantity-Product" />
+                                                                                    <button class="Upper_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity + 1)">+</button>
+
+
+
+                                                                                }
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-12 sidebarCart-sticky">
+                        <div class="Wrapper-Pay_Layout">
+                            <div class="Pay_Top_Layout Sumary_Block">
+                                <h2 class="Pay_Tittle">Thông tin đơn hàng</h2>
+
+                                <div class="Time_Shipping">
+                                    <div class="Inside_Box_Time">
+                                        <div class="Box_Time_Title">
+                                            <p class="txt_title">Thời gian giao hàng</p>
+                                            <p class="txt_time">
+                                                <i class="far fa-clock"></i>
+                                                <span>Chọn thời gian</span>
+                                            </p>
+                                        </div>
+
+
+                                        <div class="Box_Time_Radio" id="picktime_radio">
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-1" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-1">Giao khi có hàng</label>
+                                            </div>
+
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-2" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-2">Chọn thời gian</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="Pay_Total">
+                                    <p>
+                                        Tổng tiền
+                                        <span class="Total_Price_To_Pay">@Model.TotalValue().ToString("N0")</span>
+                                    </p>
+                                </div>
+
+
+                                <div class="Pay_action_Notice">
+                                    <p>
+                                        Phí vận chuyển sẽ được tính ở trang thanh toán.
+                                    </p>
+
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+                                </div>
+
+
+                                @if (Model.TotalValue() <= 40000)
+                                {
+                                    <div class="Box_Notice" style="display:block">
+
+                                        Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
+
+                                    </div>
+
+
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred disabled" href="#">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
+
+                                else
+                                {
+                                    <div class="Box_Notice Box_Notice_Friendly" style="text-align:center">
+
+                                        <span style=" font-size: 18px; position: relative; bottom: 16px; margin-left: 9px;">Thanh Toán ngay</span>  <img src="~/Content/IMG/Img_HandDown.jpg" style="height:50px" />
+
+                                    </div>
+
+
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred" href="#">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+
+                            <div class="Primary_Layout_Pay Sumary_Block">
+                                <div class="Block_Primary_Layout_Pay">
+                                    <p class="Heading_Block_Primary_Layout_Pay">
+                                        <strong>Chính sách mua hàng</strong>
+                                        :
+                                    </p>
+
+                                    <p>
+                                        Hiện chúng tôi chỉ áp dụng thanh toán với đơn hàng có giá trị tối thiểu
+                                        <strong>40.000₫ </strong>  trở lên.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script language="javascript">
+
+    //Dùng để update Quantity ứng với product Id đó
+    function CartUpdateQuantity(id, quantity) {
+
+        const form = document.createElement('form');
+
+
+        form.method = "post";
+
+
+        form.action = "UpdateQuantity";
+
+
+        if (quantity < 1) {
+            return;
+        }
+
+        const idInput = document.createElement('input');
+
+        idInput.type = 'hidden';
+
+
+        idInput.name = 'id';
+
+
+        idInput.value = id;
+
+
+        form.appendChild(idInput);
+
+
+        const quantityInput = document.createElement('input');
+
+        quantityInput.type = 'hidden';
+
+        quantityInput.name = 'quantity';
+
+        quantityInput.value = quantity;
+
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+
+
+        form.submit();
+    }
+
+</script>

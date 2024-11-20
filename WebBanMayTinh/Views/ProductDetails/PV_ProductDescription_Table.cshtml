@@ -1,0 +1,449 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsVM
+
+
+@{
+    var i = 0;
+}
+
+
+<div class="ProductDetail--Box">
+    <div class="Product_Description mg-top15">
+        @if (Model.products != null && Model.productdescription != null)
+        {
+            <div class="Box_Tittle">
+                <h2>Mô tả sản phẩm</h2>
+            </div>
+
+            <div class="Main_Prodcut_Description">
+                <div class="Table_Description_Details">
+                    <h3>Thông số kỹ thuật</h3>
+                    <div>
+                        <span style="font-size: 15px; font-weight: 700; color: #e74c3c"><strong style="font-weight:700">Tất cả linh kiện điều mới</strong></span>
+                    </div>
+
+
+
+                    <div>
+                        <table cellpadding="0" cellspacing="0" border="1" style="border-collapse:collapse; width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="background-color: white;
+                                                    border-bottom: 1px solid black;
+                                                    border-left: 1px solid black;
+                                                    border-right: 1px solid black;
+                                                    border-top: 1px solid black;
+                                                    height: 23px; padding-left: 1px;
+                                                    padding-right: 1px; padding-top: 1px;
+                                                    text-align: center; width: 55px;">
+                                        <span style="font-size:15px;font-weight:700">STT</span>
+                                    </td>
+
+
+                                    <td style="background-color: white;
+                                                    border-bottom: 1px solid black;
+                                                    border-left: 1px solid black;
+                                                    border-right: 1px solid black;
+                                                    border-top: 1px solid black;
+                                                    height: 23px; padding-left: 1px;
+                                                    padding-right: 1px; padding-top: 1px;
+                                                    text-align: center; width: 543px;">
+                                        <span style="font-size:15px;font-weight:700">Mô tả thiết bị</span>
+                                    </td>
+
+
+                                    <td style="background-color: white;
+                                                    border-bottom: 1px solid black;
+                                                    border-left: 1px solid black;
+                                                    border-right: 1px solid black;
+                                                    border-top: 1px solid black;
+                                                    height: 23px; padding-left: 1px;
+                                                    padding-right: 1px; padding-top: 1px;
+                                                    text-align: center; width: 60px;">
+                                        <span style="font-size:15px;font-weight:700">SL</span>
+                                    </td>
+
+
+                                    <td style="background-color: white;
+                                                    border-bottom: 1px solid black;
+                                                    border-left: 1px solid black;
+                                                    border-right: 1px solid black;
+                                                    border-top: 1px solid black;
+                                                    height: 23px; padding-left: 1px;
+                                                    padding-right: 1px; padding-top: 1px;
+                                                    text-align: center; width: 60px;">
+                                        <span style="font-size:15px;font-weight:700">BH</span>
+                                    </td>
+                                </tr>
+
+
+                                @if (Model.productdescription.CPU != null)
+                                {
+                                    @*CPU*@
+                                    <tr>
+                                        <td style="background-color: white;
+                                                                   border-bottom: 1px solid black;
+                                                                   border-left: 1px solid black;
+                                                                   border-right: 1px solid black;
+                                                                   border-top: 1px solid black;
+                                                                   height: 23px; padding-left: 1px;
+                                                                   padding-right: 1px; padding-top: 1px;
+                                                                   text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                                   border-bottom: 1px solid black;
+                                                                   border-left: 1px solid black;
+                                                                   border-right: 1px solid black;
+                                                                   border-top: 1px solid black;
+                                                                   height: 23px; padding-left: 1px;
+                                                                   padding-right: 1px; padding-top: 1px;
+                                                                   text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700">@Model.productdescription.CPU</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                                   border-bottom: 1px solid black;
+                                                                   border-left: 1px solid black;
+                                                                   border-right: 1px solid black;
+                                                                   border-top: 1px solid black;
+                                                                   height: 23px; padding-left: 1px;
+                                                                   padding-right: 1px; padding-top: 1px;
+                                                                   text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                                   border-bottom: 1px solid black;
+                                                                   border-left: 1px solid black;
+                                                                   border-right: 1px solid black;
+                                                                   border-top: 1px solid black;
+                                                                   height: 23px; padding-left: 1px;
+                                                                   padding-right: 1px; padding-top: 1px;
+                                                                   text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+
+
+                                @if (Model.productdescription.RAM != null)
+                                {
+                                    @*Ram*@
+                                    <tr>
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700">@Model.productdescription.RAM</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+
+
+                                @if (Model.productdescription.MAINBOARD != null)
+                                {
+                                    @*MainBoard*@
+                                    <tr>
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700">@Model.productdescription.MAINBOARD</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+
+
+                                @if (Model.productdescription.SSD != null)
+                                {
+                                    <tr>
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700"> @Model.productdescription.SSD	</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                       border-bottom: 1px solid black;
+                                                       border-left: 1px solid black;
+                                                       border-right: 1px solid black;
+                                                       border-top: 1px solid black;
+                                                       height: 23px; padding-left: 1px;
+                                                       padding-right: 1px; padding-top: 1px;
+                                                       text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+
+
+                                @if (Model.productdescription.VGA != null)
+                                {
+                                    <tr>
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700"> @Model.productdescription.VGA</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+
+                                @if (Model.productdescription.PowerPC != null)
+                                {
+                                    <tr>
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 55px;">
+                                            <span style="font-size:15px;font-weight:700">@{ i++; } @i</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 543px;">
+                                            <span style="font-size:15px;font-weight:700"> @Model.productdescription.PowerPC</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">1</span>
+                                        </td>
+
+
+                                        <td style="background-color: white;
+                                                           border-bottom: 1px solid black;
+                                                           border-left: 1px solid black;
+                                                           border-right: 1px solid black;
+                                                           border-top: 1px solid black;
+                                                           height: 23px; padding-left: 1px;
+                                                           padding-right: 1px; padding-top: 1px;
+                                                           text-align: center; width: 60px;">
+                                            <span style="font-size:15px;font-weight:700">36th</span>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                                else
+
+                                {
+
+                                    i = i;
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <div>
+                        <hr />
+                    </div>
+
+
+
+                    <div>
+                        <span style="font-size: 15px; font-weight: 700; color: #e74c3c">Bộ PC này đã áp dụng CTKM SHOCK Toàn Tập - nên sẽ không được Áp dụng CTKM Chung</span>
+                    </div>
+
+
+
+                    <div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+        <div class="Description_Details_Btn">
+
+
+        </div>
+    </div>
+</div>
