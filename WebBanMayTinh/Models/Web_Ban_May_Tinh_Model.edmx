@@ -58,6 +58,7 @@
           <Property Name="ProductImage" Type="nvarchar(max)" />
           <Property Name="DiscountPercentage" Type="decimal" Precision="5" Scale="2" />
           <Property Name="DiscountValue" Type="decimal" Precision="24" Scale="4" StoreGeneratedPattern="Computed" />
+          <Property Name="CEO" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ProductDescription">
           <Key>
@@ -263,6 +264,7 @@
           <NavigationProperty Name="ProductDescriptions" Relationship="Web_Ban_May_TinhModel.FK_ProductID" FromRole="Product" ToRole="ProductDescription" />
           <Property Name="DiscountPercentage" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="DiscountValue" Type="Decimal" Precision="24" Scale="4" />
+          <Property Name="CEO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -457,6 +459,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="Web_Ban_May_TinhModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="CEO" ColumnName="CEO" />
                 <ScalarProperty Name="DiscountValue" ColumnName="DiscountValue" />
                 <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />

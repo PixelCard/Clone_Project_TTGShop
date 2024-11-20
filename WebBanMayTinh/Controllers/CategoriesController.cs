@@ -51,7 +51,7 @@ namespace WebBanMayTinh.Controllers
         {
             return View();
         }
-        public ActionResult KhungSatTreoManHinh() 
+        public ActionResult KhungSatTreoManHinh(int? id ,int? quantity) 
         { 
             return View();
         }

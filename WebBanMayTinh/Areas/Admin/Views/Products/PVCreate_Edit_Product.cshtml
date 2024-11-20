@@ -102,7 +102,7 @@
 
 
     <div class="control-label col-md-2 ProductName">
-        Discount 
+        Discount
     </div>
 
 
@@ -112,6 +112,22 @@
     </div>
 </div>
 
+
+@*------------------------------------------------------Provider------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        Nhà cung ứng
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.CEO, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CEO, "", new { @class = "text-danger" })
+    </div>
+</div>
 
 
 

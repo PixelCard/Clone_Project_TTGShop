@@ -128,7 +128,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage,DiscountPercentage,DiscountValue")] Product product)
+        public ActionResult Create([Bind(Include = "ProductID,CategoryID,ProductName,ProductStatus,ProductPrice,ProductImage,DiscountPercentage,DiscountValue,CEO")] Product product)
         {
             if (ModelState.IsValid)
             {
