@@ -1,0 +1,97 @@
+﻿@model WebBanMayTinh.Models.ViewModel.RegisterVM
+@{
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/RegisterPage.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
+<link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+
+<div class="login-container">
+    <div class="login-header">
+        <span class="inactive"><a href="/Account/Login" class="Link_inactive">Đăng nhập</a></span> |
+        <span class="active">Đăng ký</span>
+    </div>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "register-form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <!-- Họ và tên -->
+        <div class="form-group">
+            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Họ và tên" } })
+            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Giới tính -->
+        <div class="form-group">
+            <label>
+                @Html.RadioButtonFor(model => model.CustomerGender, "Nam") Nam
+            </label>
+            <label>
+                @Html.RadioButtonFor(model => model.CustomerGender, "Nữ") Nữ
+            </label>
+            @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Ngày sinh -->
+        <div class="form-group">
+            @Html.EditorFor(model => model.CustomerBirthDay, new { htmlAttributes = new { @placeholder = "mm/dd/yyyy" } })
+            @Html.ValidationMessageFor(model => model.CustomerBirthDay, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.EditorFor(model => model.CustomerAddress, new { htmlAttributes = new { @placeholder = "Địa chỉ" } })
+            @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.EditorFor(model => model.CustomerPhone, new { htmlAttributes = new { @placeholder = "Số điện thoại" } })
+            @Html.ValidationMessageFor(model => model.CustomerPhone, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Mật khẩu -->
+        <div class="form-group password-group">
+            <div class="input-wrapper">
+                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password" } })
+                <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
+            </div>
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Xác nhận mật khẩu -->
+        <div class="form-group password-group">
+            <div class="input-wrapper">
+                @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Xác nhận mật khẩu", @type = "password" } })
+                <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
+            </div>
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!-- Nút đăng ký -->
+        <div class="form-group">
+            <button type="submit" name="submit" value="Register" class="login-button">Đăng ký</button>
+        </div>
+
+        @* Nếu cần thêm tính năng bảo mật CAPTCHA, có thể bỏ comment dòng này *@
+        @*<p class="captcha-info">
+                This site is protected by reCAPTCHA and the Google
+                <a href="#">Privacy Policy</a> and
+                <a href="#">Terms of Service</a> apply.
+            </p>*@
+    }
+
+    <!-- Footer với liên kết đăng nhập -->
+    <div class="login-footer">
+        <p>Bạn đã có tài khoản? <a href="/Account/Login">Đăng nhập</a></p>
+    </div>
+</div>
+

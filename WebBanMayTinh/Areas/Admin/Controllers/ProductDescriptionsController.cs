@@ -35,10 +35,6 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                 productDescriptions = productDescriptions.Where(pD => pD.Product.ProductName.Contains(searchTerm)); 
             }
 
-
-
-
-
             //ProductDespritionSearchVM.ProductDescriptions = productDescriptions.ToList();
 
 

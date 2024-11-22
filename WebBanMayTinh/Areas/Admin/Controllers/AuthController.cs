@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebBanMayTinh.Controllers
+namespace WebBanMayTinh.Areas.Admin.Controllers
 {
-    public class RegisterController : Controller
+    public class AuthController : Controller
     {
-        // GET: Register
-        public ActionResult RegisterPage()
+        // GET: Admin/Auth
+        public ActionResult Login()
         {
             return View();
         }

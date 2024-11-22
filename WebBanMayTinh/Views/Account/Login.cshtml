@@ -1,0 +1,53 @@
+﻿@model WebBanMayTinh.Models.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/CSS/LoginPage.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
+    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <span class="active">Đăng nhập</span> |
+            <span class="inactive"><a href="/Account/Register" class="Link_inactive">Đăng ký</a></span>
+        </div>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Vui lòng nhập email của bạn" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Vui lòng nhập mật khẩu của bạn" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group"> 
+                <button type="submit" name="submit" value="Login" class="login-button">ĐĂNG NHẬP</button>
+            </div>
+            @*<p class="captcha-info">
+                This site is protected by reCAPTCHA and the Google
+                <a href="#">Privacy Policy</a> and
+                <a href="#">Terms of Service</a> apply.
+            </p>*@
+
+
+        }
+        <div class="login-footer">
+            <p>Bạn chưa có tài khoản? <a href="#">Quên mật khẩu?</a></p>
+            <p>Bạn quên mật khẩu? <a href="/Account/Register">Đăng ký</a></p>
+        </div>
+    </div>
+</body>
+</html>
