@@ -5,9 +5,252 @@
 }
 
 
-
-
 <link rel="stylesheet" href="~/Content/CSS/ShoppingCart.css" />
+
+
+
+<style>
+
+    .Main_Details .Error_Cart {
+        text-align: center;
+        position: relative;
+        top: 46%;
+        left: 35%;
+        bottom: 0;
+        transform: translateX(-15%);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 16px;
+    }
+
+    .Container_Link_To_Home {
+        margin-top: 5px;
+        margin-left: 18px;
+        text-align: center;
+    }
+
+    .Link_Home {
+        text-decoration: none;
+        opacity: 0.7;
+        background: #151515;
+        border-radius: 4px;
+        display: block;
+        background: red;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 4px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 0;
+        margin-top: 12px;
+        margin-left: -18px;
+        width: 100%;
+        position: absolute;
+        left: 25%;
+    }
+
+
+    .Container_Link_To_Home .Link_Home {
+        position: absolute;
+        left: 3%;
+        width: 98%;
+    }
+
+
+    .Section_Main_left .site_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.53);
+        z-index: -1;
+        transition: .3s
+    }
+
+    .Section_Main_left .SideBar_left.active_Menu {
+        position: absolute;
+        z-index: 99;
+        left: 12.1%;
+    }
+
+    .Section_Main {
+        overflow: unset;
+    }
+
+    .table_Items_Cart .js_LayoutBtn_RemoveCart {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 10000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+
+
+    /* Active */
+    .table_Items_Cart .active_Js_RemoveCart{
+        opacity:1;
+        pointer-events:auto;
+    }
+
+
+
+    .js_LayoutBtn_RemoveCart .Delete_Container {
+        width: 478px;
+        opacity: 0;
+        pointer-events: none;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        position: static;
+        margin: 20px auto;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 10001;
+        margin-top: 20%;
+        margin-right: 15%;
+    }
+
+
+
+
+    .js_LayoutBtn_RemoveCart .Delete_Container {
+        padding: 20px 15px 15px;
+        margin-bottom: 50px;
+        background: #ffffff;
+        color: #252a2b;
+    }
+
+
+
+    /* Active   */
+    .js_LayoutBtn_RemoveCart .active_Delete_Container{
+        opacity:1;
+        pointer-events:auto;
+        box-sizing:border-box;
+    }
+
+
+
+    .Delete_Container .Box_Delete_Header {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        color: #252a2b;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        font-size: 16px;
+        position: relative;
+        float: none;
+        line-height: normal;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .64);
+        max-width: calc(100% - 20px);
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+
+    .Delete_Container .Box_Delete_Under {
+        text-align: right;
+        padding-top: 13px;
+        margin-top: 13px;
+        padding: 13px 16px;
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        text-align: center;
+        padding: 8px 0px;
+    }
+
+
+    .Delete_Container .Box_Btn_Delete {
+        display: inline-block;
+        position: relative;
+        margin:7px;
+    }
+
+
+    .Delete_Container .Cancel_Btn {
+        position: relative;
+        display: inline-block;
+        min-width: 110px;
+        padding: 10px 25px;
+        line-height: normal;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+
+
+    .Delete_Container .Cancel_Btn {
+        border: 1px solid #000;
+        background-color: #000;
+        color: #fff;
+    }
+
+
+    .Delete_Container .Cancel_Btn {
+        width: 100px;
+    }
+
+    .Delete_Container .Btn_YesToDelete {
+        position: relative;
+        min-width: 110px;
+        padding: 10px 32px;
+        line-height: normal;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+
+    .Delete_Container .Btn_YesToDelete {
+        width: 100px;
+    }
+
+
+    .Delete_Container .Btn_YesToDelete {
+        border: 1px solid #ec0b0b;
+        background-color: #ec0b0b;
+        color: #fff;
+    }
+</style>
 
 
 
@@ -27,6 +270,11 @@
                             @if (!Model.CartItems.Any())
                             {
 
+                                <div class="Container_Error" style="position: absolute; left: 16%; bottom: 46%; ">
+                                    <p class="Error_Cart">Bạn chưa có sản phẩm trong giỏ hàng</p>
+
+                                    @Html.ActionLink("Trang chủ", "HomePage", "Home", null, new { @class = "Link_Home" })
+                                </div>
 
                             }
 
@@ -68,21 +316,19 @@
                                                                         Link tới trang sản phẩm trong giỏ hàng
                                                                     *@
 
-                                                                    <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+                                                                    <a href="@Url.Action("ProductPage", "ProductDetails", new { id = item.ProductId })">
                                                                         <img src="@item.ProductImage" />
                                                                     </a>
                                                                 </div>
 
                                                                 <div class="Item-Remove">
-
-                                                                    <a href="@Url.Action("DeleteItemsOnCart","ShoppingCart",new { id = item.ProductId})" class="Btn_Remove_Cart">
+                                                                    <button type="button" class="Btn_Remove_Cart" id="js_btn_Remove_Cart">
 
 
                                                                         <span class="Remove_Span">Xóa</span>
 
 
-                                                                    </a>
-
+                                                                    </button>
                                                                 </div>
                                                             </div>
 
@@ -96,7 +342,7 @@
                                                                         @*
                                                                             Link tới trang sản phẩm
                                                                         *@
-                                                                        <a href="@Url.Action("ProductPage","ProductDetails",new {id = item.ProductId})">
+                                                                        <a href="@Url.Action("ProductPage", "ProductDetails", new { id = item.ProductId })">
 
 
                                                                             @item.ProductName
@@ -105,13 +351,15 @@
 
                                                                     </h3>
 
-                                                                    @*<div class="Variant_Items">
+                                                                    @*
+                                                                        <div class="Variant_Items">
                                                                             <span>
 
                                                                                 Ram 16GB / SSD 256GB
 
                                                                             </span>
-                                                                        </div>*@
+                                                                        </div>
+                                                                    *@
 
                                                                 </div>
 
@@ -177,6 +425,29 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="js_LayoutBtn_RemoveCart">
+                                                        <div class="Box_Delete Delete_Container">
+                                                            <div class="Box_Delete_Header">
+                                                                Bạn chắc chắn muốn bỏ sản phẩm này ra khỏi giỏ hàng?
+                                                            </div>
+
+                                                            <div class="Box_Delete_Under">
+                                                                <div class="Box_Btn_Delete">
+
+                                                                    <button type="button" class="Cancel_Btn">Hủy</button>
+
+                                                                </div>
+
+
+                                                                <div class="Box_Btn_Delete">
+                                                                    <a href="@Url.Action("DeleteItemsOnCart","ShoppingCart",new {id = item.ProductId})" class="Btn_YesToDelete">Đồng ý</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -306,7 +577,6 @@
 
 
 
-
 <script language="javascript">
 
     //Dùng để update Quantity ứng với product Id đó
@@ -354,5 +624,47 @@
 
         form.submit();
     }
+
+
+
+    //Even Open and Close delete cartItems
+
+    var btn_Delete_Active = document.getElementById('js_btn_Remove_Cart');
+
+
+    var box_Container = document.querySelector('.js_LayoutBtn_RemoveCart');
+
+
+    var Inside_DeleteBox_Container = document.querySelector('.Delete_Container');
+
+
+    var btn_Cancel = document.querySelector('.Cancel_Btn');
+
+
+    btn_Delete_Active.addEventListener('click', function () {
+
+        if (!(box_Container.classList.contains('active_Js_RemoveCart'))) {
+
+            box_Container.classList.add('active_Js_RemoveCart')
+
+            Inside_DeleteBox_Container.classList.add('active_Delete_Container')
+        }
+
+        else {
+
+            box_Container.classList.remove('active_Js_RemoveCart')
+
+            Inside_DeleteBox_Container.classList.remove('active_Delete_Container')
+        }
+
+    })
+
+
+    btn_Cancel.addEventListener('click', function () {
+
+        box_Container.classList.remove('active_Js_RemoveCart')
+
+        Inside_DeleteBox_Container.classList.remove('active_Delete_Container')
+    })
 
 </script>
