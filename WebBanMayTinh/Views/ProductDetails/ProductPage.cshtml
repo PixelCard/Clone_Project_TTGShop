@@ -215,79 +215,79 @@
 
 
 
-<script language="javascript">
-    //Chức năng slider
-    window.addEventListener('load', function () {
-        const slider = document.querySelector('.Slider');
+@*<script language="javascript">
+    ////Chức năng slider
+    //window.addEventListener('load', function () {
+    //    const slider = document.querySelector('.Slider');
 
-        const sliderMain = document.querySelector('.slider-Main');
+    //    const sliderMain = document.querySelector('.slider-Main');
 
-        const sliderWrapper = document.querySelector('.slider-wrapper');
+    //    const sliderWrapper = document.querySelector('.slider-wrapper');
 
-        const sliderItems = document.querySelectorAll('.Slider_Items');
+    //    const sliderItems = document.querySelectorAll('.Slider_Items');
 
-        const Img_Dot_Items = document.querySelectorAll('.Items_Img_Dot');
+    //    const Img_Dot_Items = document.querySelectorAll('.Items_Img_Dot');
 
-        const NextBtn = document.querySelector('.Btn_nxt')
+    //    const NextBtn = document.querySelector('.Btn_nxt')
 
-        const PrevBtn = document.querySelector('.Btn_Prev');
-
-
-        //Lấy ra độ dài width của items slider
-        const sliderItemsWidth = sliderItems[0].offsetWidth;
+    //    const PrevBtn = document.querySelector('.Btn_Prev');
 
 
-        //Lấy ra số lượng phần tử
-        const sliderLength = sliderItems.length;
-
-        //left: -407px;
+    //    //Lấy ra độ dài width của items slider
+    //    const sliderItemsWidth = sliderItems[0].offsetWidth;
 
 
-        //Biến dùng để lưu số width di chuyển qua slider
-        let postionX = 0;
+    //    //Lấy ra số lượng phần tử
+    //    const sliderLength = sliderItems.length;
+
+    //    //left: -407px;
 
 
-        //Biến dùng để lưu số lần di chuyển
-        var index = 0;
+    //    //Biến dùng để lưu số width di chuyển qua slider
+    //    let postionX = 0;
 
 
-        //Xử lí slider
-        NextBtn.addEventListener('click', function () {
-            handleChangeSlider(1);
-        })
-
-        PrevBtn.addEventListener('click', function () {
-            handleChangeSlider(-1);
-        })
+    //    //Biến dùng để lưu số lần di chuyển
+    //    var index = 0;
 
 
+    //    //Xử lí slider
+    //    NextBtn.addEventListener('click', function () {
+    //        handleChangeSlider(1);
+    //    })
 
-        function handleChangeSlider(direction) {
-            //Nếu direction = -1 sẽ dùng cho prevBtn
-
-            if (direction === -1) {
-                if (index <= 0) {
-                    index = 0;
-                    return;
-                }
-
-                postionX += sliderItemsWidth;
-                sliderMain.style = `transform: translateX(${postionX}px)`
-                index--
-            }
+    //    PrevBtn.addEventListener('click', function () {
+    //        handleChangeSlider(-1);
+    //    })
 
 
-            //Nếu direction = 1 sẽ dùng cho NextBtn
-            if (direction === 1) {
-                if (index >= sliderLength - 1) {
-                    index = sliderLength - 1;
-                    return;
-                }
-                postionX -= sliderItemsWidth;
-                sliderMain.style = `transform: translateX(${postionX}px)`
-                index++;
-            }
-        }
-    })
-</script>
+
+    //    function handleChangeSlider(direction) {
+    //        //Nếu direction = -1 sẽ dùng cho prevBtn
+
+    //        if (direction === -1) {
+    //            if (index <= 0) {
+    //                index = 0;
+    //                return;
+    //            }
+
+    //            postionX += sliderItemsWidth;
+    //            sliderMain.style = `transform: translateX(${postionX}px)`
+    //            index--
+    //        }
+
+
+    //        //Nếu direction = 1 sẽ dùng cho NextBtn
+    //        if (direction === 1) {
+    //            if (index >= sliderLength - 1) {
+    //                index = sliderLength - 1;
+    //                return;
+    //            }
+    //            postionX -= sliderItemsWidth;
+    //            sliderMain.style = `transform: translateX(${postionX}px)`
+    //            index++;
+    //        }
+    //    }
+    //})
+</script>*@
 

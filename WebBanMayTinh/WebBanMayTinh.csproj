@@ -148,7 +148,7 @@
     <Compile Include="Controllers\ProductHistoryController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\Web_Ban_May_TinhEntities.cs" />
+    <Compile Include="Models\Db_Context\Web_Ban_May_TinhEntities.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,9 +200,9 @@
       <DependentUpon>Web_Ban_May_Tinh_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shared\Constants\SessionDataKeys.cs" />
-    <Compile Include="Shared\Constants\UserRoleConstants.cs" />
-    <Compile Include="Shared\Helpers\HashingHelper.cs" />
+    <Compile Include="AccountSession_Role\Constants\SessionDataKeys.cs" />
+    <Compile Include="AccountSession_Role\Constants\UserRoleConstants.cs" />
+    <Compile Include="AccountSession_Role\Helpers\HashingHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -728,6 +728,7 @@
     <Content Include="Views\ProductDetails\PV_ProductButtonAddCart.cshtml" />
     <Content Include="Views\ProductDetails\PV_SocialSharingProduct.cshtml" />
     <Content Include="Views\ProductDetails\PV_ProductBoxChooseToUpdrade.cshtml" />
+    <Content Include="Views\Account\AccountInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

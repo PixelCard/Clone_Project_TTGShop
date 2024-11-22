@@ -27,7 +27,7 @@ namespace WebBanMayTinh.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginVM model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var hashedPassword = HashingHelper.HashPassword(model.Password);
                 var user = db.Users.SingleOrDefault(u => u.Email == model.Email
@@ -39,17 +39,18 @@ namespace WebBanMayTinh.Controllers
                     Session[SessionDataKeys.Email] = user.Email;
                     Session[SessionDataKeys.UserRole] = user.UserRole;
 
-                    FormsAuthentication.SetAuthCookie(user.Email,true);
+                    FormsAuthentication.SetAuthCookie(user.Email, true);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("HomePage", "Home");
                 }
+
+
                 else
                 {
                     ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
-
                 }
             }
-           
+
             return View(model);
         }
         public ActionResult Register()
@@ -83,7 +84,7 @@ namespace WebBanMayTinh.Controllers
 
                 string hashedPassword = HashingHelper.HashPassword(model.Password);
 
-                    var user = new User
+                var user = new User
                 {
                     Email = model.Email,
                     Password = hashedPassword,
@@ -101,11 +102,10 @@ namespace WebBanMayTinh.Controllers
                     CustomerAddress = model.CustomerAddress,
                     CustomerBirthDay = model.CustomerBirthDay,
                     CustomerGender = genderselection,
-                    
                 };
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("HomePage", "Home");
             }
 
             return View(model);
@@ -113,8 +113,39 @@ namespace WebBanMayTinh.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("HomePage", "Home");
+        }
+
+
+        public ActionResult AccountInfo()
+        {
+            // Lấy email từ Session
+            string email = Session[SessionDataKeys.Email]?.ToString();
+
+            // Lấy thông tin user từ bảng User và Customer
+            var user = db.Users.SingleOrDefault(u => u.Email == email);
+            var customer = db.Customers.SingleOrDefault(c => c.Email_User == email);
+
+            if (user == null || customer == null)
+            {
+                return HttpNotFound("Không tìm thấy thông tin tài khoản.");
+            }
+
+            // Tạo ViewModel với dữ liệu
+            var model = new RegisterVM
+            {
+                Email = user.Email,
+                CustomerName = customer.CustomerName,
+                CustomerPhone = customer.CustomerPhone,
+                CustomerAddress = customer.CustomerAddress,
+                CustomerBirthDay = customer.CustomerBirthDay,
+                CustomerGender = customer.CustomerGender
+            };
+
+            return View(model);
         }
     }
 }
+
+
 

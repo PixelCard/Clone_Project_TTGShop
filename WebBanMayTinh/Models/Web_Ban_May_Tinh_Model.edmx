@@ -88,7 +88,7 @@
             <PropertyRef Name="Email" />
           </Key>
           <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="1000" Nullable="false" />
           <Property Name="UserRole" Type="nchar" MaxLength="1" Nullable="false" />
         </EntityType>
         <Association Name="FK__Order__CustomerI__2E1BDC42">
@@ -281,7 +281,7 @@
             <PropertyRef Name="Email" />
           </Key>
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="UserRole" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_User_Customer" FromRole="User" ToRole="Customer" />
         </EntityType>
