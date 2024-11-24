@@ -14,7 +14,113 @@
     <title>Quản lý đơn hàng</title>
     <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
     <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+
+    <style>
+        /* Tổng quan */
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f7ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        }
+
+        /* Khối chính */
+        div {
+        text-align: center;
+        }
+
+        h1.title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        }
+
+        p {
+        font-size: 16px;
+        color: #7f8c8d;
+        }
+
+        /* Form đăng nhập */
+        .login-form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+        }
+
+        .form-group {
+        margin-bottom: 20px;
+        }
+
+        .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #dfe6e9;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #2c3e50;
+        background-color: #f9f9f9;
+        outline: none;
+        transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+        border-color: #3498db;
+        background-color: #fff;
+        }
+
+        .login-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+        background-color: #2980b9;
+        }
+
+        /* Thông báo lỗi */
+        .text-danger {
+        font-size: 12px;
+        color: #e74c3c;
+        text-align: left;
+        margin-top: 5px;
+        }
+
+        /* Gợi ý quên mật khẩu */
+        .login-form p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #95a5a6;
+        }
+
+        .login-form p a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+        .login-form p a:hover {
+        color: #2980b9;
+        }
+    </style>
 </head>
+
+
 <body>
     <div class="login-container">
         <div class="login-header">

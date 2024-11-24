@@ -12,13 +12,8 @@ namespace WebBanMayTinh.Controllers
     public class ProductDetailsController : Controller
     {
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
-        // GET: ProductDetails
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult ProductPage(int? id, int? quantity, int? page)
+        public ActionResult ProductPage(int? id, int? quantity)
         {
 
             if (id == null)

@@ -11,6 +11,20 @@
     var userRole = Session["Role"];
 
 }
+
+
+<style>
+
+    .DownIcon.ActiveUpperIcon{
+        display: inline-block;
+         transform: scaleY(-1);
+         transition:1s;
+    }
+
+</style>
+
+
+
 <!-- Begin at Header -->
 <div class="templateHeader">
     <div class="mainHeader--height" >
@@ -255,14 +269,17 @@
 
     var Box_Info_Account = document.querySelector('.Info_BoxAccount');
 
+    var Icon_Down = document.querySelector('.DownIcon');
 
     Box_button_Account.addEventListener('click', function () {
         if (Box_Info_Account.style.display === "none") {
             Box_Info_Account.style.display = "block";
+            Icon_Down.classList.add('ActiveUpperIcon')
         }
 
         else {
             Box_Info_Account.style.display = "none";
+            Icon_Down.classList.remove('ActiveUpperIcon')
         }
     })
 

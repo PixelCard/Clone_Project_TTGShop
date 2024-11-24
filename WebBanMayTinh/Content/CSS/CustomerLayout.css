@@ -380,6 +380,7 @@ a {
     position: relative;
     left: 2px;
     top: 2px;
+    transition:1s;
 }
 
 .Header_search .Finding_Icon {

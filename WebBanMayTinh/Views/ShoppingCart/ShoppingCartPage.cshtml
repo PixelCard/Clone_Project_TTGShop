@@ -267,7 +267,7 @@
 
 
                             @* Chưa có product nào trong cart *@
-                            @if (!Model.CartItems.Any())
+                            @if ( !(Model.CartItems.Any()) )
                             {
 
                                 <div class="Container_Error" style="position: absolute; left: 16%; bottom: 46%; ">
@@ -373,7 +373,6 @@
                                                                             <span class="Reduce_Price">
 
                                                                                 @ValuePriceAfterPersenTage
-
                                                                             </span>
 
 
@@ -545,7 +544,7 @@
 
 
                                     <div class="Pay_Btn">
-                                        <a id="btnCart-checkout" class="checkout-btn btnred" href="#">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred" href="@Url.Action("CheckoutPage","ShoppingCart")">
                                             THANH TOÁN
                                         </a>
                                     </div>
@@ -624,6 +623,7 @@
 
         form.submit();
     }
+
 
 
 

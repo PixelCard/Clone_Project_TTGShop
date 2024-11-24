@@ -12,17 +12,12 @@ namespace WebBanMayTinh.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderDetail
+    public partial class Banner
     {
-        public int ID { get; set; }
-        public int ProductID { get; set; }
-        public int OrderID { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public string OrderStatus { get; set; }
-        public Nullable<decimal> TotalPrice { get; set; }
+        public int BannerID { get; set; }
+        public string BannerImage { get; set; }
+        public int CategoryID { get; set; }
     
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

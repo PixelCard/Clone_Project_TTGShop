@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WebBanMayTinh.Controllers
 {
-    public class CheckoutPageController : Controller
+    public class OrderController : Controller
     {
-        // GET: CheckoutPage
-        public ActionResult CheckoutPage()
+        // GET: Order
+        public ActionResult OrderSuccess()
         {
             return View();
         }

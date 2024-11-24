@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace WebBanMayTinh.Controllers
 {
-    public class CategoriesController : Controller
+    public class _CateLinkController : Controller
     {
         // GET: Categories
         public ActionResult PC_Gaming()

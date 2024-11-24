@@ -13,11 +13,6 @@ namespace WebBanMayTinh.Controllers
     public class SearchController : Controller
     {
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
-        // GET: Search
-        public ActionResult Index()
-        {
-            return View();
-        }
         
 
         public ActionResult SearchPage(string searchTerm,int? page)

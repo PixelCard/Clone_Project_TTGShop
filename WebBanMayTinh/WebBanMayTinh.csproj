@@ -141,13 +141,16 @@
     <Compile Include="Areas\Admin\Controllers\ProductDescriptionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\CheckoutPageController.cs" />
+    <Compile Include="Controllers\_CateLinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductHistoryController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Db_Context\Web_Ban_May_TinhEntities.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +161,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\CheckoutVM.cs" />
     <Compile Include="Models\ViewModel\LoginVM.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
@@ -705,7 +709,7 @@
     <Content Include="Views\Shared\Partital_View\PV_Footer_Layout.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_ShoppingCart_ProductDetails.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_HomePage_Layout.cshtml" />
-    <Content Include="Views\CheckoutPage\CheckoutPage.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckoutPage.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\ProductHistory\ProductHistory.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
@@ -729,6 +733,7 @@
     <Content Include="Views\ProductDetails\PV_SocialSharingProduct.cshtml" />
     <Content Include="Views\ProductDetails\PV_ProductBoxChooseToUpdrade.cshtml" />
     <Content Include="Views\Account\AccountInfo.cshtml" />
+    <Content Include="Views\Order\OrderSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

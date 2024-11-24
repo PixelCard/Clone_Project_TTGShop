@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76d5fa11caaa419290f11ad96da52201" Name="Diagram1" ZoomLevel="100">
+      <Diagram DiagramId="76d5fa11caaa419290f11ad96da52201" Name="Diagram1" ZoomLevel="92">
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Category" Width="1.5" PointX="3.625" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Customer" Width="1.5" PointX="6.875" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Order" Width="1.5" PointX="10.125" PointY="6.375" IsExpanded="true" />
@@ -19,6 +19,8 @@
         <AssociationConnector Association="Web_Ban_May_TinhModel.FK__OrderDeta__Produ__30F848ED" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Web_Ban_May_TinhModel.ProductDescription" Width="1.5" PointX="3.625" PointY="0.5" />
         <AssociationConnector Association="Web_Ban_May_TinhModel.FK_ProductID" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Banner" Width="1.5" PointX="1.25" PointY="3.625" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_CategoryID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

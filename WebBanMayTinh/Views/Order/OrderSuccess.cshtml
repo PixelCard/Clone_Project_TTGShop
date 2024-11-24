@@ -1,0 +1,18 @@
+﻿@model WebBanMayTinh.Models.ViewModel.CheckoutVM
+
+
+@{
+    ViewBag.Title = "OrderPage";
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+
+<div class="Main_Layout_Success" style="height:500px;">
+    <div class="container_fluid">
+        <div class="Header_Text" style="text-align:center">
+            <h2 style="margin-bottom:12px;">Cảm ơn bạn đã mua hàng</h2>
+            <a href="@Url.Action("HomePage","Home")" style="background-color:#ffd800">Trở về trang chủ</a>
+        </div>
+    </div>
+</div>
+

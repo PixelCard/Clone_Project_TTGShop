@@ -33,5 +33,6 @@ namespace WebBanMayTinh.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ProductDescription> ProductDescriptions { get; set; }
+        public virtual DbSet<Banner> Banners { get; set; }
     }
 }
