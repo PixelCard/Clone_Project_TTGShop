@@ -28,13 +28,13 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">/font-awesome/5.15.4/css/all.min.css
                     <ul class="navbar-nav flex-grow-1">
                         <li>@Html.ActionLink("Trang Chủ", "Index", "Admin/AdminHome", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Danh Mục Sản phẩm", "Index", "Admin/Categories", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Sản Phẩm", "Index", "Admin/Products", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Chi Tiết Sản Phẩm", "Index", "Admin/ProductDescriptions", new { area = "" }, new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Khách Hàng", "Index", "Admin/User", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Khách Hàng", "Index", "/Admin/AdminAccount/Index", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Giỏ hàng", "Index", "Admin/Order", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
                 </div>

@@ -3,13 +3,12 @@
     Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
 }
 
-<link rel="stylesheet" href="~/Content/CSS/RegisterPage.css" />
+<link rel="stylesheet" href="~/Content/CSS/Register.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
 <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
-
-<div class="login-container">
-    <div class="login-header">
+<div class="register-card">
+    <div class="register-header">
         <span class="inactive"><a href="/Account/Login" class="Link_inactive">Đăng nhập</a></span> |
         <span class="active">Đăng ký</span>
     </div>
@@ -61,7 +60,6 @@
         <div class="form-group password-group">
             <div class="input-wrapper">
                 @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password" } })
-                <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
             </div>
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
@@ -70,14 +68,13 @@
         <div class="form-group password-group">
             <div class="input-wrapper">
                 @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Xác nhận mật khẩu", @type = "password" } })
-                <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
             </div>
             @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
         </div>
 
 
         <!-- Nút đăng ký -->
-        <div class="form-group">
+        <div class="form-group action">
             <button type="submit" name="submit" value="Register" class="login-button">Đăng ký</button>
         </div>
 

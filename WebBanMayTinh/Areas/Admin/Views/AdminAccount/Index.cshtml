@@ -1,0 +1,147 @@
+﻿@model PagedList.IPagedList<WebBanMayTinh.Models.Customer>
+@using PagedList.Mvc;
+@using WebBanMayTinh.Shared.Constants;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/CSS/AdminInfo.css" />
+<div class="action-bar">
+    <p>
+        @Html.ActionLink("Tạo Mới", "Create", "", htmlAttributes: new { @class = "button" })
+    </p>
+    <div class="filters">
+        @using (Html.BeginForm())
+        {
+            var currentRole = Session[SessionDataKeys.UserRole].ToString();
+
+            <div class="search-bar">
+                <i class="ti-search"></i>
+                @Html.TextBox("SearchString")
+            </div>
+            if (currentRole != UserRoleConstants.Staff)
+            {
+                <div class="dropdown">
+                    <button type="button" onclick="toggleRoleFilter()" class="dropbtn">
+                        <span>Vai trò: </span>
+                        <span class="value">Role</span>
+                        <i class="ti-angle-down"></i>
+                    </button>
+                    <div id="role-dropdown" class="dropdown-content">
+                        @Html.ActionLink("Tất cả", "Index")
+                        @Html.ActionLink("Khách hàng", "Index")
+                        @if (currentRole == UserRoleConstants.Admin || currentRole != UserRoleConstants.Manager)
+                        {
+                            @Html.ActionLink("Nhân viên", "Index")
+                        }
+                        @if (currentRole != UserRoleConstants.Admin)
+                        {
+                            @Html.ActionLink("Quản lý", "Index")
+                            @Html.ActionLink("Admin", "Index")
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            Tên người dùng
+        </th>
+        <th>
+            Vai trò
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+
+        <th>
+            Email
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @{
+                if (item.User.UserRole == UserRoleConstants.Staff)
+                {
+                    <div class="user-role-chip staff">Nhân viên</div>
+                }
+                else if (item.User.UserRole == UserRoleConstants.Manager)
+                {
+                    <div class="user-role-chip manager">Quản lý</div>
+                }
+                else if (item.User.UserRole == UserRoleConstants.Admin)
+                {
+                    <div class="user-role-chip admin">Admin</div>
+                }
+                else
+                {
+                    <div class="user-role-chip customer">Khách hàng</div>
+                }
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerPhone)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Email_User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerAddress)
+        </td>
+    </tr>
+    }
+
+</table>
+<div class="footer">
+    <p>Hiển thị từ  @((Model.PageNumber -1) * Model.PageSize + 1) đến @(Math.Min(Model.PageNumber * Model.PageSize, Model.TotalItemCount)) của tổng số @Model.TotalItemCount dữ liệu</p>
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, searchString = ViewBag.CurrentFilter }),
+    new PagedListRenderOptions()
+                {
+                    DisplayLinkToIndividualPages = true,
+        DisplayPageCountAndCurrentLocation = false,
+        MaximumPageNumbersToDisplay = 10,
+        LiElementClasses = new string[] { "page-item" },
+        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        DisplayLinkToNextPage = PagedListDisplayMode.Always
+    })
+</div>
+
+
+<script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function toggleRoleFilter() {
+        document.getElementById("role-dropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
