@@ -1,0 +1,190 @@
+﻿.action-bar {
+    display: flex;
+}
+
+
+    .action-bar p {
+        flex: auto;
+    }
+
+        .action-bar p .button {
+            background-color: orange;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+
+    .action-bar .filters form {
+        display: flex;
+        gap: 12px;
+    }
+
+
+        
+
+        .action-bar .filters .search-bar {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 4px 8px;
+            align-items: center;
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-bar .filters .search-bar input:focus {
+            outline: none;
+        }
+
+        .action-bar .filters .search-bar {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 4px 8px;
+        }
+
+            .action-bar .filters .search-bar input {
+                background: none;
+                border: none;
+                box-shadow: none;
+            }
+
+            .filters .search-bar input:selection {
+                background: none;
+                border: none;
+            }
+
+/* Dropdown Button */
+.dropbtn {
+    background: #f0f0f0;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+table tr th {
+    color: #b9b9b9;
+}
+
+table tr td {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+table tr:not(:first-child):hover {
+    background: rgb(255 165 0 / 14%);
+    cursor: pointer;
+}
+
+table tr td .user-role-chip {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 24px;
+    width: auto;
+    min-width: auto;
+    position: relative;
+    float: left;
+}
+
+    table tr td .user-role-chip.customer {
+        background-color: rgb(255 165 0 / 10%);
+        color: orange;
+    }
+
+    table tr td .user-role-chip.staff {
+        background-color: #198754;
+        color: green;
+    }
+
+    table tr td .user-role-chip.manager {
+        background-color: rgb(128 0 128 / 10%);
+        color: purple;
+    }
+
+    table tr td .user-role-chip.admin {
+        background-color: rgb(0 0 0 / 10%);
+        color: #000000;
+    }
+
+.footer {
+    display: flex;
+}
+
+    .footer p {
+        color: #b9b9b9;
+        padding-right: 24px;
+        flex: auto;
+    }
+
+    .footer .pagination-container .page-item {
+        background: #f1f2f3;
+        padding: 2px 4px;
+        border-radius: 4px;
+        color: black;
+        border: none;
+        min-width: 24px;
+        text-align: center;
+    }
+
+        .footer .pagination-container .page-item:disabled,
+        .footer .pagination-container .page-item[disabled=disabled],
+        .footer .pagination-container .page-item[disabled]:hover {
+            background-color: #dbdbdb;
+            color: #666666;
+            cursor: unset;
+        }
+
+        .footer .pagination-container .page-item:hover {
+            background: #ffde7b;
+            color: black;
+            cursor: pointer;
+        }
+
+        .footer .pagination-container .page-item.active {
+            background: #ffc107;
+            color: white;
+            cursor: pointer;
+        }

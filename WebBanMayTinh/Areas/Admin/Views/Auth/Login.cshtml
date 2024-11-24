@@ -10,25 +10,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/CSS/LoginAD.css" />
+    <link rel="stylesheet" href="~/Content/CSS/LoginAD.css" />
+
 </head>
 <body>
-   <div>
+ <div class="login-card">
+   <div class="header"
+        >
        <h1 class="title">
-           Chào mừng bạn trở lại
+           TTG Shop - Admin
        </h1>
-       <p> Nhập tài khoản và mật khẩu để đăng nhập</p>
+       <p> Vui lòng nhập tài khoản và mật khẩu để đăng nhập</p>
    </div>
-   <div>
-       @using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { @class = "login-form" }))
+   <div class="login-form">
+       @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
        {
            @Html.AntiForgeryToken()
            <div class="form-group">
-               @Html.EditorFor(m => m.Email, new { @class = "form-control", @placeholder = "Vui lòng nhập email" })
+               @Html.EditorFor(m => m.Email, new { @placeholder = "Vui lòng nhập email" })
                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
            </div>
            <div class="form-group">
-               @Html.EditorFor(m => m.Password, new { @class = "form-control", @placeholder = "Vui lòng nhập mật khẩu" })
+               @Html.EditorFor(m => m.Password, new  {@placeholder = "Vui lòng nhập mật khẩu" })
                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
            </div>
            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -37,5 +40,6 @@
            </div>
        }
    </div>
+  </div>
 </body>
 </html>

@@ -4,19 +4,17 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
 }
-<link rel="stylesheet" href="~/Content/CSS/LoginPage.css" />
+<link rel="stylesheet" href="~/Content/CSS/Login.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý đơn hàng</title>
-    <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">
     <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-card">
         <div class="login-header">
             <span class="active">Đăng nhập</span> |
             <span class="inactive"><a href="/Account/Register" class="Link_inactive">Đăng ký</a></span>
@@ -33,7 +31,7 @@
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group"> 
+            <div class="form-group action"> 
                 <button type="submit" name="submit" value="Login" class="login-button">ĐĂNG NHẬP</button>
             </div>
             @*<p class="captcha-info">
@@ -41,8 +39,6 @@
                 <a href="#">Privacy Policy</a> and
                 <a href="#">Terms of Service</a> apply.
             </p>*@
-
-
         }
         <div class="login-footer">
             <p>Bạn chưa có tài khoản? <a href="#">Quên mật khẩu?</a></p>
