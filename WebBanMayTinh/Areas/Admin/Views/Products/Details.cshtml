@@ -7,53 +7,98 @@
 
 <h2>Details</h2>
 
+
+<style>
+
+    .dl-horizontal {
+        display: flex;
+    }
+
+        .dl-horizontal .Left_Side {
+            max-width: 50%
+        }
+
+    .Left_Side .form-group {
+        max-width: 30%;
+        margin-bottom: 7px;
+    }
+
+    .form-group .Inside_Box_Text {
+        width: 400px;
+    }
+
+    .dl-horizontal .RightSide {
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .RightSide img {
+        width: 60%
+    }
+
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 347px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .Function p{
+        margin-top:1rem;
+    }
+</style>
+
 <div>
     <h4>Product</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+    <div class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+        <div class="Left_Side">
+            <div class="form-group">
+                <strong>ProductName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductName
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductStatus)
-        </dt>
+            <div class="form-group">
+                <strong>ProductStatus</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductStatus
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductStatus)
-        </dd>
+            <div class="form-group">
+                <strong>ProductPrice</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductPrice
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </dt>
+            <div class="form-group">
+                <strong>CategoryName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.Category.CategoryName
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductPrice)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductImage)
-        </dt>
+            <div class="Function">
+                <p>
+                    @Html.ActionLink("Đồng ý chỉnh sửa", "Edit", new { id = Model.ProductID }) |
+                    @Html.ActionLink("Quay trở về trang sản phẩm", "Index")
+                </p>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductImage)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
+        <div class="RightSide">
+            <div class="form-group">
+                <img src="@Model.ProductImage"></img>
+            </div>
+        </div>
 
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

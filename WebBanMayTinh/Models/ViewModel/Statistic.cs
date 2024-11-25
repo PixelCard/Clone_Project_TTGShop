@@ -11,6 +11,6 @@ namespace WebBanMayTinh.Models.ViewModel
 
         public decimal quantity { get; set; }
 
-        public decimal TotalRevenue {get; set;}
+        public decimal TotalRevenue { get; set; } = 0;
     }
 }
