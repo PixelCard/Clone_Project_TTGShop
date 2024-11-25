@@ -1,0 +1,94 @@
+﻿@model WebBanMayTinh.Models.ViewModel.RegisterVM
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/CSS/RegisterAD.css" />
+
+</head>
+<body>
+    <div class="register-card">
+        <div class="header">
+            <h1 class="title">
+                TTG Shop - Admin
+            </h1>
+            <p> Vui lòng nhập thông tin để đăng ký</p>
+        </div>
+        <div class="register-form">
+            @using (Html.BeginForm("Create", "AdminAccount", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserRole, "Chọn quyền:")
+                    @Html.DropDownListFor(model => model.UserRole, (SelectList)ViewBag.AvailableRoles, "Chọn quyền", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserRole, "", new { @class = "text-danger" })
+                </div>
+                <!-- Họ và tên -->
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Họ và tên" } })
+                    @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Giới tính -->
+                <div class="form-group gender">
+                    <label>
+                        @Html.RadioButtonFor(model => model.CustomerGender, "Nam") Nam
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(model => model.CustomerGender, "Nữ") Nữ
+                    </label>
+                    @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Ngày sinh -->
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CustomerBirthDay, new { htmlAttributes = new { @placeholder = "mm/dd/yyyy" } })
+                    @Html.ValidationMessageFor(model => model.CustomerBirthDay, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CustomerAddress, new { htmlAttributes = new { @placeholder = "Địa chỉ" } })
+                    @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CustomerPhone, new { htmlAttributes = new { @placeholder = "Số điện thoại" } })
+                    @Html.ValidationMessageFor(model => model.CustomerPhone, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Mật khẩu -->
+                <div class="form-group password-group">
+                    <div class="input-wrapper">
+                        @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Xác nhận mật khẩu -->
+                <div class="form-group password-group">
+                    <div class="input-wrapper">
+                        @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Xác nhận mật khẩu", @type = "password" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <button tybe="submit" name="submit" value="Register" class="register-button">Đăng ký</button>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
