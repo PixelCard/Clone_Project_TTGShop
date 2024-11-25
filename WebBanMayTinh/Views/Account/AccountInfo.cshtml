@@ -112,6 +112,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"><a href="@Url.Action("AccountInfo","Account",null)">Thông tin tài khoản</a></li>
                     <li class="list-group-item"><a href="#">Danh sách địa chỉ</a></li>
+                    <li class="list-group-item"><a href="@Url.Action("ProductHistory","ProductHistory",null)">Lịch sử đơn hàng</a></li>
                     <li class="list-group-item"><a href="@Url.Action("LogOut","Account",null)">Đăng xuất</a></li>
                 </ul>
             </div>
@@ -125,6 +126,7 @@
                 <p><strong>Email:</strong> @Model.Email</p>
                 <p><strong>Số Điện Thoại:</strong> @Model.CustomerPhone</p>
                 <p><strong>Địa Chỉ:</strong> @Model.CustomerAddress</p>
+                <p><a href="@Url.Action("ProductHistory","ProductHistory",null)">Lịch sử đơn hàng</a></p>
                 <hr>
                 <div class="no-orders">
                     <p>Bạn chưa đặt mua sản phẩm.</p>
