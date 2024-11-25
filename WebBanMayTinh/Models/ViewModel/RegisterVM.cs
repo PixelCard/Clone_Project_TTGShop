@@ -44,6 +44,10 @@ namespace WebBanMayTinh.Models.ViewModel
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập vai trò")]
+        [Display(Name = "Vai trò")]
+        public string UserRole { get; set; }
+
 
     }
 }

@@ -47,5 +47,6 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
 
             return View(model);
         }
+
     }
 }

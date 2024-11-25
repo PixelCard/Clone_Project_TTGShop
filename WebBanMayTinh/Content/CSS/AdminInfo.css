@@ -136,7 +136,7 @@ table tr td .user-role-chip {
 
     table tr td .user-role-chip.staff {
         background-color: #198754;
-        color: green;
+        color: white;
     }
 
     table tr td .user-role-chip.manager {

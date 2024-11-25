@@ -235,6 +235,7 @@
     <Content Include="Content\CSS\ProductHistoryPage.css" />
     <Content Include="Content\CSS\Product_Page.css" />
     <Content Include="Content\CSS\Register.css" />
+    <Content Include="Content\CSS\RegisterAD.css" />
     <Content Include="Content\CSS\SearchPage.css" />
     <Content Include="Content\CSS\ShoppingCart.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
@@ -680,6 +681,7 @@
     <Content Include="Areas\Admin\Views\ProductDescriptions\PV_Create_Edit_ProductDescription.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAccount\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminAccount\Create.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
