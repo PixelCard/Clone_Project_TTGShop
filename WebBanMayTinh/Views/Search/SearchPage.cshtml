@@ -26,7 +26,7 @@
 
                 <h1 class="Tittle">Tìm Kiếm</h1>
 
-                <p class="Count_Product_InFinding">Có <strong> @Model.Products_SearchPageList.Count()  Sản phẩm</strong> cho tìm kiếm</p>
+                <p class="Count_Product_InFinding">Có <strong> @Model.Products_SearchPageList.TotalItemCount  Sản phẩm</strong> cho tìm kiếm</p>
             </div>
 
 
@@ -46,6 +46,7 @@
                             <div class="Owl-stage" style="width:2412px;flex-wrap:wrap">
                                 @foreach (var items in Model.Products_SearchPageList)
                                 {
+
                                     var ValuePersentageChanged = items.DiscountPercentage.HasValue ? Math.Floor(items.DiscountPercentage.Value * 100).ToString("0.##") : "0";
 
 
@@ -64,7 +65,7 @@
                                                     <div class="Product_Img">
                                                         <div class="lazy-img first-img">
 
-                                                            <a href="~/ProductDetails/ProductPage">
+                                                            <a href="@Url.Action("ProductPage", "ProductDetails", new {id = items.ProductID})">
 
                                                                 <img src="@items.ProductImage" />
 

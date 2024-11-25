@@ -181,6 +181,7 @@ namespace WebBanMayTinh.Controllers
                         TotalPrice = item.TotalPrice,
                     }).ToList()
                 };
+
                 //lưu đơn hàng vào csdl
                 db.Orders.Add(order);
                 db.SaveChanges();
