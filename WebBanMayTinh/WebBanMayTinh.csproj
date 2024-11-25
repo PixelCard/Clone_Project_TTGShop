@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,19 +130,86 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductDescriptionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\_CateLinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ProductHistoryController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Db_Context\Web_Ban_May_TinhEntities.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\CheckoutVM.cs" />
+    <Compile Include="Models\ViewModel\LoginVM.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductDescription.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\Cart.cs" />
+    <Compile Include="Models\ViewModel\CartItem.cs" />
+    <Compile Include="Models\ViewModel\CartService.cs" />
+    <Compile Include="Models\ViewModel\OrderVM.cs" />
+    <Compile Include="Models\ViewModel\ProductSearchVM.cs" />
+    <Compile Include="Models\ViewModel\ProductDetailsVM.cs" />
+    <Compile Include="Models\ViewModel\RegisterVM.cs" />
+    <Compile Include="Models\ViewModel\SearchVM.cs" />
+    <Compile Include="Models\Web_Ban_May_Tinh_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Web_Ban_May_Tinh_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Web_Ban_May_Tinh_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Web_Ban_May_Tinh_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Web_Ban_May_Tinh_Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AccountSession_Role\Constants\SessionDataKeys.cs" />
+    <Compile Include="AccountSession_Role\Constants\UserRoleConstants.cs" />
+    <Compile Include="AccountSession_Role\Helpers\HashingHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -143,7 +228,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\CSS\MasterLayout.css" />
+    <Content Include="Content\CSS\AdminInfo.css" />
+    <Content Include="Content\CSS\CheckOutPage.css" />
+    <Content Include="Content\CSS\CustomerLayout.css" />
+    <Content Include="Content\CSS\HomePage.css" />
+    <Content Include="Content\CSS\Login.css" />
+    <Content Include="Content\CSS\LoginAD.css" />
+    <Content Include="Content\CSS\ProductHistoryPage.css" />
+    <Content Include="Content\CSS\Product_Page.css" />
+    <Content Include="Content\CSS\Register.css" />
+    <Content Include="Content\CSS\RegisterAD.css" />
+    <Content Include="Content\CSS\SearchPage.css" />
+    <Content Include="Content\CSS\ShoppingCart.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\demo-files\demo.css" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\ie7\ie7.css" />
@@ -503,11 +599,49 @@
     <Content Include="Content\Icon\themify-icons-font\themify-icons\SVG\zoom-in.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\SVG\zoom-out.svg" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\themify-icons.css" />
+    <Content Include="Content\IMG\3144456.png" />
+    <Content Include="Content\IMG\3262386.png" />
     <Content Include="Content\IMG\Check_logo_footer.jpg" />
+    <Content Include="Content\IMG\erroricon.png" />
+    <Content Include="Content\IMG\Img_HandDown.jpg" />
     <Content Include="Content\IMG\logo.jpg" />
+    <Content Include="Content\IMG\Banner1.png" />
+    <Content Include="Content\IMG\Banner2.png" />
+    <Content Include="Content\IMG\Banner3.png" />
+    <Content Include="Content\IMG\Banner4.png" />
+    <Content Include="Content\IMG\Banner5.png" />
+    <Content Include="Content\IMG\Banner6.png" />
+    <Content Include="Content\IMG\Banner7.png" />
+    <Content Include="Content\IMG\Banner8.png" />
+    <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_9.png" />
+    <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_10.png" />
+    <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_11.png" />
+    <Content Include="Content\IMG\Product_Items_Img\CollectionProduct_12.png" />
+    <Content Include="Content\IMG\Product_Page_Img\Product1.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product2.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product3.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\Product4.jpg" />
+    <Content Include="Content\IMG\Product_Page_Img\product_banner.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_1_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_3_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_4_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_5_ico.png" />
+    <Content Include="Content\IMG\Product_Page_Img\product_deliverly_6_ico.png" />
+    <Content Include="Content\IMG\trash-bin-clipart-vector-art-illustration_761413-26114.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Web_Ban_May_Tinh_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Web_Ban_May_Tinh_Model.Context.cs</LastGenOutput>
+      <DependentUpon>Web_Ban_May_Tinh_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Web_Ban_May_Tinh_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Web_Ban_May_Tinh_Model.edmx</DependentUpon>
+      <LastGenOutput>Web_Ban_May_Tinh_Model.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -518,6 +652,48 @@
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\fonts\themify.woff" />
     <Content Include="Content\Icon\themify-icons-font\themify-icons\Themify IconFonts 5-23-2014.json" />
+    <EntityDeploy Include="Models\Web_Ban_May_Tinh_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Web_Ban_May_Tinh_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Web_Ban_May_Tinh_Model.edmx.diagram">
+      <DependentUpon>Web_Ban_May_Tinh_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PV_Footer_Admin_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\PVCreate_Edit_Product.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\PV_IndexProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\PV_IndexProductDescriptions.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDescriptions\PV_Create_Edit_ProductDescription.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminAccount\Index.cshtml" />
+<<<<<<< Updated upstream
+    <Content Include="Areas\Admin\Views\AdminAccount\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PV_Header_Admin_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+=======
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
+>>>>>>> Stashed changes
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -540,12 +716,46 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\MasterLayout.cshtml" />
-    <Content Include="Views\Home\Customer.cshtml" />
+    <Content Include="Views\Shared\_CustomerLayout.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Shared\_ProductDetailsLayout.cshtml" />
+    <Content Include="Views\ProductDetails\ProductPage.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoppingCartPage.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Header_Layout.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Footer_Layout.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Section_ShoppingCart_ProductDetails.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Section_HomePage_Layout.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckoutPage.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\ProductHistory\ProductHistory.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_CategoriesLayout.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Categories.cshtml" />
+    <Content Include="Views\_Catelink\PC_Gaming.cshtml" />
+    <Content Include="Views\_Catelink\PC_Working.cshtml" />
+    <Content Include="Views\_Catelink\PC_VanPhong.cshtml" />
+    <Content Include="Views\_Catelink\PC_AMD_Gaming.cshtml" />
+    <Content Include="Views\_Catelink\PC_Core_Ultra.cshtml" />
+    <Content Include="Views\_Catelink\PC_GiaLap_MoPhong.cshtml" />
+    <Content Include="Views\_Catelink\PC_MINI.cshtml" />
+    <Content Include="Views\_Catelink\Linhkien_PhuKKien.cshtml" />
+    <Content Include="Views\_Catelink\ManHinh.cshtml" />
+    <Content Include="Views\_Catelink\Gaming_Gear.cshtml" />
+    <Content Include="Views\_Catelink\KhungSatTreoManHinh.cshtml" />
+    <Content Include="Views\Search\SearchPage.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductDescription_Table.cshtml" />
+    <Content Include="Views\ProductDetails\PV_Product_Policy.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductButtonAddCart.cshtml" />
+    <Content Include="Views\ProductDetails\PV_SocialSharingProduct.cshtml" />
+    <Content Include="Views\ProductDetails\PV_ProductBoxChooseToUpdrade.cshtml" />
+    <Content Include="Views\Account\AccountInfo.cshtml" />
+    <Content Include="Views\Order\OrderSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -573,6 +783,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -607,7 +820,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

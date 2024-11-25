@@ -1,0 +1,670 @@
+﻿@model WebBanMayTinh.Models.ViewModel.Cart
+
+@{
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/CSS/ShoppingCart.css" />
+
+
+
+<style>
+
+    .Main_Details .Error_Cart {
+        text-align: center;
+        position: relative;
+        top: 46%;
+        left: 35%;
+        bottom: 0;
+        transform: translateX(-15%);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 16px;
+    }
+
+    .Container_Link_To_Home {
+        margin-top: 5px;
+        margin-left: 18px;
+        text-align: center;
+    }
+
+    .Link_Home {
+        text-decoration: none;
+        opacity: 0.7;
+        background: #151515;
+        border-radius: 4px;
+        display: block;
+        background: red;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 4px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 0;
+        margin-top: 12px;
+        margin-left: -18px;
+        width: 100%;
+        position: absolute;
+        left: 25%;
+    }
+
+
+    .Container_Link_To_Home .Link_Home {
+        position: absolute;
+        left: 3%;
+        width: 98%;
+    }
+
+
+    .Section_Main_left .site_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.53);
+        z-index: -1;
+        transition: .3s
+    }
+
+    .Section_Main_left .SideBar_left.active_Menu {
+        position: absolute;
+        z-index: 99;
+        left: 12.1%;
+    }
+
+    .Section_Main {
+        overflow: unset;
+    }
+
+    .table_Items_Cart .js_LayoutBtn_RemoveCart {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 10000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+
+
+    /* Active */
+    .table_Items_Cart .active_Js_RemoveCart{
+        opacity:1;
+        pointer-events:auto;
+    }
+
+
+
+    .js_LayoutBtn_RemoveCart .Delete_Container {
+        width: 478px;
+        opacity: 0;
+        pointer-events: none;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        position: static;
+        margin: 20px auto;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 10001;
+        margin-top: 20%;
+        margin-right: 15%;
+    }
+
+
+
+
+    .js_LayoutBtn_RemoveCart .Delete_Container {
+        padding: 20px 15px 15px;
+        margin-bottom: 50px;
+        background: #ffffff;
+        color: #252a2b;
+    }
+
+
+
+    /* Active   */
+    .js_LayoutBtn_RemoveCart .active_Delete_Container{
+        opacity:1;
+        pointer-events:auto;
+        box-sizing:border-box;
+    }
+
+
+
+    .Delete_Container .Box_Delete_Header {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        color: #252a2b;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        font-size: 16px;
+        position: relative;
+        float: none;
+        line-height: normal;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .64);
+        max-width: calc(100% - 20px);
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+
+    .Delete_Container .Box_Delete_Under {
+        text-align: right;
+        padding-top: 13px;
+        margin-top: 13px;
+        padding: 13px 16px;
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        text-align: center;
+        padding: 8px 0px;
+    }
+
+
+    .Delete_Container .Box_Btn_Delete {
+        display: inline-block;
+        position: relative;
+        margin:7px;
+    }
+
+
+    .Delete_Container .Cancel_Btn {
+        position: relative;
+        display: inline-block;
+        min-width: 110px;
+        padding: 10px 25px;
+        line-height: normal;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+
+
+    .Delete_Container .Cancel_Btn {
+        border: 1px solid #000;
+        background-color: #000;
+        color: #fff;
+    }
+
+
+    .Delete_Container .Cancel_Btn {
+        width: 100px;
+    }
+
+    .Delete_Container .Btn_YesToDelete {
+        position: relative;
+        min-width: 110px;
+        padding: 10px 32px;
+        line-height: normal;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+
+    .Delete_Container .Btn_YesToDelete {
+        width: 100px;
+    }
+
+
+    .Delete_Container .Btn_YesToDelete {
+        border: 1px solid #ec0b0b;
+        background-color: #ec0b0b;
+        color: #fff;
+    }
+</style>
+
+
+
+<div class="Layout_Cart">
+    <div class="Wrapper_Main_Content_Layout_Cart">
+        <div class="Content_Layout_Cart">
+            <div class="container_fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-12 contentCart-detail">
+                        <div class="Main_Details">
+                            <h1 class="Heading_Cart">
+                                Giỏ hàng của bạn
+                            </h1>
+
+
+                            @* Chưa có product nào trong cart *@
+                            @if ( !(Model.CartItems.Any()) )
+                            {
+
+                                <div class="Container_Error" style="position: absolute; left: 16%; bottom: 46%; ">
+                                    <p class="Error_Cart">Bạn chưa có sản phẩm trong giỏ hàng</p>
+
+                                    @Html.ActionLink("Trang chủ", "HomePage", "Home", null, new { @class = "Link_Home" })
+                                </div>
+
+                            }
+
+
+                            else
+                            {
+
+                                <div class="Main_Cointainer_for_ListPageForm">
+                                    <form action="" method="post" id="cartFormPage">
+                                        <div class="Cart_row">
+                                            <div class="What_Items_You_Put_On_Cart" style="display: flex; justify-content: space-between;">
+                                                Bạn đang có @Model.CartItems.Count() sản phẩm
+
+
+                                                <div class="DeleteAllCart" style="width:4%;overflow:hidden">
+                                                    <a href="@Url.Action("ClearCart","ShoppingCart")"><img src="~/Content/IMG/trash-bin-clipart-vector-art-illustration_761413-26114.jpg" style="width:100%" /></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_Items_Cart">
+                                                @foreach (var item in Model.CartItems)
+                                                {
+
+
+                                                    string ValuePriceAfterPersenTage = "";
+
+
+                                                    decimal ValueDiscount = item.ProductPriceDiscount ?? 0;
+
+
+                                                    ValuePriceAfterPersenTage = (ValueDiscount).ToString("N0");
+
+                                                    <div class="cointainer_ItemsCart">
+                                                        <div class="Items_Collection">
+                                                            <div class="Left">
+                                                                <div class="Items-img">
+
+                                                                    @*
+                                                                        Link tới trang sản phẩm trong giỏ hàng
+                                                                    *@
+
+                                                                    <a href="@Url.Action("ProductPage", "ProductDetails", new { id = item.ProductId })">
+                                                                        <img src="@item.ProductImage" />
+                                                                    </a>
+                                                                </div>
+
+                                                                <div class="Item-Remove">
+                                                                    <button type="button" class="Btn_Remove_Cart" id="js_btn_Remove_Cart">
+
+
+                                                                        <span class="Remove_Span">Xóa</span>
+
+
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="right">
+                                                                <div class="Items_Info">
+
+                                                                    <h3 class="Title_Items">
+
+
+                                                                        @*
+                                                                            Link tới trang sản phẩm
+                                                                        *@
+                                                                        <a href="@Url.Action("ProductPage", "ProductDetails", new { id = item.ProductId })">
+
+
+                                                                            @item.ProductName
+
+                                                                        </a>
+
+                                                                    </h3>
+
+                                                                    @*
+                                                                        <div class="Variant_Items">
+                                                                            <span>
+
+                                                                                Ram 16GB / SSD 256GB
+
+                                                                            </span>
+                                                                        </div>
+                                                                    *@
+
+                                                                </div>
+
+                                                                <div class="Items_Price">
+
+                                                                    <p class="Price">
+
+                                                                        @* Nếu item của products đó chứa discount value sẽ hiện discount value và value gốc *@
+                                                                        @if (item.ProductPriceDiscount != 0)
+                                                                        {
+                                                                            <span class="Reduce_Price">
+
+                                                                                @ValuePriceAfterPersenTage
+                                                                            </span>
+
+
+                                                                            <del class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </del>
+                                                                        }
+
+
+                                                                        //Còn ko chỉ hiện mỗi value gốc
+                                                                        else
+                                                                        {
+                                                                            <span class="Orignal_Price">
+                                                                                @item.productPrice.ToString("N0")
+                                                                            </span>
+                                                                        }
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="Total">
+
+                                                                <div class="Price_Total">
+
+                                                                    <div class="Title_Price">
+                                                                        <span class="line-item-total">@item.TotalPrice.ToString("N0")</span>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="Item_quantity">
+                                                                    @* Count Your Buying and Some Button to buy or add On cart  *@
+                                                                    <div class="Product_Count_And_BtnForBuying">
+                                                                        <div class="BlockForBtnBuyingAndProductCount clearfix">
+                                                                            <div class="Product_Count">
+                                                                                @using (Html.BeginForm("UpdateQuantity", "ShoppingCart", FormMethod.Post))
+                                                                                {
+
+                                                                                    <input type="hidden" name="id" value="@item.ProductId" />
+                                                                                    <button class="Decrease_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity - 1)">-</button>
+                                                                                    <input type="text" value="@item.Quantity" readonly min="100" class="Quantity-Product" />
+                                                                                    <button class="Upper_Count qtybtn" type="button" onclick="CartUpdateQuantity(@item.ProductId,@item.Quantity + 1)">+</button>
+
+
+
+                                                                                }
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="js_LayoutBtn_RemoveCart">
+                                                        <div class="Box_Delete Delete_Container">
+                                                            <div class="Box_Delete_Header">
+                                                                Bạn chắc chắn muốn bỏ sản phẩm này ra khỏi giỏ hàng?
+                                                            </div>
+
+                                                            <div class="Box_Delete_Under">
+                                                                <div class="Box_Btn_Delete">
+
+                                                                    <button type="button" class="Cancel_Btn">Hủy</button>
+
+                                                                </div>
+
+
+                                                                <div class="Box_Btn_Delete">
+                                                                    <a href="@Url.Action("DeleteItemsOnCart","ShoppingCart",new {id = item.ProductId})" class="Btn_YesToDelete">Đồng ý</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-12 sidebarCart-sticky">
+                        <div class="Wrapper-Pay_Layout">
+                            <div class="Pay_Top_Layout Sumary_Block">
+                                <h2 class="Pay_Tittle">Thông tin đơn hàng</h2>
+
+                                <div class="Time_Shipping">
+                                    <div class="Inside_Box_Time">
+                                        <div class="Box_Time_Title">
+                                            <p class="txt_title">Thời gian giao hàng</p>
+                                            <p class="txt_time">
+                                                <i class="far fa-clock"></i>
+                                                <span>Chọn thời gian</span>
+                                            </p>
+                                        </div>
+
+
+                                        <div class="Box_Time_Radio" id="picktime_radio">
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-1" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-1">Giao khi có hàng</label>
+                                            </div>
+
+                                            <div class="Radio_item">
+                                                <input type="radio" class="input-radio" id="timeRadios-2" name="timeRadios" />
+                                                <label class="label-radio" for="timeRadios-2">Chọn thời gian</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="Pay_Total">
+                                    <p>
+                                        Tổng tiền
+                                        <span class="Total_Price_To_Pay">@Model.TotalValue().ToString("N0")</span>
+                                    </p>
+                                </div>
+
+
+                                <div class="Pay_action_Notice">
+                                    <p>
+                                        Phí vận chuyển sẽ được tính ở trang thanh toán.
+                                    </p>
+
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+
+                                    <p>
+                                        Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                    </p>
+                                </div>
+
+
+                                @if (Model.TotalValue() <= 40000)
+                                {
+                                    <div class="Box_Notice" style="display:block">
+
+                                        Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
+
+                                    </div>
+
+
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred disabled" href="#">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
+
+                                else
+                                {
+                                    <div class="Box_Notice Box_Notice_Friendly" style="text-align:center">
+
+                                        <span style=" font-size: 18px; position: relative; bottom: 16px; margin-left: 9px;">Thanh Toán ngay</span>  <img src="~/Content/IMG/Img_HandDown.jpg" style="height:50px" />
+
+                                    </div>
+
+
+                                    <div class="Pay_Btn">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred" href="@Url.Action("CheckoutPage","ShoppingCart")">
+                                            THANH TOÁN
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+
+                            <div class="Primary_Layout_Pay Sumary_Block">
+                                <div class="Block_Primary_Layout_Pay">
+                                    <p class="Heading_Block_Primary_Layout_Pay">
+                                        <strong>Chính sách mua hàng</strong>
+                                        :
+                                    </p>
+
+                                    <p>
+                                        Hiện chúng tôi chỉ áp dụng thanh toán với đơn hàng có giá trị tối thiểu
+                                        <strong>40.000₫ </strong>  trở lên.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script language="javascript">
+
+    //Dùng để update Quantity ứng với product Id đó
+    function CartUpdateQuantity(id, quantity) {
+
+        const form = document.createElement('form');
+
+
+        form.method = "post";
+
+
+        form.action = "UpdateQuantity";
+
+
+        if (quantity < 1) {
+            return;
+        }
+
+        const idInput = document.createElement('input');
+
+        idInput.type = 'hidden';
+
+
+        idInput.name = 'id';
+
+
+        idInput.value = id;
+
+
+        form.appendChild(idInput);
+
+
+        const quantityInput = document.createElement('input');
+
+        quantityInput.type = 'hidden';
+
+        quantityInput.name = 'quantity';
+
+        quantityInput.value = quantity;
+
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+
+
+        form.submit();
+    }
+
+
+
+
+    //Even Open and Close delete cartItems
+
+    var btn_Delete_Active = document.getElementById('js_btn_Remove_Cart');
+
+
+    var box_Container = document.querySelector('.js_LayoutBtn_RemoveCart');
+
+
+    var Inside_DeleteBox_Container = document.querySelector('.Delete_Container');
+
+
+    var btn_Cancel = document.querySelector('.Cancel_Btn');
+
+
+    btn_Delete_Active.addEventListener('click', function () {
+
+        if (!(box_Container.classList.contains('active_Js_RemoveCart'))) {
+
+            box_Container.classList.add('active_Js_RemoveCart')
+
+            Inside_DeleteBox_Container.classList.add('active_Delete_Container')
+        }
+
+        else {
+
+            box_Container.classList.remove('active_Js_RemoveCart')
+
+            Inside_DeleteBox_Container.classList.remove('active_Delete_Container')
+        }
+
+    })
+
+
+    btn_Cancel.addEventListener('click', function () {
+
+        box_Container.classList.remove('active_Js_RemoveCart')
+
+        Inside_DeleteBox_Container.classList.remove('active_Delete_Container')
+    })
+
+</script>

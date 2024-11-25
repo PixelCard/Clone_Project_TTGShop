@@ -1,0 +1,87 @@
+﻿@{
+    var user = Session["Email"];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - TTG Shop</title>
+    <link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css" />
+
+    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+
+    @*Font-awesome*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <style>
+        .collapse .navbar-nav > li {
+            margin: 0;
+        }
+    </style>
+</head>
+<<<<<<< Updated upstream
+
+
+
+<body>
+    <header>
+
+        @Html.Partial("PV_Header_Admin_Layout");
+
+    </header>
+=======
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("TTG Shop", "Index", "Admin/AdminHome", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                /font-awesome/5.15.4/css/all.min.css
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "Admin/AdminHome", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Danh Mục Sản phẩm", "Index", "Admin/Categories", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Sản Phẩm", "Index", "Admin/Products", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Chi Tiết Sản Phẩm", "Index", "Admin/ProductDescriptions", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Khách Hàng", "Index", "/Admin/AdminAccount/Index", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Giỏ hàng", "Index", "Admin/Order", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+>>>>>>> Stashed changes
+
+
+
+    <div class="container body-content" style="height:1000px">
+        @RenderBody()
+    </div>
+<<<<<<< Updated upstream
+
+
+    <footer>
+
+        @Html.Partial("PV_Footer_Admin_Layout");
+
+    </footer>
+=======
+>>>>>>> Stashed changes
+</body>
+</html>
+
+
+<!-- Bootstrap 4/5 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+

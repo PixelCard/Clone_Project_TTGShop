@@ -1,0 +1,198 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductSearchVM
+@using PagedList.Mvc
+
+
+<style>
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .table img {
+        height: 224px;
+    }
+
+    .container {
+        max-width:1600px;
+    }
+
+
+    .container_fluid{
+        max-width:1600px;
+    }
+</style>
+
+
+@if (Model.ProductDescriptions != null && Model.ProductDescriptions.Any())
+{
+
+    <div class="container_fluid">
+
+        <table class="table">
+            <tr>
+                <th class="col-lg-1">
+
+                    ProductName
+
+                </th>
+
+
+                <th class="col-2">
+                    ProductImagine
+                </th>
+
+
+                <th class="col-2">
+
+                    CPU
+
+                </th>
+
+
+
+                <th class="col-lg-1">
+
+
+                    MAINBOARD
+
+
+                </th>
+
+
+                <th class="col-1">
+
+                    RAM
+
+
+                </th>
+
+
+                <th class="col-1">
+
+
+                    SSD
+
+
+                </th>
+
+                @if(Model.ProductDescriptions.Any(p => p.VGA != null))
+                {
+                    <th class="col-1">
+
+
+                        VGA
+
+
+                    </th>
+                }
+
+
+                @if(Model.ProductDescriptions.Any(p => p.PowerPC != null))
+                {
+                    <th class="col-1">
+
+
+                        PowerPC
+
+
+                    </th>
+                }
+
+
+
+                <th class="col-2" style="text-align:center">
+
+                    Chức năng
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model.ProductDescriptions)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+
+
+
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.Product.ProductImage)" />
+                    </td>
+
+
+                    @if(item.CPU != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CPU)
+                        </td>
+                    }
+
+
+                    @if(item.MAINBOARD != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MAINBOARD)
+                        </td>
+                    }
+
+
+
+                    @if(item.RAM != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RAM)
+                        </td>
+                    }
+
+
+
+                    @if(item.SSD != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SSD)
+                        </td>
+                    }
+
+
+                    @if(item.VGA != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VGA)
+                        </td>
+                    }
+
+
+                    @if(item.PowerPC != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PowerPC)
+                        </td>
+                    }
+
+
+
+                    <td style="text-align:center">
+                        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ProductDescriptionID }) |
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.ProductDescriptionID }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.ProductDescriptionID })
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+}
+
+
+
+else
+{
+    <div class="Error_Finding">
+        Can't find any ProductDesprition with that name
+    </div>
+}

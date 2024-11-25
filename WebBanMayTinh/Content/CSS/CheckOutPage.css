@@ -1,0 +1,340 @@
+﻿
+/*Dùng Chung CSS*/
+
+body {
+    width:100%;
+    margin: 0;
+    padding: 0;
+    color: #737373;
+    background: white;
+    font-size: 14px;
+    font-family: Helvetica Neue, sans-serif;
+    line-height: 1.3em;
+    transform: scale(1.1);
+    transform-origin: top;
+}
+
+
+.left-panel, .right-panel {
+    padding-top: 4em;
+}
+
+
+a{
+    text-decoration:none;
+    color:#000;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: normal;
+    margin: 0;
+    line-height: 1em;
+}
+
+input{
+    font:inherit;
+    padding:0;
+    margin:0;
+    border:none;
+    background-color:transparent;
+    line-height:normal;
+}
+/*End Dùng chung CSS*/
+
+
+
+
+/*CSS cho left Panel*/
+
+.Content {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+}
+
+    .Content .container {
+        display: flex;
+        flex: 1 1 auto;
+        width: 90%;
+        padding: 0 5%;
+        max-width: 78.57143em;
+        margin:0 auto;
+    }   
+
+
+.left-panel {
+    width: 52%;
+    padding-right:6%;
+}
+
+
+    .left-panel .main-header {
+        padding-bottom: 2em;
+    }
+
+
+.main-header .Logo {
+    display:block;
+}
+
+
+.Logo .Logo_Text {
+    font-size: 2em;
+    color: #333333;
+}
+
+
+.left-panel .main_content {
+
+    padding-bottom:4em;
+    
+    flex:1 0 auto;
+}
+
+
+.main_content .Form_Text{
+
+}
+
+.Form_Text .Form_Content{
+    position:relative;
+    z-index:3;
+}
+
+.Form_Content .step{
+
+}
+
+.step .step_Header{
+    margin-bottom:1.5rem;
+}
+
+
+
+
+.step_Header .section-title {
+    font-size: 1.28571em;
+    margin-top: 0;
+    font-weight: bold;
+    color: #333333;
+}
+
+
+.step .step_Info_Account{
+
+
+}
+
+.step_Info_Account .step_ConfirmAccount{
+    margin-bottom:1.4rem;
+}
+
+.step_Info_Account .Field_Set {
+    margin: -0.45em;
+}
+
+.Field_Set .Field {
+    width: 100%;
+    float: left;
+    padding: 0.45em;
+    box-sizing: border-box;
+}
+
+.Field_Set .Field_Two {
+    width: 66.66667%
+}
+
+.Field_Set .Field_Three {
+    width: 33%;
+}
+
+.Field .Field_Input_Box {
+    position: relative;
+}
+
+.Field_Input_Box .Field_Input {
+    box-shadow: 0 0 0 1px #d9d9d9;
+    transition: all 0.2s ease-out;
+    background-color: white;
+    color: #333333;
+    border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.94em 1.8em 0.94em 0.8em;
+    word-break: normal;
+}
+
+
+.step_ChoseAddress #form_update_shipping_method{
+    padding:0;
+}
+
+
+
+#form_update_shipping_method .content-box {
+    box-shadow: unset;
+}
+
+.content-box .Inside_Address_Box {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin: 0;
+    width: 100%;
+    display: block;
+    box-shadow: unset;
+}
+
+.Inside_Address_Box .AddressField {
+    padding: 0;
+    padding-top: 0.7rem;
+}
+
+.Inside_Address_Box .FieldLocation {
+    padding: 0.45rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0;
+}
+
+
+
+
+.Change_PickLocation_Or_Shipping {
+
+}
+
+
+    .Change_PickLocation_Or_Shipping .Section_Shipping{
+
+    }
+
+    .Change_PickLocation_Or_Shipping #Section_Method_Payment{
+        padding-top:3em;
+        position:relative;
+
+    }
+
+
+
+
+
+
+    .form-group {
+        margin-bottom: 15px;
+        flex-direction: column;
+    }
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+.third-width {
+    flex: 1;
+}
+
+.shipping-method, .payment-method {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+    .shipping-method p, .payment-method p {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+.order-summary {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+    .order-summary h3 {
+        font-size: 1.1em;
+        margin-top: 0;
+    }
+
+.total-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+.product-image {
+    width: 27%;
+    height: 10%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.discount-code {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    .discount-code label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .discount-code input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+.apply-button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .apply-button:hover {
+        background-color: #0056b3;
+    }
+
+
+/*CSS cho right Panel*/
+.right-panel {
+    width: 38%;
+    padding-left: 4%;
+}

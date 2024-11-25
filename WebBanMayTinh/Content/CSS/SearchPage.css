@@ -1,0 +1,114 @@
+﻿.layout-searchPage{
+
+}
+
+    .layout-searchPage .Heading_Page{
+        position:relative;
+        text-align:center;
+    }
+
+        .layout-searchPage .Heading_Page::after {
+            content: "";
+            background: #252a2b;
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin: 20px auto 30px;
+        }
+
+.Heading_Page .Tittle{
+
+}
+
+.Heading_Page .Count_Product_InFinding{
+
+}
+
+.layout-searchPage .Wrapaper_Box_Finding_Product{
+
+}
+
+.Wrapaper_Box_Finding_Product .Sub_Text_Result{
+
+}
+
+.Wrapaper_Box_Finding_Product .pagination-container{
+    display:flex;
+    justify-content:center;
+}
+
+.pagination-container .pagination {
+    display: flex;
+    margin-top: 24px;
+}
+
+.pagination > li {
+    margin-right: 12px;
+}
+
+    .pagination > li > a {
+        border-radius: 9px;
+        border: 2px solid #73AD21;
+        padding:9px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+.layout-searchPage{
+
+}
+
+
+    .layout-searchPage .sub_Tittle {
+        text-align:center;
+        padding-bottom: 40px;
+    }
+
+    .layout-searchPage .Search_Term_Box {
+        max-width: 82%;
+        position: relative;
+        margin: 0 auto;
+        margin-left: 25px;
+    }
+
+.Search_Term_Box .Form_Search {
+
+
+}
+
+.Form_Search .Product_Box_Finding_Back {
+    width: 100%;
+    padding: 15px 5px 11px 7px;
+    font-size: 14px;
+    border: 1px solid #ececec;
+    background: #fff;
+    font-weight: 500;
+    display: inline-block;
+    text-align: left;
+}
+
+    .Form_Search .Product_Box_Finding_Back::placeholder {
+        text-align: left;
+    }
+
+.Form_Search .button_Finding {
+    width: 70px;
+    position: absolute;
+    padding: 0;
+    top: 0px;
+    bottom: 0;
+    right: -13px;
+    border: 0;
+    margin: 4px;
+    background: #f9bb01;
+    border-radius: 4px;
+}
+
+.button_Finding .Finding_Icon {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    top: 3px;
+}
+

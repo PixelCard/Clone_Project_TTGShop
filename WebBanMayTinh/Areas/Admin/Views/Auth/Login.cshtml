@@ -1,0 +1,45 @@
+﻿@model WebBanMayTinh.Models.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/CSS/LoginAD.css" />
+
+</head>
+<body>
+ <div class="login-card">
+   <div class="header"
+        >
+       <h1 class="title">
+           TTG Shop - Admin
+       </h1>
+       <p> Vui lòng nhập tài khoản và mật khẩu để đăng nhập</p>
+   </div>
+   <div class="login-form">
+       @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+       {
+           @Html.AntiForgeryToken()
+           <div class="form-group">
+               @Html.EditorFor(m => m.Email, new { @placeholder = "Vui lòng nhập email" })
+               @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+           </div>
+           <div class="form-group">
+               @Html.EditorFor(m => m.Password, new  {@placeholder = "Vui lòng nhập mật khẩu" })
+               @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+           </div>
+           @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+           <div class="form-group">
+               <button tybe="submit" name="submit" value="Login" class="login-button">Đăng nhập</button>
+           </div>
+       }
+   </div>
+  </div>
+</body>
+</html>

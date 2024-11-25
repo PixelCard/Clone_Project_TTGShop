@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76d5fa11caaa419290f11ad96da52201" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Category" Width="1.5" PointX="3.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Customer" Width="1.5" PointX="6.875" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Order" Width="1.5" PointX="10.125" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.OrderDetail" Width="1.5" PointX="10.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Product" Width="1.5" PointX="6.875" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.sysdiagram" Width="1.5" PointX="13" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.User" Width="1.5" PointX="3.5" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__Order__CustomerI__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_User_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__OrderDeta__Order__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK__OrderDeta__Produ__30F848ED" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.ProductDescription" Width="1.5" PointX="3.625" PointY="0.5" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_ProductID" />
+        <EntityTypeShape EntityType="Web_Ban_May_TinhModel.Banner" Width="1.5" PointX="1.25" PointY="3.625" />
+        <AssociationConnector Association="Web_Ban_May_TinhModel.FK_CategoryID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

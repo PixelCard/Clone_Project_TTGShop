@@ -1,0 +1,104 @@
+﻿@model WebBanMayTinh.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+<style>
+
+    .dl-horizontal {
+        display: flex;
+    }
+
+        .dl-horizontal .Left_Side {
+            max-width: 50%
+        }
+
+    .Left_Side .form-group {
+        max-width: 30%;
+        margin-bottom: 7px;
+    }
+
+    .form-group .Inside_Box_Text {
+        width: 400px;
+    }
+
+    .dl-horizontal .RightSide {
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .RightSide img {
+        width: 60%
+    }
+
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 347px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .Function p{
+        margin-top:1rem;
+    }
+</style>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <div class="dl-horizontal">
+
+        <div class="Left_Side">
+            <div class="form-group">
+                <strong>ProductName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductName
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>ProductStatus</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductStatus
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>ProductPrice</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductPrice
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>CategoryName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.Category.CategoryName
+                </div>
+            </div>
+
+
+            <div class="Function">
+                <p>
+                    @Html.ActionLink("Đồng ý chỉnh sửa", "Edit", new { id = Model.ProductID }) |
+                    @Html.ActionLink("Quay trở về trang sản phẩm", "Index")
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="RightSide">
+            <div class="form-group">
+                <img src="@Model.ProductImage"></img>
+            </div>
+        </div>
+
+    </div>
+</div>

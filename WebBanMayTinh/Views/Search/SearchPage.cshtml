@@ -1,0 +1,201 @@
+﻿@model WebBanMayTinh.Models.ViewModel.SearchVM
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css" />
+
+<link rel="stylesheet" href="~/Content/CSS/SearchPage.css" />
+
+<link rel="stylesheet" href="~/Content/CSS/HomePage.css" />
+
+@{ 
+    var CartItems = Session["Cart"] as WebBanMayTinh.Models.ViewModel.Cart;
+}
+
+@if (Model.Products_SearchPageList != null && Model.Products_SearchPageList.Any() && Model.searchTerm != null)
+{
+    <div class="layout-searchPage">
+
+        <div class="container_fluid">
+
+            <div class="Heading_Page">
+
+                <h1 class="Tittle">Tìm Kiếm</h1>
+
+                <p class="Count_Product_InFinding">Có <strong> @Model.Products_SearchPageList.TotalItemCount  Sản phẩm</strong> cho tìm kiếm</p>
+            </div>
+
+
+            <div class="Wrapaper_Box_Finding_Product">
+
+                @*Sub Text Result*@
+                <p class="Sub_Text_Result">
+                    Kết quả tìm kiếm cho <strong>"@Html.DisplayTextFor(m => m.searchTerm)"</strong>
+                </p>
+
+
+
+                @*Products*@
+                <div class="row Lg_SearchRow">
+                    <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
+                        <div class="Owl-stage-outer">
+                            <div class="Owl-stage" style="width:2412px;flex-wrap:wrap">
+                                @foreach (var items in Model.Products_SearchPageList)
+                                {
+
+                                    var ValuePersentageChanged = items.DiscountPercentage.HasValue ? Math.Floor(items.DiscountPercentage.Value * 100).ToString("0.##") : "0";
+
+
+                                    string ValuePriceAfterPersenTage = "";
+
+
+                                    if (items.DiscountValue.HasValue)
+                                    {
+                                        ValuePriceAfterPersenTage = (items.DiscountValue ?? 0).ToString("N0");
+                                    }
+
+                                    <div class="Owl-item" style=" width: 280px">
+                                        <div class="Product_Loop">
+                                            <div class="Product_Inner">
+                                                <div class="ProductLoop_Img">
+                                                    <div class="Product_Img">
+                                                        <div class="lazy-img first-img">
+
+                                                            <a href="@Url.Action("ProductPage", "ProductDetails", new {id = items.ProductID})">
+
+                                                                <img src="@items.ProductImage" />
+
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="Product_Loop_Details">
+                                                    <div class="proloop--top"></div>
+
+                                                    <h3>
+                                                        <a href="@Url.Action("ProductPage", "ProductDetails", new {id = items.ProductID})" class="quickview-product">
+                                                            @items.ProductName
+                                                        </a>
+                                                    </h3>
+
+
+
+                                                    @*<div class="proloop-variant">
+                                                              <span>+2 Ram</span>
+                                                        </div>*@
+
+
+
+                                                    <div class="Price_ProLoop">
+                                                        <div class="Price_Box">
+                                                            @if (items.DiscountValue.HasValue)
+                                                            {
+                                                                <span class="Discount_Price">@ValuePriceAfterPersenTage</span>
+                                                                <span class="OriginalPrice"><del>@items.ProductPrice.ToString("N0")</del></span>
+                                                            }
+
+                                                            else
+                                                            {
+                                                                <span class="OriginalPrice">@items.ProductPrice.ToString("N0")</span>
+                                                            }
+                                                        </div>
+
+                                                        <div class="Price_Sell">
+                                                            <span class="Pro_Sale">-@ValuePersentageChanged%</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="Btn_AddOnCart">
+                                                        <div class="Inside_Btn_AddOnCart">
+                                                            <div class="Box_Cart">
+                                                                <a href="@Url.Action("AddToCart","ShoppingCart",new {id = items.ProductID})" class="btn-proloop-cart add-to-cart  btn-addcart-view">
+                                                                    <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                    <span class="Icon">
+                                                                        <i class="fas fa-wallet"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @*Hiển thị Pagging*@
+
+
+                @Html.PagedListPager(Model.Products_SearchPageList, Page => Url.Action("SearchPage", new
+                {
+                   Page,
+                   searchTerm = Model.searchTerm,
+
+                }))
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+else
+{
+    <div class="layout-searchPage">
+
+        <div class="container_fluid">
+
+            <div class="Heading_Page">
+
+                <h1>Tìm Kiếm</h1>
+
+            </div>
+
+            <div class="sub_Tittle">
+                <h1 class="Sub_Tittl_Heading">Không tìm thấy nội dung bạn yêu cầu</h1>
+
+                <p style="margin-top:12px;">Không tìm thấy <strong>"@Model.searchTerm"</strong>.Vui lòng kiểm tra chính tả,sử dụng tổng quát hơn và thử lại</p>
+            </div>
+
+
+            <div class="Search_Term_Box">
+
+                @*Thanh Tìm kiếm cho sản phẩm tương ứng*@
+                <form action="@Url.Action("SearchPage", "Search")" method="get" class="Form_Search">
+                    <div class="Searching_Input">
+
+                        @Html.TextBoxFor(m => m.searchTerm, new
+                        {
+                           @class = "Product_Box_Finding_Back",
+                           @id = "Searching",
+                           placeholder = "Tìm kiếm sản phẩm",
+                           required = "required",
+                           size = 20,
+                           maxlength = "40",
+                        })
+                    </div>
+
+
+                    <button type="submit" class="button_Finding">
+                        <i class="ti-search Finding_Icon"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+}
+

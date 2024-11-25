@@ -1,0 +1,293 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsVM
+
+@{
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/Product_Page.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+@{
+    var i = 0;
+
+
+    string ValuePriceAfterPersenTage = "";
+
+
+    if (Model.products.DiscountValue.HasValue)
+    {
+        ValuePriceAfterPersenTage = (Model.products.DiscountValue ?? 0).ToString("N0");
+    }
+}
+
+
+<div id="Product">
+
+    <section class="Product_Infomation">
+        <div class="container_fluid">
+            <div class="Product_Details_Main">
+                <div class="Product_Gallery">
+                    <div class="cointainer_Product_Gallery">
+                        <div class="Product_Info Slider">
+                            @*   Slider       *@
+                            <div class="Nav_Product_Gallery_Img slider-wrapper">
+
+                                <div class="Img_Slider slider-Main">
+                                    <div class="Items_Product_Gallery Slider_Items">
+                                        <ul class="Nav_Img_Product_Gallery">
+                                            <li class="ItemsProduct Item1">
+                                                <a href="#" class="Lkn_Product">
+                                                    <img src="@Model.products.ProductImage" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    @*<div class="Items_Product_Gallery Slider_Items">
+                                        <ul class="Nav_Img_Product_Gallery">
+                                            <li class="ItemsProduct Item1">
+                                                <a href="#" class="Lkn_Product">
+                                                    <img src="~/Content/IMG/Product_Page_Img/Product2.jpg" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+
+                                    <div class="Items_Product_Gallery Slider_Items">
+                                        <ul class="Nav_Img_Product_Gallery">
+                                            <li class="ItemsProduct Item1">
+                                                <a href="#" class="Lkn_Product">
+                                                    <img src="~/Content/IMG/Product_Page_Img/Product3.jpg" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+
+
+                                    <div class="Items_Product_Gallery Slider_Items">
+                                        <ul class="Nav_Img_Product_Gallery">
+                                            <li class="ItemsProduct Item1">
+                                                <a href="#" class="Lkn_Product">
+                                                    <img src="~/Content/IMG/Product_Page_Img/Product4.jpg" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+                                </div>
+
+
+
+
+                                @*<div class="Own_nav">
+                                    <button type="button" role="presentation" class="Btn_Prev">
+                                        <span class="Previous"><</span>
+                                    </button>
+
+                                    <button type="button" role="presentation" class="Btn_nxt">
+                                        <span class="Next">></span>
+                                    </button>
+                                </div>*@
+
+
+
+                                @if (Model.products.DiscountPercentage != null && Model.Text_DiscountValue != "")
+                                {
+                                    <div class="Discount">
+                                        <span class="ProSale">
+                                            @Model.Text_DiscountValue %
+                                            <br />
+                                            OFF
+                                        </span>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="Product_Content">
+                    <div class="WBox">
+                        <div class="WBox-detail">
+                            <div class="Product_Heading">
+                                <h1 class="Title_Product">
+                                    @Model.products.ProductName
+                                </h1>
+
+                                <span class="Slots">
+                                    Tình trạng
+                                    <strong>@Model.products.ProductStatus</strong>
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="Bottom_Main_Product_Content">
+
+                            @*On the Left Side*@
+                            <div class="Box_Content_Bottom_Product left">
+
+                                @* Product_Details About Price and Discount and Original_Price *@
+                                <div class="WBox-detail">
+                                    <div class="Product_Facitlity">
+                                        <span class="Tittle_Price">Giá</span>
+
+
+                                        @*     Kiểm tra thử xem product đó có giảm giá ko nếu có thì ta sẽ tạo 1 thẻ span lấy giá trị product discount làm gốc        *@
+                                        @if (Model.products.DiscountValue != null && ValuePriceAfterPersenTage != "")
+                                        {
+                                            <span class="Discount_Price">@ValuePriceAfterPersenTage₫</span>
+                                            <del class="Original_Price">@Model.products.ProductPrice.ToString("N0")₫</del>
+                                        }
+
+
+                                        else
+                                        {
+                                            <span class="Discount_Price">@Model.products.ProductPrice.ToString("N0")₫</span>
+                                        }
+
+
+
+
+
+
+                                        @if (Model.products.DiscountPercentage != null && Model.Text_DiscountValue != "")
+                                        {
+                                            <span class="Discount_Box">-@Model.Text_DiscountValue%</span>
+                                        }
+                                    </div>
+
+
+
+                                    @* Product Choose to Switch to another Gear *@
+                                    @Html.Partial("PV_ProductBoxChooseToUpdrade", Model)
+
+
+
+
+
+                                    
+                                    @* Count Your Buying and Some Button to buy or add On cart  *@
+                                    @Html.Partial("PV_ProductButtonAddCart", Model)
+
+
+
+
+
+
+
+                                     @*Social Sharing Product*@  
+                                    @Html.Partial("PV_SocialSharingProduct", Model)
+                                </div>
+                            </div>
+
+
+
+
+
+                            @*On the right Side  is Product_Policy*@
+                            @Html.Partial("PV_Product_Policy", Model)
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                @*Product Description Table*@
+
+                @Html.Partial("PV_ProductDescription_Table",Model)
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+@*<script language="javascript">
+    ////Chức năng slider
+    //window.addEventListener('load', function () {
+    //    const slider = document.querySelector('.Slider');
+
+    //    const sliderMain = document.querySelector('.slider-Main');
+
+    //    const sliderWrapper = document.querySelector('.slider-wrapper');
+
+    //    const sliderItems = document.querySelectorAll('.Slider_Items');
+
+    //    const Img_Dot_Items = document.querySelectorAll('.Items_Img_Dot');
+
+    //    const NextBtn = document.querySelector('.Btn_nxt')
+
+    //    const PrevBtn = document.querySelector('.Btn_Prev');
+
+
+    //    //Lấy ra độ dài width của items slider
+    //    const sliderItemsWidth = sliderItems[0].offsetWidth;
+
+
+    //    //Lấy ra số lượng phần tử
+    //    const sliderLength = sliderItems.length;
+
+    //    //left: -407px;
+
+
+    //    //Biến dùng để lưu số width di chuyển qua slider
+    //    let postionX = 0;
+
+
+    //    //Biến dùng để lưu số lần di chuyển
+    //    var index = 0;
+
+
+    //    //Xử lí slider
+    //    NextBtn.addEventListener('click', function () {
+    //        handleChangeSlider(1);
+    //    })
+
+    //    PrevBtn.addEventListener('click', function () {
+    //        handleChangeSlider(-1);
+    //    })
+
+
+
+    //    function handleChangeSlider(direction) {
+    //        //Nếu direction = -1 sẽ dùng cho prevBtn
+
+    //        if (direction === -1) {
+    //            if (index <= 0) {
+    //                index = 0;
+    //                return;
+    //            }
+
+    //            postionX += sliderItemsWidth;
+    //            sliderMain.style = `transform: translateX(${postionX}px)`
+    //            index--
+    //        }
+
+
+    //        //Nếu direction = 1 sẽ dùng cho NextBtn
+    //        if (direction === 1) {
+    //            if (index >= sliderLength - 1) {
+    //                index = sliderLength - 1;
+    //                return;
+    //            }
+    //            postionX -= sliderItemsWidth;
+    //            sliderMain.style = `transform: translateX(${postionX}px)`
+    //            index++;
+    //        }
+    //    }
+    //})
+</script>*@
+

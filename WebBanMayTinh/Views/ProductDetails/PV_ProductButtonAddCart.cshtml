@@ -1,0 +1,77 @@
+﻿@model WebBanMayTinh.Models.ViewModel.ProductDetailsVM
+
+<div class="Product_Count_And_BtnForBuying">
+    <div class="BlockForBtnBuyingAndProductCount clearfix">
+        <div class="Product_Count">
+            <div class="Tittle">Số lượng</div>
+
+
+
+            @using (Html.BeginForm("UpdateQuantity", "ShoppingCart", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.products.ProductID" />
+                <button class="Decrease_Count qtybtn" type="button" onclick="CartUpdateQuantity(@Model.products.ProductID, @Model.quantity - 1)">-</button>
+                <input type="text" value="@Model.quantity" name="quantity" min="1" max="100" class="Quantity-Product" readonly />
+                <button class="Upper_Count qtybtn" type="button" onclick="CartUpdateQuantity(@Model.products.ProductID,@Model.quantity + 1)">+</button>
+            }
+
+
+        </div>
+
+        <div class="Block_AddOnCart">
+
+            <a href="@Url.Action("AddToCart","ShoppingCart",new { id = Model.products.ProductID,quantity = Model.quantity })" class="btn-AddOnCart button" id="Add-to-cart">
+                <span>Thêm vào giỏ hàng</span>
+            </a>
+
+
+
+
+            <a href="@Url.Action("AddToCart","ShoppingCart",new { id = Model.products.ProductID})" class="btn-BuyNow button">
+                <span>Mua Ngay</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<script language="JavaScript">
+    //Chức năng thêm số lượng đặt hàng
+    function CartUpdateQuantity(id, quantity) {
+        const form = document.createElement('form');
+
+        form.method = 'post';
+
+        form.action = "UpdateQuantity";
+
+        if (quantity < 1) {
+            return;
+        }
+
+        const idInput = document.createElement('input');
+
+        idInput.type = 'hidden';
+
+        idInput.name = 'id';
+
+        idInput.value = id;
+
+        form.appendChild(idInput);
+
+        const quantityInput = document.createElement('input');
+
+        quantityInput.type = 'hidden';
+
+        quantityInput.name = 'quantity';
+
+        quantityInput.value = quantity;
+
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+
+
+        form.submit();
+    }
+</script>

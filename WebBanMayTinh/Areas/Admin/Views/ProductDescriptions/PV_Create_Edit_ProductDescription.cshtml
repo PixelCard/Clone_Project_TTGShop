@@ -1,0 +1,145 @@
+﻿@model WebBanMayTinh.Models.ProductDescription
+
+
+
+@*------------------------------------------------------Product Name------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.Category.CategoryName, "CategoryName", htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+    <div class="control-label col-md-2 Category_List_Items">
+        Tên Sản Phẩm
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.DropDownList("ProductID", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+@*------------------------------------------------------CPU------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+    <div class="control-label col-md-2 ProductName">
+        CPU
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.CPU, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+
+@*------------------------------------------------------RAM------------------------------------------------------------*@
+
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductStatus, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+    <div class="control-label col-md-2 ProductName">
+        Ram
+    </div>
+
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.RAM, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+@*------------------------------------------------------MainBoard------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductPrice, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        MainBoard
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.MAINBOARD, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MAINBOARD, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+
+
+@*------------------------------------------------------SSD------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        SSD
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.SSD, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.SSD, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+@*------------------------------------------------------VGA------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        VGA
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.VGA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.VGA, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+@*------------------------------------------------------PowerPC------------------------------------------------------------*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+
+    <div class="control-label col-md-2 ProductName">
+        PowerPC
+    </div>
+
+
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.PowerPC, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PowerPC, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Lưu" class="btn btn-default" />
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-SavingProduct" })
+    </div>
+</div>
+
+
+
+
