@@ -36,7 +36,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
                     Session[SessionDataKeys.UserRole] = user.UserRole;
                     FormsAuthentication.SetAuthCookie(user.Email, true);
 
-                    return RedirectToAction("Index", "AdminAccount");
+                    return RedirectToAction("Index", "AdminHome");
                 }
                 else
                 {
@@ -46,6 +46,13 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
             }
 
             return View(model);
+        }
+
+
+        public ActionResult logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Auth");
         }
     }
 }

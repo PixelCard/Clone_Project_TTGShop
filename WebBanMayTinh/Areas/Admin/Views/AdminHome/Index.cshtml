@@ -1,0 +1,34 @@
+﻿@model WebBanMayTinh.Models.ViewModel.Statistic
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Thống Kê Tổng Doanh Thu Sản Phẩm</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Tổng Doanh Thu</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductPrice * @Model.quantity</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

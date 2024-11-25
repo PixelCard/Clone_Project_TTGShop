@@ -1,0 +1,212 @@
+﻿
+@{ 
+
+    var User = Session["Email"];
+
+
+    var userRole = Session["Role"];
+
+}
+
+
+<style>
+
+    .DownIcon.ActiveUpperIcon{
+        display: inline-block;
+         transform: scaleY(-1);
+         transition:1s;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+</style>
+
+
+
+<!-- Begin at Header -->
+<div class="templateHeader">
+    <div class="mainHeader--height" >
+        <header class="Main_Header">
+            <div class="BG_MiddleHeader">
+                <div class="container_fluid">
+                    <div class="flex_container_MiddleHeader">
+                        <div class="Header_Logo">
+                            <a href="@Url.Action("Index","AdminHome")" class="Href_To_HomePage">
+                                <img src="~/Content/IMG/logo.jpg" alt="TTG_Shop_logo" class="logo">
+                            </a>
+                        </div>
+
+                        <div class="Header_search">
+
+                            <div class="Navigation">
+
+
+                                <ul class="Nav_ul" style="margin: 0; margin-top: 19px; display:flex">
+
+                                    <li style=" margin-right: 12px;">
+
+                                        <a href="@Url.Action("Index","AdminHome")" style=" font-size: 18px; margin: 0; text-decoration:none;color:#000">Trang Chủ</a>
+
+                                    </li>
+
+
+                                    <li style=" margin-right: 12px;">
+
+
+                                        <a href="@Url.Action("Index","Products")" style=" font-size: 18px; margin: 0; text-decoration:none;color:#000">Sản phẩm</a>
+
+
+                                    </li>
+
+
+
+
+                                    <li style=" margin-right: 12px;">
+
+                                        <a href="@Url.Action("Index","ProductDescriptions")" style=" font-size: 18px; margin: 0; text-decoration:none;color:#000">Chi tiết sản phẩm</a>
+
+                                    </li>
+
+
+                                    <li style=" margin-right: 12px;">
+
+                                        <a href="@Url.Action("Index","Categories")" style=" font-size: 18px; margin: 0; text-decoration:none;color:#000">Danh sách sản phẩm</a>
+
+                                    </li>
+
+
+
+
+                                    <li style=" margin-right: 12px;">
+
+                                        <a href="@Url.Action("Index","AdminAccount")" style=" font-size: 18px; margin: 0; text-decoration:none;color:#000">Khách hàng</a>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div class="Header_Account_Shop" style="max-width: 20%;">
+                            <div class="flex_Container_Account">
+                                <div class="Box_Account_Shop">
+                                    <div class="Account">
+                                        @if (User == null && (userRole != "Admin" || userRole != "Staff" || userRole != "Manager" ) )
+                                        {
+                                            <a href="@Url.Action("Login","Auth",null)">
+                                                <button type="button" title="tai_khoan" class="Header_btn_account">
+                                                    <span class="Account_icon">
+                                                        <span class="IconUser">
+                                                            <i class="ti-user UserIcon"></i>
+                                                        </span>
+                                                    </span>
+
+
+                                                    <span class="box_text_account">
+                                                            Đăng nhập 
+                                                        <span class="box_text_MyAccount">
+                                                            Tài khoản của tôi <i class="ti-angle-down DownIcon"></i>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </a>
+                                        }
+
+
+                                        else
+                                        {
+
+                                            <div class="Box_Account_Info">
+                                                <button type="button" title="tai_khoan" class="Header_btn_account" style="top: -1px; left: 14px; ">
+                                                    <span class="Account_icon" style=" margin-left: -50px;">
+                                                        <span class="IconUser">
+                                                            <i class="ti-user UserIcon"></i>
+                                                        </span>
+                                                    </span>
+
+
+                                                    <span class="box_text_MyAccount" style=" position: relative; display: unset; margin-left: 9px; top: 3px;">
+                                                        <span class="Box_Name_Acccount" style=" margin-left: 17px;">
+                                                             <span style="white-space: nowrap; text-overflow: ellipsis; display: inline-block; vertical-align: middle; max-width: 115px; overflow: hidden;">@User</span><i class="ti-angle-down DownIcon"></i>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+
+
+
+                                            <div class="Info_BoxAccount" style="position: absolute; z-index: 9999; top: 50px; left: -15px; background-color: #ffff; width: 100%; overflow: hidden; padding: 15px 20px; box-shadow: -2px 8px 8px 1px #000; display: none ">
+
+                                                <div class="Box_Carry_InsideHaveAccount" style=" overflow: hidden;"> 
+
+                                                    <div class="site_AccountController">
+
+                                                        <div class="site_AccountControllerHeader">
+
+                                                            <h2 class="Site_account_Heading_Text" style=" font-weight: 600; font-size: 2rem;">Thông tin cá nhân</h2>
+
+
+                                                            <div class="Function_InsideController">
+
+                                                                <ul>
+                                                                    <li class="UserName">
+
+                                                                        <span>@User</span>
+
+                                                                    </li>
+
+
+                                                                    <li>
+
+                                                                        <a href="@Url.Action("logout","Auth")">Đăng Xuất</a>
+                                                                        
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+<!-- End Header -->
+
+
+
+
+
+<script language="JavaScript">
+
+    var Box_button_Account = document.querySelector('.Box_Account_Info');
+
+    var Box_Info_Account = document.querySelector('.Info_BoxAccount');
+
+    var Icon_Down = document.querySelector('.DownIcon');
+
+    Box_button_Account.addEventListener('click', function () {
+        if (Box_Info_Account.style.display === "none") {
+            Box_Info_Account.style.display = "block";
+            Icon_Down.classList.add('ActiveUpperIcon')
+        }
+
+        else {
+            Box_Info_Account.style.display = "none";
+            Icon_Down.classList.remove('ActiveUpperIcon')
+        }
+    })
+
+</script>

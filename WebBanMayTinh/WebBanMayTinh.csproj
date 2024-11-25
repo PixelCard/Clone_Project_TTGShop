@@ -189,6 +189,7 @@
     <Compile Include="Models\ViewModel\ProductDetailsVM.cs" />
     <Compile Include="Models\ViewModel\RegisterVM.cs" />
     <Compile Include="Models\ViewModel\SearchVM.cs" />
+    <Compile Include="Models\ViewModel\Statistic.cs" />
     <Compile Include="Models\Web_Ban_May_Tinh_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -680,7 +681,22 @@
     <Content Include="Areas\Admin\Views\ProductDescriptions\PV_Create_Edit_ProductDescription.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAccount\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\dx.viz.debug.js" />
+    <Content Include="Scripts\dx.viz.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -691,6 +707,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\vectormap-data\africa.js" />
+    <Content Include="Scripts\vectormap-data\canada.js" />
+    <Content Include="Scripts\vectormap-data\eurasia.js" />
+    <Content Include="Scripts\vectormap-data\europe.js" />
+    <Content Include="Scripts\vectormap-data\usa.js" />
+    <Content Include="Scripts\vectormap-data\world.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -707,7 +732,7 @@
     <Content Include="Views\Shared\_ProductDetailsLayout.cshtml" />
     <Content Include="Views\ProductDetails\ProductPage.cshtml" />
     <Content Include="Views\ShoppingCart\ShoppingCartPage.cshtml" />
-    <Content Include="Views\Shared\Partital_View\PV_Header_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PV_Header_Admin_Layout.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Footer_Layout.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_ShoppingCart_ProductDetails.cshtml" />
     <Content Include="Views\Shared\Partital_View\PV_Section_HomePage_Layout.cshtml" />
@@ -736,6 +761,7 @@
     <Content Include="Views\ProductDetails\PV_ProductBoxChooseToUpdrade.cshtml" />
     <Content Include="Views\Account\AccountInfo.cshtml" />
     <Content Include="Views\Order\OrderSuccess.cshtml" />
+    <Content Include="Views\Shared\Partital_View\PV_Header_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
