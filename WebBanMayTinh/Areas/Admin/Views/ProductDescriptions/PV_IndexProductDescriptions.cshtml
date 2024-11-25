@@ -10,7 +10,7 @@
         font-weight: 600;
     }
 
-    img {
+    .table img {
         height: 224px;
     }
 
@@ -42,7 +42,6 @@
                 <th class="col-2">
                     ProductImagine
                 </th>
-
 
 
                 <th class="col-2">
@@ -78,28 +77,32 @@
 
                 </th>
 
-
-                <th class="col-1">
-
-
-                    VGA
+                @if(Model.ProductDescriptions.Any(p => p.VGA != null))
+                {
+                    <th class="col-1">
 
 
-                </th>
+                        VGA
+
+
+                    </th>
+                }
+
+
+                @if(Model.ProductDescriptions.Any(p => p.PowerPC != null))
+                {
+                    <th class="col-1">
+
+
+                        PowerPC
+
+
+                    </th>
+                }
 
 
 
-                <th class="col-1">
-
-
-                    PowerPC
-
-
-                </th>
-
-
-
-                <th class="col-4" style="text-align:center">
+                <th class="col-2" style="text-align:center">
 
                     Chức năng
 
@@ -122,41 +125,55 @@
                     </td>
 
 
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CPU)
-                    </td>
-
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MAINBOARD)
-                    </td>
+                    @if(item.CPU != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CPU)
+                        </td>
+                    }
 
 
-
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RAM)
-                    </td>
+                    @if(item.MAINBOARD != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MAINBOARD)
+                        </td>
+                    }
 
 
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SSD)
-                    </td>
+                    @if(item.RAM != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RAM)
+                        </td>
+                    }
 
 
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.VGA)
-                    </td>
+                    @if(item.SSD != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SSD)
+                        </td>
+                    }
 
 
+                    @if(item.VGA != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VGA)
+                        </td>
+                    }
 
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PowerPC)
-                    </td>
+                    @if(item.PowerPC != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PowerPC)
+                        </td>
+                    }
+
 
 
                     <td style="text-align:center">
