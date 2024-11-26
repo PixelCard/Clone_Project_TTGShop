@@ -1,0 +1,29 @@
+﻿@model WebBanMayTinh.Models.Customer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "AdminAccount", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Email_User)
+    <div>
+        <label for="CustomerName">Tên khách hàng:</label>
+        @Html.TextBoxFor(model => model.CustomerName)
+    </div>
+    <div>
+        <label for="CustomerPhone">Số điện thoại:</label>
+        @Html.TextBoxFor(model => model.CustomerPhone)
+    </div>
+    <div>
+        <label for="CustomerAddress">Địa chỉ:</label>
+        @Html.TextBoxFor(model => model.CustomerAddress)
+    </div>
+    <div>
+        <button type="submit">Cập nhật</button>
+    </div>
+}

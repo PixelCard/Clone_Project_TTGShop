@@ -1,8 +1,11 @@
 ﻿@model WebBanMayTinh.Models.ViewModel.RegisterVM
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+
+
 
 <!DOCTYPE html>
 <html>
@@ -15,21 +18,15 @@
 </head>
 <body>
     <div class="register-card">
-        <div class="header">
-            <h1 class="title">
-                TTG Shop - Admin
-            </h1>
-            <p> Vui lòng nhập thông tin để đăng ký</p>
-        </div>
-        <div class="register-form">
-            @using (Html.BeginForm("Create", "AdminAccount", FormMethod.Post))
+            @using (Html.BeginForm("Create", "AdminAccount", FormMethod.Post, new { @class = "register-form" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
                     @Html.LabelFor(model => model.UserRole, "Chọn quyền:")
-                    @Html.DropDownListFor(model => model.UserRole, (SelectList)ViewBag.AvailableRoles, "Chọn quyền", new { @class = "form-control" })
+                    @Html.DropDownListFor(model => model.UserRole, (List<SelectListItem>) ViewBag.AvailableRoles, " ", new { @class = "form-control drop-down-btn" })
                     @Html.ValidationMessageFor(model => model.UserRole, "", new { @class = "text-danger" })
                 </div>
+
                 <!-- Họ và tên -->
                 <div class="form-group">
                     @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Họ và tên" } })
@@ -88,7 +85,8 @@
                     <button tybe="submit" name="submit" value="Register" class="register-button">Đăng ký</button>
                 </div>
             }
-        </div>
     </div>
 </body>
 </html>
+
+

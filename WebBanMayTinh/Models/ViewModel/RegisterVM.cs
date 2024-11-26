@@ -31,8 +31,9 @@ namespace WebBanMayTinh.Models.ViewModel
         public string CustomerGender { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập ngày sinh")]
+        [DataType(DataType.Date)]
         [Display(Name = "Ngày sinh")]
-        public Nullable<System.DateTime> CustomerBirthDay { get; set; }
+        public DateTime? CustomerBirthDay { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [DataType(DataType.Password)]

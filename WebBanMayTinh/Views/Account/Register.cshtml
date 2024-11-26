@@ -36,7 +36,7 @@
 
         <!-- Ngày sinh -->
         <div class="form-group">
-            @Html.EditorFor(model => model.CustomerBirthDay, new { htmlAttributes = new { @placeholder = "mm/dd/yyyy" } })
+            @Html.EditorFor(model => model.CustomerBirthDay, new { htmlAttributes = new { type="date" } })
             @Html.ValidationMessageFor(model => model.CustomerBirthDay, "", new { @class = "text-danger" })
         </div>
 

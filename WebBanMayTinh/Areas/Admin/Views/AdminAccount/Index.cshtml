@@ -12,13 +12,13 @@
         @Html.ActionLink("Tạo Mới", "Create", "", htmlAttributes: new { @class = "button" })
     </p>
     <div class="filters">
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Index","AdminAccount", FormMethod.Get))
         {
             var currentRole = Session[SessionDataKeys.UserRole].ToString();
 
             <div class="search-bar">
                 <i class="ti-search"></i>
-                @Html.TextBox("SearchString")
+                @Html.TextBox("SearchString",ViewBag.CurrentFilter as string)
             </div>
             if (currentRole != UserRoleConstants.Staff)
             {
@@ -28,16 +28,16 @@
                         <i class="ti-angle-down"></i>
                     </button>
                     <div id="role-dropdown" class="dropdown-content">
-                        @Html.ActionLink("Tất cả", "Index")
-                        @Html.ActionLink("Khách hàng", "Index")
-                        @if (currentRole == UserRoleConstants.Admin || currentRole != UserRoleConstants.Manager)
+                        @Html.ActionLink("Tất cả", "Index", new { searchString = ViewBag.CurrentFilter as string })
+                        @Html.ActionLink("Khách hàng", "Index", new { searchString = ViewBag.CurrentFilter as string, userRole = UserRoleConstants.Customer })
+                        @if (currentRole == UserRoleConstants.Admin || currentRole == UserRoleConstants.Manager)
                         {
-                            @Html.ActionLink("Nhân viên", "Index")
+                            @Html.ActionLink("Nhân viên", "Index", new { searchString = ViewBag.CurrentFilter as string, userRole = UserRoleConstants.Staff })
                         }
-                        @if (currentRole != UserRoleConstants.Admin)
+                        @if (currentRole == UserRoleConstants.Admin)
                         {
-                            @Html.ActionLink("Quản lý", "Index")
-                            @Html.ActionLink("Admin", "Index")
+                            @Html.ActionLink("Quản lý", "Index", new { searchString = ViewBag.CurrentFilter as string, userRole = UserRoleConstants.Manager })
+                            @Html.ActionLink("Admin", "Index", new { searchString = ViewBag.CurrentFilter as string, userRole = UserRoleConstants.Admin })
                         }
                     </div>
                 </div>
@@ -69,51 +69,62 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerName)
-        </td>
-        <td>
-            @{
-                if (item.User.UserRole == UserRoleConstants.Staff)
-                {
-                    <div class="user-role-chip staff">Nhân viên</div>
-                }
-                else if (item.User.UserRole == UserRoleConstants.Manager)
-                {
-                    <div class="user-role-chip manager">Quản lý</div>
-                }
-                else if (item.User.UserRole == UserRoleConstants.Admin)
-                {
-                    <div class="user-role-chip admin">Admin</div>
-                }
-                else
-                {
-                    <div class="user-role-chip customer">Khách hàng</div>
-                }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerName)
+    </td>
+    <td>
+        @{
+            if (item.User.UserRole == UserRoleConstants.Staff)
+            {
+                <div class="user-role-chip staff">Nhân viên</div>
             }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerPhone)
-        </td>
+            else if (item.User.UserRole == UserRoleConstants.Manager)
+            {
+                <div class="user-role-chip manager">Quản lý</div>
+            }
+            else if (item.User.UserRole == UserRoleConstants.Admin)
+            {
+                <div class="user-role-chip admin">Admin</div>
+            }
+            else
+            {
+                <div class="user-role-chip customer">Khách hàng</div>
+            }
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerPhone)
+    </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Email_User)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerAddress)
-        </td>
-    </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email_User)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerAddress)
+    </td>
+    <td>
+        @Html.ActionLink("Chỉnh sửa", "Edit", new { email = item.Email_User }) |
+        @{
+            var currentRole = Session[SessionDataKeys.UserRole].ToString();
+
+            if (currentRole == UserRoleConstants.Admin)
+            {
+                @Html.ActionLink("Xoá", "Delete", new { email = item.Email_User })
+            }
+        }
+    </td>
+</tr>
     }
 
 </table>
 <div class="footer">
     <p>Hiển thị từ  @((Model.PageNumber -1) * Model.PageSize + 1) đến @(Math.Min(Model.PageNumber * Model.PageSize, Model.TotalItemCount)) của tổng số @Model.TotalItemCount dữ liệu</p>
     @Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, searchString = ViewBag.CurrentFilter }),
+    new { page, searchString = ViewBag.CurrentFilter, userRole = ViewBag.Role }),
     new PagedListRenderOptions()
-                {
-                    DisplayLinkToIndividualPages = true,
+    {
+        DisplayLinkToIndividualPages = true,
         DisplayPageCountAndCurrentLocation = false,
         MaximumPageNumbersToDisplay = 10,
         LiElementClasses = new string[] { "page-item" },
