@@ -1,0 +1,182 @@
+﻿@model WebBanMayTinh.Models.ViewModel.CategoriesVM
+@using PagedList
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ProductDetailsLayout.cshtml";
+}
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CategoriesDemo1</title>
+    @*<link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">*@
+
+    <link rel="stylesheet" href="~/Content/CSS/Categories.css">
+    <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+
+
+
+<body>
+    <div class="Section_Main">
+        <div class="container_fluid">
+            <div class="Flex_Section_Main_Items">
+                <div class="Section_Main_left">
+                    <div class="Main_Menu SideBar_left">
+                        <div class="List_MENU">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Danh mục sản phẩm</h2></li>
+
+                                @foreach (var item in Model.categories) 
+                                {
+                                    <li class="item">
+                                        <a href="@Url.Action("Index","_CateLink",new {id = item.CategoryID})">
+
+                                           @item.CategoryName
+
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+
+                        @*<div class="List_BRAND">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Nhà cung cấp</h2></li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    Khác
+                                </li>
+                            </ul>
+                        </div>*@
+
+                        <div class="List_Price">
+                            <ul class="Menu_Link_Root">
+                                <li class="Topic_Content"><h2>Lọc giá</h2></li>
+
+                                <li class="item">
+
+                                    input
+
+                                </li>
+
+
+                                @*<li class="item">
+                                    <input type="checkbox" />
+                                    5.000.000₫-10.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    10.000.000₫-15.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    15.000.000₫-20.000.000₫
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" />
+                                    20.000.000₫-25.000.000₫
+                                </li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Section_right">
+                    <div class="Cate_Banner">
+                        <img src="https://th.bing.com/th/id/OIP.OV9Hst-E3LS9EKtlMZU03wHaEK?w=289&h=180&c=7&r=0&o=5&pid=1.7" />
+                    </div>
+                    <div class="collection-heading__content">
+                        <div class="heading-box">
+                            <h1 class="title"> Gaming--Gear cho PC </h1>
+                            <span class="title-count"><b>@Model.Products.Count()</b>" sản phẩm"</span>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
+                        <div class="Owl-stage-outer">
+                            <div class="Owl-stage" style="width:auto;">
+
+                                @foreach (var product in Model.Products)
+                                {
+                                    <div class="Owl-item" style=" width: 280px">
+                                        <div class="Product_Loop">
+                                            <div class="Product_Inner">
+                                                <div class="ProductLoop_Img">
+                                                    <div class="Product_Img">
+                                                        <div class="lazy-img first-img">
+
+                                                            <a href="/ProductDetails/ProductPage?id=@product.ProductID">
+
+                                                                <img src="@product.ProductImage" alt="@product.ProductName" />
+
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="Product_Loop_Details">
+                                                    <div class="proloop--top"></div>
+                                                    <h3 class="product-name">@product.ProductName</h3>
+                                                    <div class="proloop-variant">
+                                                    </div>
+
+                                                    <div class="Price_ProLoop">
+                                                        <div class="Price_Box">
+                                                            <span class="discount-price">@string.Format("{0:0,0}", product.ProductPrice - product.DiscountValue) ₫</span>
+
+                                                        </div>
+
+                                                        <div class="Price_Sell">
+                                                            <div class="discount-rate">Giảm @string.Format("{0:0}%", (product.DiscountValue / product.ProductPrice) * 100)</div>
+                                                            <span class="original-price"><del>@string.Format("{0:0,0}", product.ProductPrice) ₫</del></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="Btn_AddOnCart">
+                                                        <div class="Inside_Btn_AddOnCart">
+                                                            <div class="Box_Cart">
+                                                                <a href="/ShoppingCart/ShoppingCartPage" class="btn-proloop-cart add-to-cart  btn-addcart-view">
+                                                                    <span class="Tittle">Thêm vào giỏ hàng</span>
+                                                                    <span class="Icon">
+                                                                        <i class="fas fa-wallet"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

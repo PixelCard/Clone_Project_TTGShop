@@ -1,4 +1,4 @@
-﻿
+﻿@model WebBanMayTinh.Models.ViewModel.HomePageVM
 
 @{
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
@@ -81,8 +81,8 @@
                 <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
                     <div class="Owl-stage-outer">
                         <div class="Owl-stage" style="width:2412px">
-                            @foreach (var product in Model)
-                            {
+                            @foreach (var product in Model.PaginatedProducts) 
+                            { 
                                 if (product.DiscountPercentage >= 0.1m)
                                 {
                                     <div class="Owl-item" style=" width: 280px">
@@ -130,7 +130,7 @@
                                                     <div class="Btn_AddOnCart">
                                                         <div class="Inside_Btn_AddOnCart">
                                                             <div class="Box_Cart">
-                                                                <a href="/ShoppingCart/ShoppingCartPage" class="btn-proloop-cart add-to-cart  btn-addcart-view">
+                                                                <a href="@Url.Action("AddToCart", "ShoppingCart", new {id = product.ProductID})" class="btn-proloop-cart add-to-cart  btn-addcart-view">
                                                                     <span class="Tittle">Thêm vào giỏ hàng</span>
                                                                     <span class="Icon">
                                                                         <i class="fas fa-wallet"></i>
@@ -168,7 +168,6 @@
 
 
 
-
 <section class="HomePage_Collection_Items_Discount">
     <div class="container_fluid">
         <div class="Main_Collection1">
@@ -186,8 +185,8 @@
                 <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
                     <div class="Owl-stage-outer">
                         <div class="Owl-stage" style="width:2412px">
-                            @foreach (var topProducts in Model)
-                            {
+                            @foreach (var topProducts in Model.TopDiscountProducts)
+                            { 
                                 if (topProducts.DiscountPercentage >= 0.1m)
                                 {
                                     <div class="Owl-item" style=" width: 280px">
@@ -235,7 +234,7 @@
                                                     <div class="Btn_AddOnCart">
                                                         <div class="Inside_Btn_AddOnCart">
                                                             <div class="Box_Cart">
-                                                                <a href="/ShoppingCart/ShoppingCartPage" class="btn-proloop-cart add-to-cart  btn-addcart-view">
+                                                                <a href="@Url.Action("AddToCart", "ShoppingCart", new {id = topProducts.ProductID})" class="btn-proloop-cart add-to-cart  btn-addcart-view">
                                                                     <span class="Tittle">Thêm vào giỏ hàng</span>
                                                                     <span class="Icon">
                                                                         <i class="fas fa-wallet"></i>
@@ -260,3 +259,11 @@
 
 
 
+<script>
+
+    var btn_left_Slider = document.querySelector('.btn-pre');
+
+    var btn_right_Slider = document.querySelector('.btn-next');
+
+
+</script>

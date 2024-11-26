@@ -164,6 +164,7 @@
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModel\CheckoutVM.cs" />
+    <Compile Include="Models\ViewModel\HomePageVM.cs" />
     <Compile Include="Models\ViewModel\LoginVM.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>Web_Ban_May_Tinh_Model.tt</DependentUpon>
@@ -683,17 +684,14 @@
     <Content Include="Areas\Admin\Views\ProductDescriptions\PV_Create_Edit_ProductDescription.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAccount\Index.cshtml" />
-<<<<<<< Updated upstream
     <Content Include="Areas\Admin\Views\AdminAccount\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\PV_Header_Admin_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
-=======
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Order\View.cshtml" />
-    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
->>>>>>> Stashed changes
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

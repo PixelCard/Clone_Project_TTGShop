@@ -1,0 +1,138 @@
+﻿.Section_Main {
+    background: #fff6;
+}
+
+
+/*CSS Left*/
+.List_MENU, .List_BRAND, .List_Price {
+    border: 10px solid #fff;
+}
+
+ul .Topic_Content {
+    justify-items: center;
+    border-bottom: 1px solid #000000;
+}
+
+ul .item {
+    font-size: 16px;
+}
+
+.Menu_Link_Root {
+    height: 20px;
+}
+/*CSS Right*/
+Section_right {
+    padding: 15px;
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+.Cate_Banner img {
+    max-width: 100%;
+}
+
+.collection-heading__content {
+    padding: 10px;
+}
+
+    .collection-heading__content h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .collection-heading__content .heading-box {
+        display: flex;
+        height: 100%;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+.Owl-stage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.Owl-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.Product_Loop {
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 16px;
+}
+
+.Owl-item .Product_Loop {
+    width: 80%;
+    height: 100%;
+    margin-bottom: 0;
+    padding-bottom: 14px;
+}
+
+.Product_Loop .Product_Inner {
+    display: flex;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+a img {
+    padding: 0px 15px;
+    width: 200px;
+    height: 120px;
+}
+
+/* Giá sản phẩm */
+.Price_Box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Discount_Price {
+    font-size: 18px;
+    color: #e63946;
+    font-weight: bold;
+}
+
+.Price_Sell .Pro_Sale {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+/* Nút thêm vào giỏ hàng */
+.Btn_AddOnCart {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+    .Btn_AddOnCart button {
+        background-color: #007bff;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }

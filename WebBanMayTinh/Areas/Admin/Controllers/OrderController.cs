@@ -14,14 +14,9 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
     {
         // GET: Admin/Order
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
-
-
         public ActionResult Index(int? page)
         {
-
             var item = db.Orders.OrderByDescending(x => x.OrderDate).ToList();
-
-
             if (page == null)
             {
                 page = 1;
@@ -53,7 +48,6 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         //    }
         //    return View(order);
         //}
-
         //// POST: Admin/Categories/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
@@ -73,7 +67,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
             if (item != null)
             {
                 db.Orders.Attach(item);
-                if(trangthai == 0)
+                if (trangthai == 0)
                 {
                     item.PaymentStatus = "Chưa thanh toán";
                 }

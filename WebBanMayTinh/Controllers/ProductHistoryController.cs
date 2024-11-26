@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -80,6 +81,5 @@ namespace WebBanMayTinh.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }

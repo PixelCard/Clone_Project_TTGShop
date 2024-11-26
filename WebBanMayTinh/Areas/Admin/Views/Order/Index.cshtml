@@ -1,7 +1,6 @@
 ﻿@model PagedList.IPagedList<WebBanMayTinh.Models.Order>
 @using PagedList.Mvc;
 
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -18,7 +17,6 @@
         box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
     }
 </style>
-
 <style>
     * {
         margin: 0;
@@ -31,25 +29,21 @@
         text-decoration: none;
     }
 
-
     .Box_Button_Add {
         justify-content: space-between;
         flex-direction: row-reverse;
     }
-
 
         .Box_Button_Add .Btn_AddProduct {
             border-radius: 25px;
             border: 2px solid #37a1a8;
         }
 
-
     .Btn_AddProduct > p {
         position: relative;
         top: 9px;
         left: 2px;
     }
-
 
     .Form_Search .search-bar {
         display: flex;
@@ -180,19 +174,12 @@
         @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, }))
     </div>
 }
-
-
 else
 {
     <div class="Error_Finding">
         Đơn hàng rỗng
     </div>
 }
-
-
-
-
-
 <div class="modal fade" id="modal-default" style="display:none;" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -202,7 +189,6 @@ else
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body">
                 <input type="hidden" id="txtOrderID" value="0" />
                 <div class="form-group">
@@ -221,7 +207,6 @@ else
         </div>
     </div>
 </div>
-
 @section scripts{
     <script>
         $(document).ready(function () {
