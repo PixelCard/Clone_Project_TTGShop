@@ -32,7 +32,7 @@ namespace WebBanMayTinh.Controllers
                 var hashedPassword = HashingHelper.HashPassword(model.Password);
                 var user = db.Users.SingleOrDefault(u => u.Email == model.Email
                 && u.Password == hashedPassword
-                && u.UserRole == UserRoleConstants.Customer);
+                );
 
                 if (user != null)
                 {

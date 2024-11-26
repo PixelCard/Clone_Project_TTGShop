@@ -1,0 +1,22 @@
+﻿@model WebBanMayTinh.Models.Customer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Xóa tài khoản</h2>
+
+<p>Bạn có chắc chắn muốn xóa tài khoản của mình không?</p>
+
+<div>
+    <p><strong>Họ tên:</strong> @Model.CustomerName</p>
+    <p><strong>Email:</strong> @Model.Email_User</p>
+    <p><strong>Số điện thoại:</strong> @Model.CustomerPhone</p>
+</div>
+
+@using (Html.BeginForm("Delete", "AdminAccount", new { email = Model.Email_User }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Xóa tài khoản</button>
+    <a href="@Url.Action("Index", "AdminAccount")" class="btn btn-secondary">Quay lại</a>}

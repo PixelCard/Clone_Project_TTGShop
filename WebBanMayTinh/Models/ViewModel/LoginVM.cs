@@ -8,8 +8,6 @@ namespace WebBanMayTinh.Models.ViewModel
 {
     public class LoginVM
     {
-        internal object Username;
-
         [Required(ErrorMessage ="Vui lòng nhập email")]
         [DataType(DataType.EmailAddress, ErrorMessage ="Email không hợp lệ")]
         [Display(Name ="Email")]
