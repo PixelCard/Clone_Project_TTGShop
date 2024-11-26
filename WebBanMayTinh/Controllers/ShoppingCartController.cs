@@ -169,7 +169,7 @@ namespace WebBanMayTinh.Controllers
                 {
                     CustomerID = customer.CustomerID,
                     OrderDate = model.OrderDate,
-                    TotalAmount = model.TotalAmount,
+                    TotalAmount = model.TotalAmount = cart.GetCart().TotalValue(),
                     PaymentStatus = paymentStatus,
                     PaymentMethod = model.PaymentMethod,
                     ShippingAddress = model.ShippingAddress,
@@ -188,7 +188,7 @@ namespace WebBanMayTinh.Controllers
 
                 //Xóa giỏ hàng sau khi đặt hàng thành công
                 cart.clearCart();
-                return RedirectToAction("OrderSuccess","Order", new { id = order.OrderID });
+                return RedirectToAction("OrderSuccess", "OrderSuccess");
             }
             return View(model);
         }

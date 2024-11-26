@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using WebBanMayTinh.Models;
 using PagedList.Mvc;
 using PagedList;
+using System.Data.Entity;
 
 namespace WebBanMayTinh.Controllers
 {
@@ -16,39 +17,35 @@ namespace WebBanMayTinh.Controllers
         // GET: ProductHistrory
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
 
-        public ActionResult ProductHistory(int? page)
+        public ActionResult ProductHistory(string searchString, int? page)
         {
-
-            var item = db.Orders.OrderByDescending(x => x.OrderDate).ToList();
-
-
-            if (page == null)
+            if (searchString != null)
             {
                 page = 1;
             }
-            var pageSize = 10;
-            var pageNumber = page ?? 1;
-            ViewBag.PageSize = pageSize;
-            ViewBag.PageNumber = pageNumber;
-            return View(item.ToPagedList(pageNumber, pageSize));
-        }
 
-        public ActionResult Index(int? page)
-        {
-
+            ViewBag.CurrentFilter = searchString;
             var item = db.Orders.OrderByDescending(x => x.OrderDate).ToList();
 
+            IQueryable<Order> orderID = db.Orders.AsQueryable();
 
-            if (page == null)
+            if (!string.IsNullOrEmpty(searchString))
             {
-                page = 1;
+                orderID = orderID.Where(p => p.OrderID.ToString() == searchString);
             }
+
             var pageSize = 10;
             var pageNumber = page ?? 1;
-            ViewBag.PageSize = pageSize;
-            ViewBag.PageNumber = pageNumber;
-            return View(item.ToPagedList(pageNumber, pageSize));
+            //ViewBag.PageSize = pageSize;
+            //ViewBag.PageNumber = pageNumber;
+            //return View(item.ToPagedList(pageNumber, pageSize));
+            var data = orderID
+               .OrderBy(c => c.OrderID)
+               .ToPagedList(pageNumber, pageSize);
+
+            return View(data);
         }
+
 
 
         public ActionResult View(int id)
@@ -81,5 +78,7 @@ namespace WebBanMayTinh.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
     }
 }

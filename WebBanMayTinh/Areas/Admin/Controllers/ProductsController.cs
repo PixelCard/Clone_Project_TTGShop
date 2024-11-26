@@ -95,7 +95,6 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
 
             int pagesize = 2; //Hiển tối đa được bao nhiêu sản phẩm trên 1 trang
 
-
             ProductSearchVM.Products = products_Linq.ToPagedList(pageNumber,pagesize); //truyền list sản phẩm của product đã truy vấn ra để phân trang 
 
             return View(ProductSearchVM);

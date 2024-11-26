@@ -1,6 +1,19 @@
 ﻿@model WebBanMayTinh.Models.Product
 @using PagedList.Mvc;
 
+<style>
+        .Function {
+            border-radius: 25px;
+            border: 2px solid #37a1a8;
+            width: 347px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    .Function p {
+        margin-bottom:0px;
+    }
+</style>
 
 @*------------------------------------------------------Category Product------------------------------------------------------------*@
 <div class="form-group">
@@ -131,9 +144,9 @@
 
 
 
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Lưu" class="btn btn-default" />
+<div class="Function">
+    <p>
+        <input type="submit" value="Lưu" class="btn btn-default" /> |
         @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-SavingProduct" })
-    </div>
+    </p>
 </div>

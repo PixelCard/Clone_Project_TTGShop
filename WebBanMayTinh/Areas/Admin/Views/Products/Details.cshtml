@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details Product</h2>
 
 
 <style>
@@ -50,7 +50,6 @@
 </style>
 
 <div>
-    <h4>Product</h4>
     <hr />
     <div class="dl-horizontal">
 
@@ -86,7 +85,7 @@
 
             <div class="Function">
                 <p>
-                    @Html.ActionLink("Đồng ý chỉnh sửa", "Edit", new { id = Model.ProductID }) |
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.ProductID }) |
                     @Html.ActionLink("Quay trở về trang sản phẩm", "Index")
                 </p>
             </div>

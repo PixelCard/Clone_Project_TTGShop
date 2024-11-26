@@ -118,6 +118,11 @@
             font-weight: 600;
             line-height: 1.6;
         }
+
+    .pagination-container .pagination {
+        display: flex;
+        padding: 15px;
+    }
 </style>
 
 
@@ -126,15 +131,15 @@
     <div class="container">
         <div class="order-management">
             <div class="tabs">
-                <button class="tab active">TẤT CẢ</button>
-                <button class="tab">MỚI</button>
+                <button class="tab active">TẤT CẢ SẢN PHẨM</button>
+                @*<button class="tab">MỚI</button>
                 <button class="tab">ĐANG XỬ LÝ</button>
                 <button class="tab">ĐANG VẬN CHUYỂN</button>
                 <button class="tab">HOÀN THÀNH</button>
-                <button class="tab">HỦY</button>
+                <button class="tab">HỦY</button>*@
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Tìm đơn hàng theo Mã đơn hàng">
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
                 <button style="">Tìm đơn hàng</button>
             </div>
             <div class="no-orders">
@@ -148,21 +153,21 @@
                                     #
                                 </th>
 
-                                <th class="col-2">
+                                <th class="col-3">
                                     Kiểu thanh toán
                                 </th>
 
-                                <th class="col-2">
+                                <th class="col-3">
                                     Trạng thái
                                 </th>
 
 
-                                <th class="col-2">
+                                <th class="col-3">
                                     Tổng tiền
                                 </th>
 
 
-                                <th class="col-1">
+                                <th class="col-2">
                                     Ngày đặt
                                 </th>
 
@@ -193,7 +198,7 @@
                                     </td>
 
                                     <td>
-                                        @item.OrderDate.ToString("dd/mm/yyyy")
+                                        @item.OrderDate.ToString("dd/MM/yyyy")
                                     </td>
 
                                     <td style="text-align:center">
@@ -202,16 +207,21 @@
                                 </tr>
                             }
                         </table>
-                        @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, }))
+                        @Html.PagedListPager(Model, Page => Url.Action("ProductHistory", new { Page, }))
                     </div>
                 }
+
+
                 else
                 {
                     <img src="~/Content/IMG/3262386.png">
 
                     <p>Quý khách chưa có đơn hàng nào.</p>
                 }
-                <button class="continue-btn">TIẾP TỤC MUA HÀNG</button>
+
+                <a href="@Url.Action("HomePage","Home")">
+                    <button class="continue-btn">TIẾP TỤC MUA HÀNG</button>
+                </a>
             </div>
         </div>
     </div>

@@ -5,61 +5,126 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
-
+<h2>Delete ProductDescription</h2>
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ProductDescription</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CPU)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CPU)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MAINBOARD)
-        </dt>
+<style>
 
-        <dd>
-            @Html.DisplayFor(model => model.MAINBOARD)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RAM)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RAM)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SSD)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SSD)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product.ProductName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    .dl-horizontal {
+        display: flex;
     }
+
+        .dl-horizontal .Left_Side {
+            max-width: 50%
+        }
+
+    .Left_Side .form-group {
+        max-width: 30%;
+        margin-bottom: 7px;
+    }
+
+    .form-group .Inside_Box_Text {
+        width: 400px;
+    }
+
+    .dl-horizontal .RightSide {
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .RightSide img {
+        width: 60%
+    }
+
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 347px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .Function p {
+            margin-top: 1rem;
+        }
+</style>
+
+<div>
+    <hr />
+    <div class="dl-horizontal">
+
+        <div class="Left_Side">
+            <div class="form-group">
+                <strong>ProductName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.Product.ProductName
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>CPU</strong>
+                <div class="Inside_Box_Text">
+                    @Model.CPU
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>RAM</strong>
+                <div class="Inside_Box_Text">
+                    @Model.RAM
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>MAINBOARD</strong>
+                <div class="Inside_Box_Text">
+                    @Model.MAINBOARD
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>SSD</strong>
+                <div class="Inside_Box_Text">
+                    @Model.SSD
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>VGA</strong>
+                <div class="Inside_Box_Text">
+                    @Model.VGA
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <strong>PowerPC</strong>
+                <div class="Inside_Box_Text">
+                    @Model.PowerPC
+                </div>
+            </div>
+
+
+            <div class="Function">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Xóa" class="btn btn-default" /> |
+                        @Html.ActionLink("Trở về danh sách", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+
+
+
+        <div class="RightSide">
+            <div class="form-group">
+                <img src="@Model.Product.ProductImage"></img>
+            </div>
+        </div>
+    </div>
 </div>

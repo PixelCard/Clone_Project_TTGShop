@@ -5,60 +5,108 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Delete Product</h2>
+
+
+
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductStatus)
+<style>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductImage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductImage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    .dl-horizontal {
+        display: flex;
     }
+
+        .dl-horizontal .Left_Side {
+            max-width: 50%
+        }
+
+    .Left_Side .form-group {
+        max-width: 30%;
+        margin-bottom: 7px;
+    }
+
+    .form-group .Inside_Box_Text {
+        width: 400px;
+    }
+
+    .dl-horizontal .RightSide {
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .RightSide img {
+        width: 60%
+    }
+
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 347px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .Function p {
+            margin-top: 1rem;
+        }
+</style>
+
+<div>
+    <hr />
+    <div class="dl-horizontal">
+
+        <div class="Left_Side">
+            <div class="form-group">
+                <strong>ProductName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductName
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>ProductStatus</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductStatus
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>ProductPrice</strong>
+                <div class="Inside_Box_Text">
+                    @Model.ProductPrice
+                </div>
+            </div>
+
+            <div class="form-group">
+                <strong>CategoryName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.Category.CategoryName
+                </div>
+            </div>
+
+
+            <div class="Function">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Xóa" class="btn btn-default" /> |
+                        @Html.ActionLink("Trở về danh sách", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+
+
+
+        <div class="RightSide">
+            <div class="form-group">
+                <img src="@Model.ProductImage"></img>
+            </div>
+        </div>
+    </div>
 </div>

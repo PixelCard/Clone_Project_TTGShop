@@ -5,55 +5,120 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details ProductDescription</h2>
+
+<style>
+
+    .dl-horizontal {
+        display: flex;
+    }
+
+        .dl-horizontal .Left_Side {
+            max-width: 50%
+        }
+
+    .Left_Side .form-group {
+        max-width: 30%;
+        margin-bottom: 7px;
+    }
+
+    .form-group .Inside_Box_Text {
+        width: 400px;
+    }
+
+    .dl-horizontal .RightSide {
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .RightSide img {
+        width: 60%
+    }
+
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 347px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .Function p {
+            margin-top: 1rem;
+        }
+</style>
 
 <div>
-    <h4>ProductDescription</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CPU)
-        </dt>
+    <div class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.CPU)
-        </dd>
+        <div class="Left_Side">
+            <div class="form-group">
+                <strong>ProductName</strong>
+                <div class="Inside_Box_Text">
+                    @Model.Product.ProductName
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MAINBOARD)
-        </dt>
+            <div class="form-group">
+                <strong>CPU</strong>
+                <div class="Inside_Box_Text">
+                    @Model.CPU
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MAINBOARD)
-        </dd>
+            <div class="form-group">
+                <strong>RAM</strong>
+                <div class="Inside_Box_Text">
+                    @Model.RAM
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RAM)
-        </dt>
+            <div class="form-group">
+                <strong>MAINBOARD</strong>
+                <div class="Inside_Box_Text">
+                    @Model.MAINBOARD
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.RAM)
-        </dd>
+            <div class="form-group">
+                <strong>SSD</strong>
+                <div class="Inside_Box_Text">
+                    @Model.SSD
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SSD)
-        </dt>
+            <div class="form-group">
+                <strong>VGA</strong>
+                <div class="Inside_Box_Text">
+                    @Model.VGA
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SSD)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </dt>
+            <div class="form-group">
+                <strong>PowerPC</strong>
+                <div class="Inside_Box_Text">
+                    @Model.PowerPC
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Product.ProductName)
-        </dd>
 
-    </dl>
+            <div class="Function">
+                <p>
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.ProductDescriptionID }) |
+                    @Html.ActionLink("Quay lại trang", "Index")
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="RightSide">
+            <div class="form-group">
+                <img src="@Model.Product.ProductImage"></img>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductDescriptionID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

@@ -47,6 +47,10 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
 
             return View(model);
         }
-
+        public ActionResult logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Auth");
+        }
     }
 }

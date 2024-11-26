@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebBanMayTinh.Controllers
 {
-    public class OrderController : Controller
+    public class OrderSuccessController : Controller
     {
         // GET: Order
         public ActionResult OrderSuccess()

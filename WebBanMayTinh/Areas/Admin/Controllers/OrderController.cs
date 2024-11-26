@@ -16,7 +16,7 @@ namespace WebBanMayTinh.Areas.Admin.Controllers
         private Web_Ban_May_TinhEntities db = new Web_Ban_May_TinhEntities();
         public ActionResult Index(int? page)
         {
-            var item = db.Orders.OrderByDescending(x => x.OrderDate).ToList();
+            var item = db.Orders.OrderByDescending(x => x.OrderID).ToList();
             if (page == null)
             {
                 page = 1;

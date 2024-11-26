@@ -9,98 +9,14 @@
 @*<link rel="stylesheet" href="~/Content/CSS/LoginPage.css" />*@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <!DOCTYPE html>
-<style>
-    .Section_Main {
-        background: #fff6;
-    }
 
-
-    /*CSS Left*/
-    .List_MENU, .List_BRAND, .List_Price {
-        border: 10px solid #fff;
-    }
-
-    ul .Topic_Content {
-        justify-items: center;
-        border-bottom: 1px solid #000000;
-    }
-
-    ul .item {
-        font-size: 16px;
-    }
-
-
-    /*CSS Right*/
-    Section_right {
-        padding: 15px;
-        flex: 0 0 80%;
-        max-width: 80%;
-    }
-
-    .Cate_Banner img {
-        max-width: 100%;
-    }
-
-    .collection-heading__content {
-        padding: 10px;
-    }
-
-        .collection-heading__content h1 {
-            margin: 0;
-            font-size: 26px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .collection-heading__content .heading-box {
-            display: flex;
-            height: 100%;
-            -webkit-justify-content: space-between;
-            justify-content: space-between;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-
-        .collection-heading__content span, b {
-            font-size: 18px;
-            justify-items: center;
-        }
-
-    .Product_Loop .Product_Inner {
-        display: flex;
-        margin-bottom: 0;
-        position: relative;
-        overflow: hidden;
-        background: #fff;
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        border-radius: 4px;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.08);
-    }
-
-    a img {
-        padding: 0px 15px;
-        width: 200px;
-        height: 120px;
-    }
-
-    .proloop-variant, .Price_Box, .Price_Sell {
-        padding-left: 10px;
-    }
-
-    Owl-item {
-        width: 22%;
-        max-height: 400px;
-    }
-</style>
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CategoriesDemo1</title>
-    @*<link rel="stylesheet" href="~/Content/CSS/CustomerLayout.css">*@
+    <link rel="stylesheet" href="~/Content/CSS/Category.css">
     <link rel="stylesheet" href="~/Content/Icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -116,7 +32,7 @@
                             <ul class="Menu_Link_Root">
                                 <li class="Topic_Content"><h2>Danh mục sản phẩm</h2></li>
                                 <li class="item">
-                                    <a href="@Url.Action("KhungSatTreoManHinh","Categories",new {})">
+                                    <a href="~/Views/_Catelink/PC_Gaming.cshtml">
 
                                         Pc Gaming - Máy tính chơi game
 
@@ -125,7 +41,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/PC_Working.cshtml">
+                                    <a href="~/Views/_Catelink/PC_Working.cshtml">
 
                                         PC Workstation
 
@@ -134,7 +50,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/PC_VanPhong.cshtml">
+                                    <a href="~/Views/_Catelink/PC_VanPhong.cshtml">
 
                                         PC VĂN PHÒNG
 
@@ -144,7 +60,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/PC_AMD_Gaming.cshtml">
+                                    <a href="~/Views/_Catelink/PC_AMD_Gaming.cshtml">
 
                                         PC AMD GAMING
 
@@ -154,7 +70,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/PC_MINI.cshtml">
+                                    <a href="~/Views/_Catelink/PC_MINI.cshtml">
 
                                         PC MINI
 
@@ -164,7 +80,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/PC_GiaLap_MoPhong.cshtml">
+                                    <a href="~/Views/_Catelink/PC_GiaLap_MoPhong.cshtml">
 
 
                                         PC GIẢ LẬP - ẢO HÓA
@@ -175,7 +91,7 @@
 
 
                                 <li class="item SubItem">
-                                    <a href="~/Views/Categories/Linhkien_PhuKKien.cshtml">
+                                    <a href="~/Views/_Catelink/Linhkien_PhuKKien.cshtml">
 
                                         Linh kiện máy tính
 
@@ -195,7 +111,7 @@
 
 
                                 <li class="item">
-                                    <a href="~/Views/Categories/ManHinh.cshtml">
+                                    <a href="~/Views/_Catelink/ManHinh.cshtml">
 
                                         Màn hình
 
@@ -203,7 +119,7 @@
                                 </li>
 
                                 <li class="item SubItem">
-                                    <a href="~/Views/Categories/Gaming_Gear.cshtml">
+                                    <a href="~/Views/_Catelink/Gaming_Gear.cshtml">
 
                                         Gaming Gear
 
@@ -211,7 +127,7 @@
                                 </li>
 
                                 <li class="item Dnone" style="display: none;">
-                                    <a href="~/Views/Categories/KhungSatTreoManHinh.cshtml">
+                                    <a href="~/Views/_Catelink/KhungSatTreoManHinh.cshtml">
                                         giá treo màn hình
                                     </a>
                                 </li>
@@ -273,10 +189,10 @@
 
                     <div class=" owl-loaded List_Item Box_List_Header_Middle owl-carousel">
                         <div class="Owl-stage-outer">
-                            <div class="Owl-stage" style="width:auto;display:flex;">
+                            <div class="Owl-stage" style="width:auto;">
 
 
-                                <div class="Owl-item" style="width: 25%;max-height: 400px;">
+                                <div class="Owl-item">
                                     <div class="Product_Loop">
                                         <div class="Product_Inner">
                                             <div class="ProductLoop_Img">

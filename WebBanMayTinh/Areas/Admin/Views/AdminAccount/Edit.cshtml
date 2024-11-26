@@ -5,25 +5,66 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Chỉnh sửa thông tin</h2>
+
+<style>
+    .Function {
+        border-radius: 25px;
+        border: 2px solid #37a1a8;
+        width: 186px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .Function p {
+            margin-bottom: 0px;
+        }
+
+    .form-group_Account{
+        margin-top:12px;
+        margin-bottom:2px;
+    }
+
+</style>
+
 
 @using (Html.BeginForm("Edit", "AdminAccount", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.Email_User)
-    <div>
-        <label for="CustomerName">Tên khách hàng:</label>
-        @Html.TextBoxFor(model => model.CustomerName)
+
+
+    @*<div>
+            <label for="CustomerName">Tên khách hàng:</label>
+            @Html.TextBoxFor(model => model.CustomerName)
+        </div>*@
+
+    <div class="form-group_Account">
+        <div class="control-label col-md-2 ProductName">
+            Tên khách hàng:
+            @Html.TextBoxFor(model => model.CustomerName)
+        </div>
     </div>
-    <div>
-        <label for="CustomerPhone">Số điện thoại:</label>
-        @Html.TextBoxFor(model => model.CustomerPhone)
+
+
+    <div class="form-group_Account">
+        <div class="control-label col-md-2 ProductName">
+            Số điện thoại:
+            @Html.TextBoxFor(model => model.CustomerPhone)
+        </div>
     </div>
-    <div>
-        <label for="CustomerAddress">Địa chỉ:</label>
-        @Html.TextBoxFor(model => model.CustomerAddress)
+
+
+    <div class="form-group_Account">
+        <div class="control-label col-md-2 ProductName">
+            Địa chỉ:
+            @Html.TextBoxFor(model => model.CustomerAddress)
+        </div>
     </div>
-    <div>
-        <button type="submit">Cập nhật</button>
+
+    <div class="Function">
+        <p>
+            <button type="submit" style="border:none; background-color:transparent">Cập nhật</button>
+        </p>
     </div>
 }

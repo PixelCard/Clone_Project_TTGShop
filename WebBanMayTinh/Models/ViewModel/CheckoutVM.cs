@@ -12,10 +12,10 @@ namespace WebBanMayTinh.Models.ViewModel
         public int CustomerID { get; set; }
 
         [Display(Name = "Ngày đặt hàng")]
-        public System.DateTime OrderDate { get; set; }
+        public DateTime OrderDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Tổng giá trị")]
-        public decimal TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }  // Tính tổng giá trị sản phẩm
 
         [Display(Name = "Trạng thái thanh toán")]
         public string PaymentMethod { get; set; }
@@ -32,6 +32,5 @@ namespace WebBanMayTinh.Models.ViewModel
 
         //Các thuộc tính khác của đơn hàng 
         public List<OrderDetail> OrderDetails { get; set; }
-
     }
 }
